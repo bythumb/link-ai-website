@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compliance — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Black.woff2') format('woff2'); font-weight: 900; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    .page-hero {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem; text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--body); margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.6; }
+
+    .content-wrap {
+      max-width: 820px; margin: 0 auto; padding: 3rem 2rem 4rem;
+    }
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h3 {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      margin: 1.5rem 0 0.4rem;
+    }
+    .content-wrap p { margin-bottom: 0.9rem; font-size: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.35rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    .section-divider {
+      border: none; border-top: 2px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    .disclosure-box {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border); border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.85rem;
+    }
+
+    .eho-logo {
+      display: flex; align-items: center; gap: 1rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 0.75rem; padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+    }
+    .eho-icon {
+      width: 48px; height: 48px; background: var(--navy);
+      border-radius: 0.4rem; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--white); font-weight: 900;
+    }
+    .eho-text { font-size: 0.8rem; }
+    .eho-text strong { display: block; color: var(--navy); font-size: 0.9rem; margin-bottom: 0.2rem; }
+
+    .license-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 0.75rem; padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .license-card:hover {
+      border-color: var(--tq);
+      box-shadow: 0 4px 16px rgba(90,233,215,0.12);
+    }
+    .license-state {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--tq); margin-bottom: 0.4rem;
+    }
+    .license-entity {
+      font-size: 0.95rem; font-weight: 800; color: var(--navy); margin-bottom: 0.6rem;
+    }
+    .license-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.78rem; margin-bottom: 0.2rem;
+    }
+    .license-row .label { color: var(--body); }
+    .license-row .value { font-weight: 700; color: var(--navy); font-size: 0.75rem; }
+    .license-dre {
+      margin-top: 0.6rem; padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem; color: var(--body);
+    }
+
+    .site-footer { background: var(--white); padding: 2rem 2rem 1.6rem; font-family: var(--font); }
+    .site-footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy { width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .content-wrap { padding: 2rem 1.2rem 3rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+      .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="link-ai-v5-combined.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="link-ai-v5-combined.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Compliance</h1>
+  <div class="page-updated">Updated May 15, 2025</div>
+</div>
+
+<main class="content-wrap">
+
+  <!-- ── FAIR HOUSING ── -->
+
+  <div class="eho-logo">
+    <div class="eho-icon">EHO</div>
+    <div class="eho-text">
+      <strong>Equal Housing Opportunity</strong>
+      Link Management Systems and its affiliated brokerages are committed to equal housing opportunity for all persons regardless of protected class status.
+    </div>
+  </div>
+
+  <h2>Fair Housing &amp; Equal Opportunity</h2>
+  <p>Link Management Systems, Inc. and all of its affiliated real estate brokerages and service entities are committed to the principles of the Fair Housing Act and the Equal Opportunity Act. We are dedicated to providing fair and equal housing opportunities to all individuals and are firmly opposed to any form of discrimination in housing.</p>
+  <p>We believe that every person has the right to choose where they live and that this right should be exercised free from discrimination, intimidation, or interference based on protected characteristics.</p>
+
+  <h2>Protected Classes</h2>
+  <p>Under federal law, it is illegal to discriminate in the sale, lease, or financing of housing or in the provision of brokerage services based on:</p>
+  <ul>
+    <li><strong>Race</strong></li>
+    <li><strong>Color</strong></li>
+    <li><strong>National Origin</strong></li>
+    <li><strong>Religion</strong></li>
+    <li><strong>Sex</strong> (including gender identity and sexual orientation under certain jurisdictions)</li>
+    <li><strong>Familial Status</strong> (including children under 18 living with parents or legal custodians, pregnant women, and people securing custody of children under 18)</li>
+    <li><strong>Disability</strong> (physical or mental)</li>
+  </ul>
+  <p>Many states and localities extend protection to additional classes, including but not limited to: source of income, marital status, sexual orientation, gender identity, age, ancestry, and military/veteran status. Link and its affiliates comply with all applicable state and local fair housing laws.</p>
+
+  <h2>Our Obligations and Practices</h2>
+  <p>Link and its affiliated brokerages and agents commit to:</p>
+  <ul>
+    <li>Offering housing opportunities to all qualified persons without discrimination</li>
+    <li>Providing equal professional service to all clients and customers</li>
+    <li>Presenting all properties to all buyers, regardless of their background</li>
+    <li>Adhering to the National Association of REALTORS® Code of Ethics</li>
+    <li>Refraining from "steering" — directing clients toward or away from neighborhoods based on their protected class</li>
+    <li>Accurately representing available properties and their features to all prospects</li>
+    <li>Training all agents on fair housing laws, obligations, and best practices</li>
+    <li>Maintaining non-discriminatory advertising practices</li>
+  </ul>
+
+  <h2>Reasonable Accommodations and Modifications</h2>
+  <p>Federal law requires landlords and housing providers to make reasonable accommodations in rules, policies, practices, and services when necessary for a person with a disability to have equal opportunity to use and enjoy housing. This includes:</p>
+  <ul>
+    <li><strong>Reasonable accommodations</strong> — changes in rules, policies, practices, or services</li>
+    <li><strong>Reasonable modifications</strong> — physical changes to the unit or common areas (generally at the tenant's expense, unless the housing receives federal funding)</li>
+  </ul>
+  <p>Requests for reasonable accommodations or modifications should be documented and responded to promptly. If you need an accommodation in connection with our services, please contact us.</p>
+
+  <h2>Filing a Fair Housing Complaint</h2>
+  <p>If you believe you have experienced housing discrimination, you have the right to file a complaint. Complaints may be filed with:</p>
+  <ul>
+    <li><strong>U.S. Department of Housing and Urban Development (HUD)</strong> — online at hud.gov/fairhousing, by phone at 1-800-669-9777 (TTY: 1-800-927-9275), or by mail at HUD Office of Fair Housing and Equal Opportunity, 451 7th Street SW, Washington, DC 20410</li>
+    <li><strong>Your state's civil rights or housing agency</strong></li>
+    <li><strong>A private attorney</strong></li>
+  </ul>
+  <p>You may also file a complaint directly with Link by contacting our compliance team. All complaints will be taken seriously and investigated promptly.</p>
+
+  <hr class="section-divider">
+
+  <!-- ── ESCROW LICENSE ── -->
+
+  <h2>Escrow License</h2>
+  <p>Link Escrow is a licensed escrow agent providing settlement and closing services in California, regulated by the California Department of Financial Protection and Innovation.</p>
+
+  <div class="license-card">
+    <div class="license-state">California</div>
+    <div class="license-entity">Link Escrow</div>
+    <div class="license-row"><span class="label">DFPI License</span><span class="value">96DBO-189708</span></div>
+    <div class="license-row"><span class="label">Type</span><span class="value">Escrow Agent</span></div>
+    <div class="license-dre">California Department of Financial Protection and Innovation</div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ── LINK MANAGEMENT SYSTEMS ── -->
+
+  <h2>Link Management Systems</h2>
+  <p>Link Management Systems, Inc. is the technology and management entity that operates the Link platform, affiliated brokerages, and escrow services. Link Management Systems is subject to oversight by the following regulatory agencies:</p>
+  <ul>
+    <li><strong>Escrow</strong> — California Department of Financial Protection and Innovation (DFPI)</li>
+    <li><strong>Fair housing</strong> — U.S. Department of Housing and Urban Development (HUD)</li>
+    <li><strong>Real estate</strong> — State real estate commissions and divisions in each licensed state</li>
+  </ul>
+
+  <hr class="section-divider">
+
+  <!-- ── CONTACT ── -->
+
+  <h2>Contact</h2>
+  <div class="disclosure-box">
+    <strong>Compliance &amp; Fair Housing</strong><br>
+    Link Management Systems, Inc.<br>
+    202 W 140th St, Los Angeles, CA 90061<br>
+    Email: <a href="mailto:compliance@link.ai">compliance@link.ai</a><br>
+    Phone: (310) 695-6510
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo"><img src="../Full%20logo_dark%20color.png" alt="Link"></div>
+    <div class="site-footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="compliance.html">Compliance</a>
+    </div>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
+    </div>
+    <div class="site-footer-copy">© 2025 Link Management Systems. All rights reserved. Equal Housing Opportunity.</div>
+  </div>
+</footer>
+
+</body>
+</html>

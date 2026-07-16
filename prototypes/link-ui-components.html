@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Link.ai UI Components</title>
+<style>
+@font-face { font-family:'Mont'; src:url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Mont'; src:url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight:600; }
+@font-face { font-family:'Mont'; src:url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Mont'; src:url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight:800; }
+
+:root {
+  --tq:     #5ae9d7;
+  --navy:   #131f4a;
+  --page:   #fbfcff;
+  --body:   #636b87;
+  --border: #dde5f3;
+  --white:  #ffffff;
+  --font:   'Mont', system-ui, sans-serif;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:16px; }
+body { font-family:var(--font); background:var(--page); color:var(--navy); }
+
+/* ── PAGE SHELL ─────────────────────────────── */
+.page-header {
+  padding: 3rem 4rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+}
+.ph-eyebrow { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tq); margin-bottom:.5rem; }
+.ph-title   { font-size:2.2rem; font-weight:400; letter-spacing:-.03em; color:var(--navy); }
+.ph-sub     { font-size:.88rem; color:var(--body); margin-top:.4rem; line-height:1.65; max-width:520px; }
+.ph-tag     { font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--tq); border:1px solid rgba(90,233,215,.3); padding:.35rem .85rem; border-radius:2rem; align-self:flex-start; }
+
+.page-body  { max-width:1200px; margin:0 auto; padding:0 4rem 8rem; }
+
+/* ── COMPONENT BLOCK ───────────────────────── */
+.comp { padding-top:5rem; }
+.comp-hdr {
+  display:flex; align-items:baseline; gap:1rem;
+  padding-bottom:1.25rem; border-bottom:2px solid var(--border); margin-bottom:2.5rem;
+}
+.comp-num  { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tq); }
+.comp-name { font-size:1.5rem; font-weight:400; letter-spacing:-.025em; }
+.comp-desc { font-size:.85rem; color:var(--body); line-height:1.7; max-width:640px; margin-bottom:2rem; }
+
+.comp-row  { display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:start; }
+.comp-row.full { grid-template-columns:1fr; }
+
+/* preview panel */
+.comp-preview {
+  border-radius:1.11rem; overflow:hidden;
+  border:1px solid var(--border);
+  background:var(--white);
+  box-shadow:0 2px 8px rgba(19,31,74,.04), 0 16px 40px rgba(19,31,74,.06);
+}
+.preview-label {
+  font-size:.6rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--body); padding:.65rem 1rem; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:.5rem;
+}
+.preview-label::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--tq); }
+
+/* code panel */
+.comp-code {
+  border-radius:1.11rem; overflow:hidden;
+  border:1px solid var(--border);
+}
+.code-tabs { display:flex; border-bottom:1px solid var(--border); background:#f6f8fd; }
+.code-tab {
+  font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--body); padding:.6rem 1rem; cursor:pointer; border-bottom:2px solid transparent;
+  transition:.15s;
+}
+.code-tab.active { color:var(--navy); border-bottom-color:var(--navy); background:var(--white); }
+.code-block {
+  background:#0f1520; padding:1.25rem 1.5rem;
+  font-family:'SF Mono', 'Fira Code', monospace; font-size:.72rem; line-height:1.75;
+  color:#c9d1d9; overflow-x:auto; display:none; white-space:pre;
+}
+.code-block.active { display:block; }
+.tok-prop   { color:#79c0ff; }
+.tok-val    { color:#a5d6ff; }
+.tok-str    { color:#a8d8a8; }
+.tok-cmt    { color:#6e7681; font-style:italic; }
+.tok-sel    { color:#f97583; }
+.tok-kw     { color:#ff7b72; }
+.tok-fn     { color:#d2a8ff; }
+.tok-num    { color:#f8c555; }
+
+/* ── DESIGN TOKENS BOX ─────────────────────── */
+.tokens-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.75rem; margin-top:2rem; }
+.token-item {
+  background:var(--white); border:1px solid var(--border); border-radius:.75rem;
+  padding:.85rem 1rem; display:flex; align-items:center; gap:.85rem;
+}
+.token-swatch { width:32px; height:32px; border-radius:.4rem; flex-shrink:0; border:1px solid rgba(0,0,0,.06); }
+.token-name  { font-size:.65rem; font-weight:700; color:var(--navy); }
+.token-value { font-size:.6rem; color:var(--body); font-family:monospace; }
+
+/* ── DIVIDER ────────────────────────────────── */
+.comp-divider { height:1px; background:var(--border); margin-top:5rem; }
+
+
+/* ═══════════════════════════════════════════
+   COMPONENT 1 PREVIEW: Orbital Carousel
+   ═══════════════════════════════════════════ */
+.oc-stage {
+  height:340px;
+  background: linear-gradient(rgba(10,18,48,.45), rgba(10,18,48,.45)),
+              url('../AdobeStock_1275181740.jpeg') center 30%/cover;
+  display:flex; align-items:flex-end; justify-content:center; padding:0 0 1.5rem;
+  position:relative; overflow:visible;
+}
+.oc-card-wrap {
+  position:absolute; top:2.5rem; left:50%; transform:translateX(-50%);
+  width:200px; height:280px;
+}
+.oc-card {
+  position:absolute; inset:0;
+  background:var(--white); border:1px solid var(--border); border-radius:1.8rem;
+  overflow:hidden; opacity:0;
+  transition:transform .78s cubic-bezier(.25,.46,.45,.94), opacity .78s ease;
+  box-shadow:0 4px 20px rgba(19,31,74,.18), 0 20px 50px rgba(19,31,74,.12);
+}
+.oc-chrome {
+  padding:.4rem .75rem; background:#f3f5f9; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:.25rem;
+}
+.oc-dots { display:flex; gap:3px; }
+.oc-dot  { width:5px; height:5px; border-radius:50%; }
+.oc-body { padding:.85rem; font-size:.6rem; color:var(--body); }
+.oc-tag  { font-size:.45rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--tq); margin-bottom:.4rem; }
+.oc-title{ font-size:.82rem; font-weight:700; color:var(--navy); line-height:1.2; margin-bottom:.5rem; }
+.oc-row  { display:flex; justify-content:space-between; padding:.22rem .35rem; background:var(--page); border:1px solid var(--border); border-radius:.25rem; margin-bottom:.15rem; }
+.oc-rl   { font-size:.55rem; color:var(--body); }
+.oc-rv   { font-size:.55rem; font-weight:600; color:var(--navy); }
+.oc-hint { font-size:.6rem; font-weight:600; color:rgba(255,255,255,.7); letter-spacing:.04em; }
+
+.oc-glass-card {
+  position:absolute;
+  background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-radius:clamp(24px,3.5vw,52px) clamp(24px,3.5vw,52px) 0 0;
+  bottom:0; left:50%; transform:translateX(-50%);
+  width:76%; height:72%; display:flex; align-items:flex-start; justify-content:center;
+  padding-top:1.2rem;
+}
+
+/* ═══════════════════════════════════════════
+   COMPONENT 2 PREVIEW: Glass Card
+   ═══════════════════════════════════════════ */
+.gc-stage {
+  padding:2rem 1.5rem;
+  background: linear-gradient(rgba(10,18,48,.48), rgba(10,18,48,.48)),
+              url('../AdobeStock_130005965.jpeg') center/cover;
+  display:flex; flex-direction:column; gap:1rem;
+}
+.gc-demo {
+  padding:1.1rem 1.25rem; border-radius:.85rem;
+}
+.gc-title { font-size:.85rem; font-weight:700; margin-bottom:.25rem; }
+.gc-body  { font-size:.65rem; line-height:1.55; opacity:.7; }
+.gc-var-label {
+  font-size:.52rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+
+.gc-light {
+  background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); color:#fff;
+}
+.gc-medium {
+  background:rgba(255,255,255,.20); border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); color:rgba(19,31,74,.9);
+}
+.gc-dark {
+  background:rgba(10,18,48,.55); border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); color:#fff;
+}
+
+/* ═══════════════════════════════════════════
+   COMPONENT 3 PREVIEW: Scroll Showcase
+   ═══════════════════════════════════════════ */
+.ss-stage {
+  padding:1.5rem 1.25rem;
+  background:#fbfcff;
+  background-image:
+    linear-gradient(to bottom, #fbfcff 0%, rgba(251,252,255,0) 38%),
+    radial-gradient(circle, #c4d0e8 1px, transparent 1px);
+  background-size:100% 100%, 18px 18px;
+}
+.ss-text { margin-bottom:1.25rem; }
+.ss-eyebrow { font-size:.52rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--body); margin-bottom:.35rem; }
+.ss-name    { font-size:1.3rem; font-weight:400; letter-spacing:-.02em; color:var(--navy); line-height:1.15; }
+.ss-desc    { font-size:.7rem; color:var(--body); line-height:1.65; margin-top:.4rem; }
+.ss-cols    { display:grid; grid-template-columns:auto 1fr; gap:.75rem; }
+.ss-tl      { background:var(--white); border:1px solid var(--border); border-radius:.75rem; padding:.75rem .5rem; display:flex; flex-direction:column; gap:0; }
+.ss-tl-item {
+  display:flex; align-items:center; gap:.5rem; padding:.45rem .6rem; border-radius:.45rem;
+  font-size:.58rem; font-weight:600; color:var(--body); cursor:pointer; white-space:nowrap;
+}
+.ss-tl-item.active { background:rgba(90,233,215,.12); color:var(--navy); }
+.ss-tl-dot  { width:5px; height:5px; border-radius:50%; background:var(--border); flex-shrink:0; }
+.ss-tl-item.active .ss-tl-dot { background:var(--tq); }
+.ss-frame   { background:var(--white); border:1px solid var(--border); border-radius:.75rem .75rem 0 0; overflow:hidden; }
+.ss-frame-chrome { padding:.35rem .65rem; background:#f3f5f9; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:.3rem; }
+.ss-frame-dots { display:flex; gap:3px; }
+.ss-frame-dot  { width:5px; height:5px; border-radius:50%; }
+.ss-frame-body { padding:.75rem; }
+.ss-frame-line { height:7px; background:#f0f3fb; border-radius:3px; margin-bottom:.35rem; }
+.ss-frame-line.tq { background:rgba(90,233,215,.25); width:60%; }
+
+</style>
+</head>
+<body>
+
+<!-- ── PAGE HEADER ─────────────────────────── -->
+<header class="page-header">
+  <div>
+    <div class="ph-eyebrow">Link.ai · UI Component Library</div>
+    <h1 class="ph-title">Three components worth keeping.</h1>
+    <p class="ph-sub">Live previews, design tokens, and copy-ready CSS + JS for each pattern. Built for Link.ai — portable to any project.</p>
+  </div>
+  <span class="ph-tag">3 components · V5 era</span>
+</header>
+
+<div class="page-body">
+
+<!-- ═══════════════════════════════════════════════════
+     DESIGN TOKENS
+     ═══════════════════════════════════════════════════ -->
+<div class="comp" id="tokens">
+  <div class="comp-hdr">
+    <span class="comp-num">00</span>
+    <span class="comp-name">Design Tokens</span>
+  </div>
+  <p class="comp-desc">These CSS custom properties underpin all three components. Paste this <code style="font-family:monospace;font-size:.85em;background:#f0f3fb;padding:.1em .4em;border-radius:.3em">:root</code> block at the top of any project to inherit the full Link.ai palette.</p>
+  <div class="tokens-grid">
+    <div class="token-item"><div class="token-swatch" style="background:#5ae9d7"></div><div><div class="token-name">--tq</div><div class="token-value">#5ae9d7 · Turquoise</div></div></div>
+    <div class="token-item"><div class="token-swatch" style="background:#131f4a"></div><div><div class="token-name">--navy</div><div class="token-value">#131f4a · Navy</div></div></div>
+    <div class="token-item"><div class="token-swatch" style="background:#fbfcff;border:1px solid #dde5f3"></div><div><div class="token-name">--page</div><div class="token-value">#fbfcff · Page bg</div></div></div>
+    <div class="token-item"><div class="token-swatch" style="background:#636b87"></div><div><div class="token-name">--body</div><div class="token-value">#636b87 · Body text</div></div></div>
+    <div class="token-item"><div class="token-swatch" style="background:#dde5f3"></div><div><div class="token-name">--border</div><div class="token-value">#dde5f3 · Borders</div></div></div>
+    <div class="token-item"><div class="token-swatch" style="background:#fff;border:1px solid #dde5f3"></div><div><div class="token-name">--white</div><div class="token-value">#ffffff · Cards</div></div></div>
+  </div>
+  <div style="margin-top:1.5rem">
+    <div class="comp-code" style="border-radius:.75rem">
+      <div class="code-block active" style="display:block">
+<span class="tok-sel">:root</span> {
+  <span class="tok-prop">--tq</span>:     <span class="tok-str">#5ae9d7</span>;  <span class="tok-cmt">/* turquoise — CTAs and accents only */</span>
+  <span class="tok-prop">--navy</span>:   <span class="tok-str">#131f4a</span>;  <span class="tok-cmt">/* headings, dark bg */</span>
+  <span class="tok-prop">--page</span>:   <span class="tok-str">#fbfcff</span>;  <span class="tok-cmt">/* page background */</span>
+  <span class="tok-prop">--body</span>:   <span class="tok-str">#636b87</span>;  <span class="tok-cmt">/* body copy */</span>
+  <span class="tok-prop">--border</span>: <span class="tok-str">#dde5f3</span>;  <span class="tok-cmt">/* card borders */</span>
+  <span class="tok-prop">--white</span>:  <span class="tok-str">#ffffff</span>;
+  <span class="tok-prop">--font</span>:   <span class="tok-str">'Mont'</span>, system-ui, sans-serif;  <span class="tok-cmt">/* 400 for headlines */</span>
+}</div>
+    </div>
+  </div>
+</div>
+
+<div class="comp-divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COMPONENT 1 · ORBITAL CAROUSEL
+     ═══════════════════════════════════════════════════ -->
+<div class="comp" id="carousel">
+  <div class="comp-hdr">
+    <span class="comp-num">01</span>
+    <span class="comp-name">Orbital Carousel</span>
+  </div>
+  <p class="comp-desc">A face-forward 3D card carousel where cards travel a circular path using <strong>translateX + translateZ</strong> (not rotateY), so every card always faces the viewer. Three cards visible at once — front card full-scale, side cards at 72% — with drag, click-to-center, and 5-second auto-advance. The frosted glass background card rises from the bottom of the hero photo.</p>
+
+  <div class="comp-row">
+    <div class="comp-preview">
+      <div class="preview-label">Live preview — drag or click side cards</div>
+      <div class="oc-stage" id="ocStage">
+        <div class="oc-glass-card" id="ocGlass">
+          <div style="perspective:700px; width:200px; height:260px; position:relative;" id="ocScene">
+            <div id="ocCylinder" style="width:200px;height:260px;position:relative;transform-style:preserve-3d;">
+              <!-- Card 1 -->
+              <div class="oc-card" id="occ0">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Pre-Qualification</div><div class="oc-title">Buying power confirmed.</div><div class="oc-row"><span class="oc-rl">Income verified</span><span class="oc-rv">✓</span></div><div class="oc-row"><span class="oc-rl">Soft credit pull</span><span class="oc-rv">720</span></div><div class="oc-row"><span class="oc-rl">Max loan</span><span class="oc-rv">$480k</span></div></div>
+              </div>
+              <!-- Card 2 -->
+              <div class="oc-card" id="occ1">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Home Valuation</div><div class="oc-title">Est. value calculated.</div><div class="oc-row"><span class="oc-rl">Comps analyzed</span><span class="oc-rv">12</span></div><div class="oc-row"><span class="oc-rl">Confidence</span><span class="oc-rv">High</span></div><div class="oc-row"><span class="oc-rl">Value range</span><span class="oc-rv">$540–580k</span></div></div>
+              </div>
+              <!-- Card 3 -->
+              <div class="oc-card" id="occ2">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Net Sheet</div><div class="oc-title">Seller proceeds ready.</div><div class="oc-row"><span class="oc-rl">Sale price</span><span class="oc-rv">$565k</span></div><div class="oc-row"><span class="oc-rl">Agent commission</span><span class="oc-rv">−$16,950</span></div><div class="oc-row"><span class="oc-rl">Net proceeds</span><span class="oc-rv" style="color:#0b7a6a">$531k</span></div></div>
+              </div>
+              <!-- Card 4 -->
+              <div class="oc-card" id="occ3">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Listing Copilot</div><div class="oc-title">AI answered 3 buyers.</div><div class="oc-row"><span class="oc-rl">Open house?</span><span class="oc-rv">Sat 11–2pm</span></div><div class="oc-row"><span class="oc-rl">HOA fees</span><span class="oc-rv">$220/mo</span></div><div class="oc-row"><span class="oc-rl">Leads captured</span><span class="oc-rv" style="color:#0b7a6a">3</span></div></div>
+              </div>
+              <!-- Card 5 -->
+              <div class="oc-card" id="occ4">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Property Search</div><div class="oc-title">Saved 4 matches.</div><div class="oc-row"><span class="oc-rl">Budget</span><span class="oc-rv">$400–480k</span></div><div class="oc-row"><span class="oc-rl">Beds / baths</span><span class="oc-rv">3bd / 2ba</span></div><div class="oc-row"><span class="oc-rl">Alerts active</span><span class="oc-rv" style="color:#0b7a6a">✓</span></div></div>
+              </div>
+              <!-- Card 6 -->
+              <div class="oc-card" id="occ5">
+                <div class="oc-chrome"><div class="oc-dots"><div class="oc-dot" style="background:#ffc7c5"></div><div class="oc-dot" style="background:#ffe5a0"></div><div class="oc-dot" style="background:#5ae9d7"></div></div></div>
+                <div class="oc-body"><div class="oc-tag">Link Manager</div><div class="oc-title">6 links tracked.</div><div class="oc-row"><span class="oc-rl">Total scans</span><span class="oc-rv">142</span></div><div class="oc-row"><span class="oc-rl">Yard sign</span><span class="oc-rv">88 scans</span></div><div class="oc-row"><span class="oc-rl">Leads this week</span><span class="oc-rv" style="color:#0b7a6a">12</span></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="oc-hint">← drag · click side cards · auto-advances →</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="comp-code">
+        <div class="code-tabs">
+          <div class="code-tab active" onclick="showTab(this,'oc-css')">CSS</div>
+          <div class="code-tab" onclick="showTab(this,'oc-js')">JavaScript</div>
+          <div class="code-tab" onclick="showTab(this,'oc-html')">HTML</div>
+        </div>
+        <div class="code-block active" id="oc-css">
+<span class="tok-cmt">/* Scene — sets 3D perspective */</span>
+<span class="tok-sel">.carousel-scene</span> {
+  <span class="tok-prop">perspective</span>: <span class="tok-num">900px</span>;
+  <span class="tok-prop">width</span>: <span class="tok-num">240px</span>; <span class="tok-prop">height</span>: <span class="tok-num">370px</span>;
+  <span class="tok-prop">position</span>: relative;
+  <span class="tok-prop">transform-style</span>: preserve-3d;
+}
+
+<span class="tok-sel">.carousel-cylinder</span> {
+  <span class="tok-prop">width</span>: <span class="tok-num">240px</span>; <span class="tok-prop">height</span>: <span class="tok-num">370px</span>;
+  <span class="tok-prop">position</span>: relative;
+  <span class="tok-prop">transform-style</span>: preserve-3d;
+}
+
+<span class="tok-sel">.cc-card</span> {
+  <span class="tok-prop">position</span>: absolute; <span class="tok-prop">inset</span>: <span class="tok-num">0</span>;
+  <span class="tok-prop">background</span>: var(--white);
+  <span class="tok-prop">border</span>: <span class="tok-num">1px</span> solid var(--border);
+  <span class="tok-prop">border-radius</span>: <span class="tok-num">2.2rem</span>;
+  <span class="tok-prop">opacity</span>: <span class="tok-num">0</span>;
+  <span class="tok-prop">transition</span>:
+    transform <span class="tok-num">.78s</span> cubic-bezier(.25,.46,.45,.94),
+    opacity <span class="tok-num">.78s</span> ease;
+}
+
+<span class="tok-cmt">/* Frosted host card (hero glass lift) */</span>
+<span class="tok-sel">.hero-card</span> {
+  <span class="tok-prop">background</span>: rgba(255,255,255,.10);
+  <span class="tok-prop">border</span>: <span class="tok-num">1px</span> solid rgba(255,255,255,.18);
+  <span class="tok-prop">backdrop-filter</span>: blur(<span class="tok-num">10px</span>);
+  <span class="tok-prop">-webkit-backdrop-filter</span>: blur(<span class="tok-num">10px</span>);
+  <span class="tok-prop">border-radius</span>: clamp(36px,4.7vw,80px) clamp(36px,4.7vw,80px) <span class="tok-num">0 0</span>;
+}</div>
+        <div class="code-block" id="oc-js">
+<span class="tok-kw">const</span> TOTAL = <span class="tok-num">6</span>;
+<span class="tok-kw">const</span> STEP  = <span class="tok-num">360</span> / TOTAL;  <span class="tok-cmt">// 60°</span>
+<span class="tok-kw">const</span> R     = <span class="tok-num">300</span>;            <span class="tok-cmt">// orbit radius px</span>
+<span class="tok-kw">let</span>   totalAngle = <span class="tok-num">0</span>;
+
+<span class="tok-kw">function</span> <span class="tok-fn">positionCards</span>(instant) {
+  cards.forEach((card, i) => {
+    <span class="tok-kw">const</span> theta = ((i * STEP - totalAngle) % <span class="tok-num">360</span> + <span class="tok-num">360</span>) % <span class="tok-num">360</span>;
+    <span class="tok-kw">const</span> rad   = theta * Math.PI / <span class="tok-num">180</span>;
+    <span class="tok-kw">const</span> x     = R * Math.sin(rad);
+    <span class="tok-kw">const</span> z     = R * (Math.cos(rad) - <span class="tok-num">1</span>);
+    <span class="tok-kw">const</span> front = theta === <span class="tok-num">0</span>;
+    <span class="tok-kw">const</span> side  = theta === <span class="tok-num">60</span> || theta === <span class="tok-num">300</span>;
+    card.style.transform =
+      `translateX(${x}px) translateZ(${z}px) scale(${front ? <span class="tok-num">1</span> : side ? <span class="tok-num">.72</span> : <span class="tok-num">0</span>})`;
+    card.style.opacity       = front ? <span class="tok-str">'1'</span> : side ? <span class="tok-str">'.52'</span> : <span class="tok-str">'0'</span>;
+    card.style.pointerEvents = (front || side) ? <span class="tok-str">'auto'</span> : <span class="tok-str">'none'</span>;
+    card.style.zIndex        = front ? <span class="tok-num">10</span> : side ? <span class="tok-num">5</span> : <span class="tok-num">1</span>;
+  });
+}
+
+<span class="tok-kw">function</span> <span class="tok-fn">rotate</span>(delta) {
+  totalAngle += delta;
+  positionCards();
+}
+
+<span class="tok-cmt">// Auto-advance every 5s</span>
+<span class="tok-kw">let</span> timer = setInterval(() => rotate(+STEP), <span class="tok-num">5000</span>);
+
+<span class="tok-cmt">// Click side card to center it</span>
+cards.forEach((card, i) => {
+  card.addEventListener(<span class="tok-str">'click'</span>, () => {
+    <span class="tok-kw">const</span> theta = ((i * STEP - totalAngle) % <span class="tok-num">360</span> + <span class="tok-num">360</span>) % <span class="tok-num">360</span>;
+    if (theta === <span class="tok-num">60</span>)  rotate(+STEP);
+    if (theta === <span class="tok-num">300</span>) rotate(-STEP);
+  });
+});
+
+<span class="tok-cmt">// Drag to rotate</span>
+<span class="tok-kw">let</span> dragX = null;
+scene.addEventListener(<span class="tok-str">'mousedown'</span>, e => dragX = e.clientX);
+window.addEventListener(<span class="tok-str">'mouseup'</span>, e => {
+  if (dragX === null) return;
+  <span class="tok-kw">const</span> dx = e.clientX - dragX;
+  if (Math.abs(dx) > <span class="tok-num">50</span>) rotate(dx < <span class="tok-num">0</span> ? +STEP : -STEP);
+  dragX = null;
+});</div>
+        <div class="code-block" id="oc-html">
+<span class="tok-cmt">&lt;!-- Host card (glass lift) --&gt;</span>
+&lt;<span class="tok-sel">div</span> class=<span class="tok-str">"hero-card"</span>&gt;
+  &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"carousel-scene"</span>&gt;
+    &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"carousel-cylinder"</span> id=<span class="tok-str">"carouselCylinder"</span>&gt;
+
+      &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"cc-card"</span>&gt;
+        <span class="tok-cmt">&lt;!-- card content --&gt;</span>
+      &lt;/<span class="tok-sel">div</span>&gt;
+
+      <span class="tok-cmt">&lt;!-- × 6 cards total --&gt;</span>
+
+    &lt;/<span class="tok-sel">div</span>&gt;
+  &lt;/<span class="tok-sel">div</span>&gt;
+&lt;/<span class="tok-sel">div</span>&gt;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comp-divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COMPONENT 2 · GLASS CARD
+     ═══════════════════════════════════════════════════ -->
+<div class="comp" id="glass">
+  <div class="comp-hdr">
+    <span class="comp-num">02</span>
+    <span class="comp-name">Glass Card</span>
+  </div>
+  <p class="comp-desc">A frosted glass morphism card system built on <code style="font-family:monospace;font-size:.85em;background:#f0f3fb;padding:.1em .4em;border-radius:.3em">backdrop-filter: blur()</code>. Three tint variants — Light (10% white), Medium (20% white), Dark (55% navy) — for use over photo backgrounds. The current hero uses Light at 10px blur.</p>
+
+  <div class="comp-row">
+    <div class="comp-preview">
+      <div class="preview-label">Three tint variants over photo</div>
+      <div class="gc-stage">
+        <div style="margin-bottom:.35rem">
+          <div class="gc-var-label" style="color:rgba(255,255,255,.4)">Light · 10% white · blur 10px</div>
+          <div class="gc-demo gc-light">
+            <div class="gc-title">Glass Card Light</div>
+            <div class="gc-body">Subtle frost — photo reads through clearly. Used as the hero host card.</div>
+          </div>
+        </div>
+        <div style="margin-bottom:.35rem">
+          <div class="gc-var-label" style="color:rgba(255,255,255,.4)">Medium · 20% white · blur 20px</div>
+          <div class="gc-demo gc-medium">
+            <div class="gc-title" style="color:var(--navy)">Glass Card Medium</div>
+            <div class="gc-body" style="color:var(--body)">Higher opacity — dark text legible. Stronger material feel.</div>
+          </div>
+        </div>
+        <div>
+          <div class="gc-var-label" style="color:rgba(255,255,255,.4)">Dark · 55% navy · blur 18px</div>
+          <div class="gc-demo gc-dark">
+            <div class="gc-title">Glass Card Dark</div>
+            <div class="gc-body">Navy tint — strong contrast, photo still visible underneath.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="comp-code">
+        <div class="code-tabs">
+          <div class="code-tab active" onclick="showTab(this,'gc-css')">CSS · All 3 variants</div>
+        </div>
+        <div class="code-block active" id="gc-css">
+<span class="tok-cmt">/* ─ Light (hero card) ─────────────────── */</span>
+<span class="tok-sel">.glass-light</span> {
+  <span class="tok-prop">background</span>:         rgba(<span class="tok-num">255,255,255</span>, .<span class="tok-num">10</span>);
+  <span class="tok-prop">border</span>:             <span class="tok-num">1px</span> solid rgba(<span class="tok-num">255,255,255</span>, .<span class="tok-num">18</span>);
+  <span class="tok-prop">backdrop-filter</span>:    blur(<span class="tok-num">10px</span>);
+  <span class="tok-prop">-webkit-backdrop-filter</span>: blur(<span class="tok-num">10px</span>);
+  <span class="tok-prop">color</span>: <span class="tok-str">#fff</span>;
+}
+
+<span class="tok-cmt">/* ─ Medium ────────────────────────────── */</span>
+<span class="tok-sel">.glass-medium</span> {
+  <span class="tok-prop">background</span>:         rgba(<span class="tok-num">255,255,255</span>, .<span class="tok-num">20</span>);
+  <span class="tok-prop">border</span>:             <span class="tok-num">1px</span> solid rgba(<span class="tok-num">255,255,255</span>, .<span class="tok-num">28</span>);
+  <span class="tok-prop">backdrop-filter</span>:    blur(<span class="tok-num">20px</span>);
+  <span class="tok-prop">-webkit-backdrop-filter</span>: blur(<span class="tok-num">20px</span>);
+  <span class="tok-prop">color</span>: rgba(<span class="tok-num">19,31,74</span>, .<span class="tok-num">9</span>);  <span class="tok-cmt">/* dark text */</span>
+}
+
+<span class="tok-cmt">/* ─ Dark ──────────────────────────────── */</span>
+<span class="tok-sel">.glass-dark</span> {
+  <span class="tok-prop">background</span>:         rgba(<span class="tok-num">10,18,48</span>, .<span class="tok-num">55</span>);
+  <span class="tok-prop">border</span>:             <span class="tok-num">1px</span> solid rgba(<span class="tok-num">255,255,255</span>, .<span class="tok-num">12</span>);
+  <span class="tok-prop">backdrop-filter</span>:    blur(<span class="tok-num">18px</span>);
+  <span class="tok-prop">-webkit-backdrop-filter</span>: blur(<span class="tok-num">18px</span>);
+  <span class="tok-prop">color</span>: <span class="tok-str">#fff</span>;
+}
+
+<span class="tok-cmt">/* ─ Required: photo parent ────────────── */</span>
+<span class="tok-sel">.glass-host</span> {
+  <span class="tok-prop">background</span>: url(<span class="tok-str">'your-photo.jpg'</span>) center/cover;
+  <span class="tok-prop">position</span>: relative;
+  <span class="tok-cmt">/* glass child positioned inside */</span>
+}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comp-divider"></div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     COMPONENT 3 · SCROLL SHOWCASE
+     ═══════════════════════════════════════════════════ -->
+<div class="comp" id="showcase">
+  <div class="comp-hdr">
+    <span class="comp-num">03</span>
+    <span class="comp-name">Scroll Showcase</span>
+  </div>
+  <p class="comp-desc">A scroll-jacked feature reveal: a 700vh tall scene with a sticky inner section. As the user scrolls, the tool list highlights, the browser frame crossfades to show the active tool's UI, and the headline text above crossfades to describe it. Uses <code style="font-family:monospace;font-size:.85em;background:#f0f3fb;padding:.1em .4em;border-radius:.3em">grid-area: 1/1</code> overlay technique for zero-layout-shift crossfades.</p>
+
+  <div class="comp-row full">
+    <div class="comp-preview">
+      <div class="preview-label">Static preview — layout & states</div>
+      <div class="ss-stage">
+        <div class="ss-text">
+          <div class="ss-eyebrow">01 / 06 · Pre-Qualification</div>
+          <div class="ss-name">Know who can buy before you show a single home.</div>
+          <div class="ss-desc">Soft credit pull, income verification, and instant buying power — submitted to your lender automatically on completion.</div>
+        </div>
+        <div class="ss-cols">
+          <div class="ss-tl">
+            <div class="ss-tl-item active"><div class="ss-tl-dot"></div>Pre-Qualification</div>
+            <div class="ss-tl-item"><div class="ss-tl-dot"></div>Listing Copilot</div>
+            <div class="ss-tl-item"><div class="ss-tl-dot"></div>Home Valuation</div>
+            <div class="ss-tl-item"><div class="ss-tl-dot"></div>Net Sheet</div>
+            <div class="ss-tl-item"><div class="ss-tl-dot"></div>Property Search</div>
+            <div class="ss-tl-item"><div class="ss-tl-dot"></div>Link Manager</div>
+          </div>
+          <div class="ss-frame">
+            <div class="ss-frame-chrome">
+              <div class="ss-frame-dots">
+                <div class="ss-frame-dot" style="background:#ffc7c5"></div>
+                <div class="ss-frame-dot" style="background:#ffe5a0"></div>
+                <div class="ss-frame-dot" style="background:#5ae9d7"></div>
+              </div>
+            </div>
+            <div class="ss-frame-body">
+              <div class="ss-frame-line tq"></div>
+              <div class="ss-frame-line" style="width:90%"></div>
+              <div class="ss-frame-line" style="width:75%"></div>
+              <div class="ss-frame-line" style="width:55%"></div>
+              <div class="ss-frame-line tq" style="width:40%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1.5rem">
+    <div class="comp-code">
+      <div class="code-tabs">
+        <div class="code-tab active" onclick="showTab(this,'ss-css')">CSS</div>
+        <div class="code-tab" onclick="showTab(this,'ss-js')">JavaScript</div>
+        <div class="code-tab" onclick="showTab(this,'ss-html')">HTML</div>
+      </div>
+      <div class="code-block active" id="ss-css">
+<span class="tok-cmt">/* Tall outer scene — enables scrolljack */</span>
+<span class="tok-sel">.sc-scene</span>  { <span class="tok-prop">height</span>: <span class="tok-num">700vh</span>; }
+
+<span class="tok-cmt">/* Sticky inner — stays in view while scene scrolls */</span>
+<span class="tok-sel">.sc-section</span> {
+  <span class="tok-prop">position</span>: sticky; <span class="tok-prop">top</span>: <span class="tok-num">0</span>; <span class="tok-prop">height</span>: <span class="tok-num">100vh</span>;
+  <span class="tok-prop">display</span>: flex; <span class="tok-prop">flex-direction</span>: column;
+  <span class="tok-prop">align-items</span>: center; <span class="tok-prop">justify-content</span>: center;
+  <span class="tok-prop">padding</span>: <span class="tok-num">60px</span> clamp(<span class="tok-num">30px</span>,<span class="tok-num">7vw</span>,<span class="tok-num">110px</span>);
+  <span class="tok-prop">background-color</span>: <span class="tok-str">#fbfcff</span>;
+  <span class="tok-prop">background-image</span>:
+    linear-gradient(to bottom, <span class="tok-str">#fbfcff</span> 0%, rgba(<span class="tok-num">251,252,255</span>,0) <span class="tok-num">38%</span>),
+    radial-gradient(circle, <span class="tok-str">#c4d0e8</span> <span class="tok-num">1px</span>, transparent <span class="tok-num">1px</span>);
+  <span class="tok-prop">background-size</span>: <span class="tok-num">100%</span> <span class="tok-num">100%</span>, <span class="tok-num">22px</span> <span class="tok-num">22px</span>;
+}
+
+<span class="tok-cmt">/* Crossfade overlay technique — zero layout shift */</span>
+<span class="tok-sel">.sc-textstack</span> { <span class="tok-prop">display</span>: grid; }
+<span class="tok-sel">.sc-slide</span> {
+  <span class="tok-prop">grid-area</span>: <span class="tok-num">1</span>/<span class="tok-num">1</span>;  <span class="tok-cmt">/* all slides occupy same cell */</span>
+  <span class="tok-prop">opacity</span>: <span class="tok-num">0</span>;
+  <span class="tok-prop">transition</span>: opacity .<span class="tok-num">55s</span> ease;
+  <span class="tok-prop">pointer-events</span>: none;
+}
+<span class="tok-sel">.sc-slide.active</span> {
+  <span class="tok-prop">opacity</span>: <span class="tok-num">1</span>;
+  <span class="tok-prop">pointer-events</span>: auto;
+}
+
+<span class="tok-cmt">/* Tool list item */</span>
+<span class="tok-sel">.tl-item.active</span> {
+  <span class="tok-prop">background</span>: rgba(<span class="tok-num">90,233,215</span>,.<span class="tok-num">12</span>);
+  <span class="tok-prop">color</span>: var(--navy);
+}</div>
+      <div class="code-block" id="ss-js">
+<span class="tok-kw">const</span> scene  = document.querySelector(<span class="tok-str">'.sc-scene'</span>);
+<span class="tok-kw">const</span> slides = document.querySelectorAll(<span class="tok-str">'.sc-slide'</span>);
+<span class="tok-kw">const</span> items  = document.querySelectorAll(<span class="tok-str">'.tl-item'</span>);
+<span class="tok-kw">const</span> frames = document.querySelectorAll(<span class="tok-str">'.hf-card'</span>);
+<span class="tok-kw">const</span> TOTAL  = slides.length;  <span class="tok-cmt">// 6</span>
+
+<span class="tok-kw">let</span> current = <span class="tok-num">0</span>;
+
+<span class="tok-kw">function</span> <span class="tok-fn">showTool</span>(idx, instant) {
+  slides[current].classList.remove(<span class="tok-str">'active'</span>);
+  items[current].classList.remove(<span class="tok-str">'active'</span>);
+  frames[current].classList.remove(<span class="tok-str">'active'</span>, <span class="tok-str">'instant'</span>);
+
+  current = idx;
+
+  slides[idx].classList.add(<span class="tok-str">'active'</span>);
+  items[idx].classList.add(<span class="tok-str">'active'</span>);
+  if (instant) frames[idx].classList.add(<span class="tok-str">'instant'</span>);
+  frames[idx].classList.add(<span class="tok-str">'active'</span>);
+}
+
+<span class="tok-cmt">// Sidebar click</span>
+items.forEach(el =>
+  el.addEventListener(<span class="tok-str">'click'</span>, () => showTool(+el.dataset.sc, <span class="tok-kw">false</span>))
+);
+
+<span class="tok-cmt">// Scroll drive</span>
+window.addEventListener(<span class="tok-str">'scroll'</span>, () => {
+  <span class="tok-kw">const</span> rect       = scene.getBoundingClientRect();
+  <span class="tok-kw">const</span> scrollable = scene.offsetHeight - window.innerHeight;
+  <span class="tok-kw">const</span> progress   = Math.max(<span class="tok-num">0</span>, Math.min(<span class="tok-num">1</span>, -rect.top / scrollable));
+  <span class="tok-kw">const</span> idx        = Math.min(TOTAL - <span class="tok-num">1</span>, Math.floor(progress * TOTAL));
+  showTool(idx, <span class="tok-kw">true</span>);
+}, { passive: <span class="tok-kw">true</span> });</div>
+      <div class="code-block" id="ss-html">
+&lt;<span class="tok-sel">div</span> class=<span class="tok-str">"sc-scene"</span>&gt;
+&lt;<span class="tok-sel">section</span> class=<span class="tok-str">"sc-section"</span>&gt;
+
+  <span class="tok-cmt">&lt;!-- Crossfading headlines --&gt;</span>
+  &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"sc-textstack"</span>&gt;
+    &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"sc-slide active"</span>&gt;
+      &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"sc-eyebrow"</span>&gt;01 / 06 · Pre-Qualification&lt;/<span class="tok-sel">div</span>&gt;
+      &lt;<span class="tok-sel">h2</span> class=<span class="tok-str">"sc-name"</span>&gt;Know who can buy.&lt;/<span class="tok-sel">h2</span>&gt;
+    &lt;/<span class="tok-sel">div</span>&gt;
+    <span class="tok-cmt">&lt;!-- × 6 slides --&gt;</span>
+  &lt;/<span class="tok-sel">div</span>&gt;
+
+  <span class="tok-cmt">&lt;!-- Tool sidebar + browser frame --&gt;</span>
+  &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"sc-cols"</span>&gt;
+    &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"tl-list"</span>&gt;
+      &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"tl-item active"</span> data-sc=<span class="tok-str">"0"</span>&gt;Pre-Qualification&lt;/<span class="tok-sel">div</span>&gt;
+      <span class="tok-cmt">&lt;!-- × 6 items --&gt;</span>
+    &lt;/<span class="tok-sel">div</span>&gt;
+    &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"hf-stack"</span>&gt;
+      &lt;<span class="tok-sel">div</span> class=<span class="tok-str">"hf-card active"</span>&gt;...&lt;/<span class="tok-sel">div</span>&gt;
+      <span class="tok-cmt">&lt;!-- × 6 frames --&gt;</span>
+    &lt;/<span class="tok-sel">div</span>&gt;
+  &lt;/<span class="tok-sel">div</span>&gt;
+
+&lt;/<span class="tok-sel">section</span>&gt;
+&lt;/<span class="tok-sel">div</span>&gt;</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /page-body -->
+
+
+<script>
+// ── Tab switcher ────────────────────────────────
+function showTab(btn, id) {
+  const wrap = btn.closest('.comp-code');
+  wrap.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+  wrap.querySelectorAll('.code-block').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+
+// ── Orbital Carousel (live preview) ─────────────
+const TOTAL = 6, STEP = 360 / TOTAL, R = 220;
+let totalAngle = 0;
+const cards = [0,1,2,3,4,5].map(i => document.getElementById('occ'+i));
+
+function positionCards(instant) {
+  if (instant) cards.forEach(c => { c.style.transition = 'none'; });
+  cards.forEach((card, i) => {
+    const theta = ((i * STEP - totalAngle) % 360 + 360) % 360;
+    const rad   = theta * Math.PI / 180;
+    const x     = R * Math.sin(rad);
+    const z     = R * (Math.cos(rad) - 1);
+    const front = theta === 0;
+    const side  = theta === 60 || theta === 300;
+    const scale = front ? 1 : side ? 0.72 : 0;
+    card.style.transform    = `translateX(${x}px) translateZ(${z}px) scale(${scale})`;
+    card.style.opacity      = front ? '1' : side ? '0.52' : '0';
+    card.style.pointerEvents = (front || side) ? 'auto' : 'none';
+    card.style.zIndex       = front ? 10 : side ? 5 : 1;
+    card.style.cursor       = side ? 'pointer' : '';
+  });
+  if (instant) { void cards[0].offsetWidth; cards.forEach(c => { c.style.transition = ''; }); }
+}
+
+function rotate(delta) { totalAngle += delta; positionCards(false); }
+
+positionCards(true);
+let autoTimer = setInterval(() => rotate(+STEP), 3500);
+function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => rotate(+STEP), 3500); }
+
+cards.forEach((card, i) => {
+  card.addEventListener('click', () => {
+    const theta = ((i * STEP - totalAngle) % 360 + 360) % 360;
+    if (theta === 60)  { rotate(+STEP); resetAuto(); }
+    if (theta === 300) { rotate(-STEP); resetAuto(); }
+  });
+});
+
+const stage = document.getElementById('ocStage');
+let dragX = null, dragMoved = false;
+stage.addEventListener('mousedown', e => { dragX = e.clientX; dragMoved = false; });
+window.addEventListener('mousemove', e => { if (dragX !== null && Math.abs(e.clientX - dragX) > 6) dragMoved = true; });
+window.addEventListener('mouseup', e => {
+  if (dragX === null) return;
+  const dx = e.clientX - dragX;
+  if (Math.abs(dx) > 40) { rotate(dx < 0 ? +STEP : -STEP); resetAuto(); }
+  dragX = null;
+});
+stage.addEventListener('touchstart', e => { dragX = e.touches[0].clientX; }, { passive: true });
+stage.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - dragX;
+  if (Math.abs(dx) > 30) { rotate(dx < 0 ? +STEP : -STEP); resetAuto(); }
+}, { passive: true });
+</script>
+
+</body>
+</html>

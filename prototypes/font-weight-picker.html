@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Font Weight Picker — Link.ai</title>
+<style>
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: 'Mont', sans-serif; background: #fbfcff; display: flex; flex-direction: column; }
+
+.row {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: flex-start; justify-content: center;
+  padding: 0 8vw;
+  border-bottom: 1px solid #dde5f3;
+  position: relative;
+  cursor: pointer;
+  transition: background .2s;
+}
+.row:last-child { border-bottom: none; }
+.row:hover { background: #f4f7ff; }
+.row.selected { background: #edfcf9; }
+.row.selected::after {
+  content: '✓ Selected';
+  position: absolute; right: 4vw; top: 50%; transform: translateY(-50%);
+  font-size: .8rem; font-weight: 700; color: #0b7a6a;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+
+.weight-label {
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: #b0b8d0; margin-bottom: .6rem;
+}
+.weight-label span { color: #5ae9d7; margin-left: .5rem; }
+
+.headline {
+  font-family: 'Mont', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
+  letter-spacing: -.03em;
+  line-height: 1.05;
+  color: #131f4a;
+}
+</style>
+</head>
+<body>
+
+<div class="row" onclick="pick(this, 400)">
+  <div class="weight-label">Option A <span>400 · Regular</span></div>
+  <div class="headline" style="font-weight:400">Your modern real estate partner.</div>
+</div>
+
+<div class="row" onclick="pick(this, 600)">
+  <div class="weight-label">Option B <span>600 · SemiBold</span></div>
+  <div class="headline" style="font-weight:600">Your modern real estate partner.</div>
+</div>
+
+<div class="row" onclick="pick(this, 700)">
+  <div class="weight-label">Option C <span>700 · Bold</span></div>
+  <div class="headline" style="font-weight:700">Your modern real estate partner.</div>
+</div>
+
+<script>
+function pick(el, w) {
+  document.querySelectorAll('.row').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  console.log('Selected weight:', w);
+}
+</script>
+</body>
+</html>

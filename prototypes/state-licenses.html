@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State Licenses — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Black.woff2') format('woff2'); font-weight: 900; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    .page-hero {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem; text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--body); margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.6; }
+
+    .content-wrap {
+      max-width: 860px; margin: 0 auto; padding: 3rem 2rem 4rem;
+    }
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.5rem 0 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h3 {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      margin: 1.5rem 0 0.4rem;
+    }
+    .content-wrap p { margin-bottom: 0.9rem; font-size: 0.9rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    .license-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem; margin: 1rem 0 2rem;
+    }
+    .license-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 0.75rem; padding: 1.2rem 1.4rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .license-card:hover {
+      border-color: var(--tq);
+      box-shadow: 0 4px 16px rgba(90,233,215,0.12);
+    }
+    .license-state {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--tq);
+      margin-bottom: 0.4rem;
+    }
+    .license-entity {
+      font-size: 0.95rem; font-weight: 800; color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .license-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-size: 0.78rem; margin-bottom: 0.2rem;
+    }
+    .license-row .label { color: var(--body); }
+    .license-row .value { font-weight: 700; color: var(--navy); font-size: 0.75rem; }
+    .license-dre {
+      margin-top: 0.6rem; padding-top: 0.6rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem; color: var(--body);
+    }
+
+    .disclosure-box {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border); border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.85rem;
+    }
+
+    .nmls-banner {
+      background: var(--navy); border-radius: 0.75rem;
+      padding: 1.5rem 1.8rem; margin: 1.5rem 0;
+      display: flex; align-items: center; gap: 1.2rem;
+    }
+    .nmls-number {
+      font-size: 1.6rem; font-weight: 900; color: var(--tq);
+      white-space: nowrap;
+    }
+    .nmls-desc { font-size: 0.8rem; color: rgba(255,255,255,0.75); }
+    .nmls-desc strong { color: var(--white); display: block; margin-bottom: 0.2rem; }
+
+    .state-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+    .state-pill {
+      background: rgba(90,233,215,0.12); border: 1px solid rgba(90,233,215,0.3);
+      border-radius: 0.3rem; padding: 0.2rem 0.55rem;
+      font-size: 0.7rem; font-weight: 700; color: var(--tq);
+    }
+
+    .site-footer { background: var(--white); padding: 2rem 2rem 1.6rem; font-family: var(--font); }
+    .site-footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy { width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .content-wrap { padding: 2rem 1.2rem 3rem; }
+      .license-grid { grid-template-columns: 1fr; }
+      .nmls-banner { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    .disclosure-box { background: none; border: none; border-left: none; padding: 0; margin: .9rem 0; font-size: .9rem; }
+    .license-grid { display: block; }
+    .license-card { background: none; border: none; border-radius: 0; padding: 0; margin-bottom: 1.5rem; box-shadow: none; }
+    .license-card:hover { border-color: transparent; box-shadow: none; }
+    .license-state { font-size: .75rem; color: var(--body); letter-spacing: 0; }
+    .license-entity { font-size: .9rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
+    .license-row { font-size: .9rem; color: var(--body); }
+    .license-row .label { color: var(--body); }
+    .license-row .value { font-weight: 400; color: var(--body); font-size: .9rem; }
+    .license-dre { border-top: none; padding-top: 0; font-size: .9rem; color: var(--body); }
+    .nmls-banner { background: none; border-radius: 0; padding: 0; gap: .4rem; margin: .9rem 0; }
+    .nmls-number { font-size: 1rem; font-weight: 600; color: var(--navy); white-space: normal; }
+    .nmls-desc { color: var(--body); font-size: .9rem; }
+    .nmls-desc strong { color: var(--navy); display: inline; }
+    .state-pills { display: block; }
+    .state-pill { display: inline; background: none; border: none; border-radius: 0; padding: 0; font-size: .9rem; font-weight: 400; color: var(--body); }
+    .state-pill::after { content: ', '; }
+    .state-pill:last-child::after { content: ''; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="link-ai-v5-combined.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="link-ai-v5-combined.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Legal</div>
+  <h1>State Licenses</h1>
+  <div class="page-updated">Updated May 15, 2025</div>
+</div>
+
+<main class="content-wrap">
+
+  <p>Link Management Systems operates real estate brokerage, mortgage, and escrow services through licensed entities in multiple states. All licenses are maintained in good standing with the respective state regulatory agencies.</p>
+
+  <h2>Real Estate Brokerage Licenses</h2>
+  <p>Link's real estate brokerage services are provided by state-licensed brokerages under the supervision of licensed designated brokers.</p>
+
+  <div class="license-grid">
+
+    <div class="license-card">
+      <div class="license-state">Arizona</div>
+      <div class="license-entity">Link Brokerages — Arizona</div>
+      <div class="license-row"><span class="label">License Number</span><span class="value">LC704861000</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Real Estate Broker</span></div>
+      <div class="license-dre">Designated Broker: Michael Hankerson</div>
+    </div>
+
+    <div class="license-card">
+      <div class="license-state">California</div>
+      <div class="license-entity">Link Brokerages — California</div>
+      <div class="license-row"><span class="label">DRE License</span><span class="value">02126177</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Real Estate Broker</span></div>
+      <div class="license-dre">Designated Broker: Kreg McCoy<br>California Department of Real Estate</div>
+    </div>
+
+    <div class="license-card">
+      <div class="license-state">Colorado</div>
+      <div class="license-entity">Link Brokerages — Colorado</div>
+      <div class="license-row"><span class="label">License Number</span><span class="value">EC.100101324</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Employing Broker</span></div>
+      <div class="license-dre">Designated Broker: Heather Barone<br>Colorado Division of Real Estate</div>
+    </div>
+
+    <div class="license-card">
+      <div class="license-state">Georgia</div>
+      <div class="license-entity">Link Brokerages — Georgia</div>
+      <div class="license-row"><span class="label">License Number</span><span class="value">80869</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Real Estate Broker</span></div>
+      <div class="license-dre">Designated Broker: Vicki Rickett<br>Georgia Real Estate Commission</div>
+    </div>
+
+    <div class="license-card">
+      <div class="license-state">New York</div>
+      <div class="license-entity">Link Brokerages — New York</div>
+      <div class="license-row"><span class="label">License Number</span><span class="value">10991238596</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Real Estate Broker</span></div>
+      <div class="license-dre">
+        Licensed Broker: Jonas Wagner<br><br>
+        <strong style="color:var(--navy);">Noelle NY LLC</strong><br>
+        License: 10991240160<br>
+        Broker: Brooke Thomas
+      </div>
+    </div>
+
+    <div class="license-card">
+      <div class="license-state">South Carolina</div>
+      <div class="license-entity">Link Brokerages — South Carolina</div>
+      <div class="license-row"><span class="label">License Number</span><span class="value">26832</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Real Estate Broker</span></div>
+      <div class="license-dre">Designated Broker: Rosemarie Heldmann<br>South Carolina Real Estate Commission</div>
+    </div>
+
+  </div>
+
+  <h2>Mortgage Lending License</h2>
+
+  <div class="nmls-banner">
+    <div class="nmls-number">NMLS #2527988</div>
+    <div class="nmls-desc">
+      <strong>First Link Mortgage</strong>
+      Licensed mortgage company providing pre-qualification and mortgage origination services. Consumer access available at nmlsconsumeraccess.org.
+    </div>
+  </div>
+
+  <p>First Link Mortgage is licensed to originate residential mortgage loans in the following states:</p>
+  <div class="state-pills">
+    <span class="state-pill">California</span>
+    <span class="state-pill">Arizona</span>
+    <span class="state-pill">Colorado</span>
+    <span class="state-pill">Georgia</span>
+    <span class="state-pill">Texas</span>
+    <span class="state-pill">Florida</span>
+    <span class="state-pill">Montana</span>
+    <span class="state-pill">Idaho</span>
+  </div>
+
+  <div class="disclosure-box" style="margin-top: 1.5rem;">
+    <strong>California Mortgage Disclosure:</strong> Licensed by the California Department of Financial Protection and Innovation (DFPI). California loans are made pursuant to California Finance Lender Law, License No. [CFL Number]. Equal Housing Lender.
+  </div>
+
+  <h2>Escrow License</h2>
+
+  <div class="license-grid">
+    <div class="license-card">
+      <div class="license-state">California</div>
+      <div class="license-entity">Link Escrow</div>
+      <div class="license-row"><span class="label">DFPI License</span><span class="value">96DBO-189708</span></div>
+      <div class="license-row"><span class="label">Type</span><span class="value">Escrow Agent</span></div>
+      <div class="license-dre">California Department of Financial Protection and Innovation</div>
+    </div>
+  </div>
+
+  <h2>Regulatory Information</h2>
+  <p>Link Management Systems and its affiliated entities are subject to oversight by the following regulatory agencies:</p>
+  <ul>
+    <li><strong>Real estate</strong> — State real estate commissions and divisions in each licensed state</li>
+    <li><strong>Mortgage</strong> — Consumer Financial Protection Bureau (CFPB); state banking/mortgage regulators</li>
+    <li><strong>Escrow</strong> — California Department of Financial Protection and Innovation (DFPI)</li>
+    <li><strong>Fair housing</strong> — U.S. Department of Housing and Urban Development (HUD)</li>
+  </ul>
+
+  <div class="disclosure-box">
+    <strong>Verify Our Licenses:</strong><br>
+    Real estate licenses can be verified through each state's licensing portal. Mortgage licenses can be verified at <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>.
+  </div>
+
+  <h2>Contact</h2>
+  <div class="disclosure-box">
+    <strong>Link Management Systems, Inc.</strong><br>
+    202 W 140th St, Los Angeles, CA 90061<br>
+    Email: <a href="mailto:contact@link.ai">contact@link.ai</a><br>
+    Phone: (310) 695-6510
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo"><img src="../Full%20logo_dark%20color.png" alt="Link"></div>
+    <div class="site-footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="fair-housing.html">Fair Housing &amp; Equal Opportunity</a>
+      <a href="state-licenses.html">State Licenses</a>
+    </div>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
+    </div>
+    <div class="site-footer-copy">© 2025 Link Management Systems. All rights reserved. Equal Housing Opportunity. NMLS #2527988.</div>
+  </div>
+</footer>
+
+</body>
+</html>

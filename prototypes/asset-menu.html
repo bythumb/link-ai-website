@@ -1,0 +1,1697 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asset Menu — Link.ai</title>
+<style>
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+
+:root {
+  --tq: #5ae9d7;
+  --navy: #131f4a;
+  --page: #fbfcff;
+  --body: #636b87;
+  --border: #dde5f3;
+  --font: 'Mont', system-ui, sans-serif;
+  --dark: #0b1020;
+  --card: rgba(255,255,255,.055);
+  --card-b: rgba(255,255,255,.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; font-weight: 400; }
+html { font-size: 16px; }
+body { font-family: var(--font); background: var(--dark); color: #fff; min-height: 100vh; }
+
+/* ── HEADER ─────────────────────────────────────── */
+.am-header {
+  padding: 3.5rem 3rem 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+}
+.am-brand { display: flex; align-items: center; gap: .75rem; }
+.am-wordmark { font-size: 1.1rem; font-weight: 400; color: #fff; letter-spacing: -.02em; }
+.am-wordmark span { color: var(--tq); }
+.am-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--tq); }
+.am-title { font-size: 2.6rem; font-weight: 400; letter-spacing: -.04em; line-height: 1; color: #fff; margin-top: .5rem; }
+.am-sub { font-size: .85rem; color: rgba(255,255,255,.45); margin-top: .4rem; font-weight: 400; }
+.am-badge {
+  font-size: .62rem; font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--tq); border: 1px solid rgba(90,233,215,.3); padding: .35rem .75rem;
+  border-radius: 2rem; white-space: nowrap; align-self: flex-start;
+}
+
+/* ── JUMP NAV ────────────────────────────────────── */
+.am-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(11,16,32,.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex; gap: 0; overflow-x: auto; padding: 0 3rem;
+  scrollbar-width: none;
+}
+.am-nav::-webkit-scrollbar { display: none; }
+.am-nav a {
+  font-size: .72rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(255,255,255,.4); text-decoration: none; padding: 1rem 1.25rem;
+  border-bottom: 2px solid transparent; white-space: nowrap; transition: color .2s, border-color .2s;
+}
+.am-nav a:hover { color: rgba(255,255,255,.85); }
+.am-nav a.active { color: var(--tq); border-bottom-color: var(--tq); }
+
+/* ── PAGE BODY ───────────────────────────────────── */
+.am-body { padding: 0 3rem 6rem; }
+
+/* ── SECTION ─────────────────────────────────────── */
+.am-section { padding-top: 4rem; }
+.am-section-hdr {
+  display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.75rem;
+  padding-bottom: .75rem; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.am-section-num { font-size: .62rem; font-weight: 400; color: var(--tq); letter-spacing: .1em; }
+.am-section-title { font-size: 1.05rem; font-weight: 400; color: rgba(255,255,255,.9); letter-spacing: -.01em; }
+.am-section-count { font-size: .7rem; color: rgba(255,255,255,.25); margin-left: auto; }
+
+/* ── GRID ────────────────────────────────────────── */
+.am-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.am-grid.wide { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+
+/* ── ITEM CARD ───────────────────────────────────── */
+.am-item {
+  background: var(--card);
+  border: 1px solid var(--card-b);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  cursor: default;
+}
+.am-item:hover { border-color: rgba(255,255,255,.2); transform: translateY(-2px); }
+.am-item.span2 { grid-column: span 2; }
+
+.am-preview {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-radius: .88rem .88rem 0 0;
+}
+.am-preview.tall { height: 220px; }
+.am-preview.short { height: 140px; }
+
+.am-meta {
+  padding: .9rem 1rem .85rem;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.am-item-name { font-size: .78rem; font-weight: 400; color: rgba(255,255,255,.88); display: block; }
+.am-item-desc { font-size: .67rem; color: rgba(255,255,255,.35); margin-top: .2rem; display: block; }
+.am-item-tag {
+  display: inline-block; margin-top: .5rem;
+  font-size: .55rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase;
+  background: rgba(90,233,215,.12); color: var(--tq); padding: .2rem .5rem; border-radius: .25rem;
+}
+
+
+/* ═══════════════════════════════════════════════════
+   1. BACKGROUND TREATMENTS
+   ═══════════════════════════════════════════════════ */
+
+.bg-ps-dark {
+  background: linear-gradient(rgba(10,18,48,.50), rgba(10,18,48,.50)),
+              url('../AdobeStock_130005965.jpeg') center/cover;
+  height: 100%; display: flex; align-items: center; justify-content: center;
+}
+.bg-house-dark {
+  background: linear-gradient(rgba(10,18,48,.45), rgba(10,18,48,.45)),
+              url('../AdobeStock_1275181740.jpeg') center 30%/cover;
+  height: 100%; display: flex; align-items: center; justify-content: center;
+}
+.bg-frosted-lift {
+  background: url('../AdobeStock_130005965.jpeg') center/cover;
+  height: 100%; display: flex; align-items: flex-end;
+}
+.bg-frosted-lift-panel {
+  width: 100%; padding: 1.1rem 1.2rem;
+  background: rgba(255,255,255,.11); backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.bg-mesh {
+  background: radial-gradient(ellipse 80% 60% at 20% 40%, #1a2d6e 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 80% 70%, #0e4a3a 0%, transparent 60%),
+              #080e1e;
+  height: 100%; display: flex; align-items: center; justify-content: center;
+}
+.bg-light {
+  background: #fbfcff;
+  background-image: radial-gradient(circle, #c8d4ec 1px, transparent 1px);
+  background-size: 20px 20px;
+  height: 100%; display: flex; align-items: center; justify-content: center;
+}
+.bg-gradient-fade {
+  background: url('../AdobeStock_130005965.jpeg') center/cover;
+  height: 100%; position: relative;
+}
+.bg-gradient-fade::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(11,16,32,0) 0%, rgba(11,16,32,.9) 100%);
+}
+
+.bg-label {
+  font-size: .62rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.2);
+  padding: .3rem .7rem; border-radius: 2rem; backdrop-filter: blur(4px);
+}
+.bg-label.dark { color: var(--navy); border-color: rgba(19,31,74,.2); background: rgba(255,255,255,.5); }
+
+/* ═══════════════════════════════════════════════════
+   2. GLASS & CARD STYLES
+   ═══════════════════════════════════════════════════ */
+
+.glass-stage {
+  background: url('../AdobeStock_130005965.jpeg') center/cover;
+  height: 100%;
+  display: flex; align-items: center; justify-content: center; padding: 1.2rem;
+}
+.glass-stage.house {
+  background: url('../AdobeStock_1275181740.jpeg') center 30%/cover;
+}
+.glass-stage.dark-bg {
+  background: linear-gradient(135deg, #0f1e4a 0%, #071428 100%);
+}
+
+.g-card {
+  width: 100%; padding: 1rem 1.1rem; border-radius: .75rem;
+  font-size: .72rem;
+}
+.g-card .g-title { font-size: .8rem; font-weight: 400; margin-bottom: .3rem; }
+.g-card .g-body { font-size: .67rem; opacity: .65; line-height: 1.5; }
+
+/* Light frosted */
+.g-light {
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(14px); color: #fff;
+}
+/* Medium frosted */
+.g-medium {
+  background: rgba(255,255,255,.20); border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(20px); color: rgba(19,31,74,.9);
+}
+/* Dark frosted */
+.g-dark-glass {
+  background: rgba(10,18,48,.55); border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(18px); color: #fff;
+}
+/* Clean white */
+.g-white {
+  background: #fff; border: 1px solid #dde5f3; color: var(--navy);
+  box-shadow: 0 4px 20px rgba(19,31,74,.1);
+}
+/* Dark solid */
+.g-dark-solid {
+  background: var(--navy); border: 1px solid rgba(255,255,255,.08); color: #fff;
+}
+/* TQ glow */
+.g-tq-glow {
+  background: rgba(255,255,255,.08); border: 1px solid rgba(90,233,215,.5);
+  backdrop-filter: blur(12px); color: #fff;
+  box-shadow: 0 0 20px rgba(90,233,215,.15), inset 0 0 20px rgba(90,233,215,.04);
+}
+
+
+/* ═══════════════════════════════════════════════════
+   3. SECTION PATTERNS
+   ═══════════════════════════════════════════════════ */
+
+/* Stats */
+.sp-stats {
+  height: 100%;
+  background: linear-gradient(rgba(10,18,48,.52), rgba(10,18,48,.52)),
+              url('../AdobeStock_130005965.jpeg') center/cover;
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; padding: 1.5rem;
+}
+.sp-stat { flex: 1; text-align: center; }
+.sp-stat + .sp-stat { border-left: 1px solid rgba(255,255,255,.14); }
+.sp-stat-num { font-size: 1.6rem; font-weight: 400; color: #fff; letter-spacing: -.04em; }
+.sp-stat-num span { color: var(--tq); }
+.sp-stat-label { font-size: .58rem; color: rgba(255,255,255,.45); margin-top: .2rem; letter-spacing: .04em; text-transform: uppercase; }
+
+/* Testimonial */
+.sp-quote {
+  height: 100%; background: #fff;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 1.4rem 1.5rem; gap: .75rem;
+}
+.sp-quote-mark { font-size: 2rem; line-height: 1; color: var(--tq); font-weight: 400; }
+.sp-quote-text { font-size: .72rem; color: var(--navy); line-height: 1.65; font-weight: 400; font-style: italic; }
+.sp-quote-author { display: flex; align-items: center; gap: .6rem; }
+.sp-quote-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--tq), #1a6b5e); flex-shrink: 0; }
+.sp-quote-name { font-size: .67rem; font-weight: 400; color: var(--navy); }
+.sp-quote-role { font-size: .6rem; color: var(--body); }
+
+/* Feature row */
+.sp-features {
+  height: 100%; background: #fbfcff;
+  display: flex; align-items: center; padding: 1.2rem; gap: .6rem;
+}
+.sp-feat { flex: 1; padding: .85rem .75rem; background: #fff; border: 1px solid #dde5f3; border-radius: .65rem; }
+.sp-feat-icon { width: 24px; height: 24px; border-radius: .35rem; background: rgba(90,233,215,.15); border: 1px solid rgba(90,233,215,.25); display: flex; align-items: center; justify-content: center; margin-bottom: .5rem; }
+.sp-feat-icon svg { width: 12px; height: 12px; stroke: var(--tq); fill: none; stroke-width: 2; }
+.sp-feat-name { font-size: .65rem; font-weight: 400; color: var(--navy); }
+.sp-feat-desc { font-size: .58rem; color: var(--body); margin-top: .2rem; line-height: 1.45; }
+
+/* Pricing */
+.sp-pricing {
+  height: 100%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; padding: 1.2rem;
+}
+.sp-price-card {
+  width: 100%; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: .75rem; padding: 1.1rem 1.2rem; backdrop-filter: blur(12px);
+}
+.sp-price-tier { font-size: .55rem; font-weight: 400; color: var(--tq); letter-spacing: .1em; text-transform: uppercase; }
+.sp-price-num { font-size: 2rem; font-weight: 400; color: #fff; letter-spacing: -.05em; margin: .2rem 0; }
+.sp-price-num sub { font-size: .8rem; font-weight: 400; vertical-align: baseline; color: rgba(255,255,255,.45); }
+.sp-price-line { display: flex; align-items: center; gap: .4rem; margin-top: .5rem; }
+.sp-price-check { width: 12px; height: 12px; border-radius: 50%; background: rgba(90,233,215,.2); border: 1px solid var(--tq); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.sp-price-check::after { content: ''; width: 4px; height: 4px; background: var(--tq); border-radius: 50%; }
+.sp-price-feat { font-size: .6rem; color: rgba(255,255,255,.65); }
+
+/* Steps */
+.sp-steps {
+  height: 100%; background: #fbfcff;
+  display: flex; align-items: center; padding: 1.2rem 1.5rem; gap: 0;
+}
+.sp-step { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.sp-step + .sp-step::before {
+  content: ''; position: absolute; top: 16px; right: calc(50% + 20px);
+  left: calc(-50% + 20px); height: 1px; background: #dde5f3;
+}
+.sp-step-num {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  font-size: .65rem; font-weight: 400;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1; flex-shrink: 0;
+  margin-bottom: .5rem;
+}
+.sp-step:nth-child(1) .sp-step-num { background: var(--tq); color: var(--navy); }
+.sp-step-label { font-size: .6rem; font-weight: 400; color: var(--navy); }
+.sp-step-desc { font-size: .55rem; color: var(--body); margin-top: .15rem; }
+
+/* CTA Band */
+.sp-cta-band {
+  height: 100%;
+  background: linear-gradient(135deg, #0f1e50 0%, #071428 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .75rem; padding: 1.5rem; text-align: center;
+}
+.sp-cta-headline { font-size: .95rem; font-weight: 400; color: #fff; letter-spacing: -.02em; line-height: 1.2; }
+.sp-cta-sub { font-size: .65rem; color: rgba(255,255,255,.45); }
+.sp-cta-btn {
+  font-size: .65rem; font-weight: 400; color: var(--navy); background: var(--tq);
+  padding: .55rem 1.25rem; border-radius: .5rem; border: none; cursor: pointer;
+  margin-top: .2rem; font-family: var(--font);
+}
+
+/* Horizontal feature scroll */
+.sp-hscroll {
+  height: 100%; padding: 1rem;
+  background: #fbfcff;
+  display: flex; align-items: center;
+  overflow: hidden; gap: .6rem;
+}
+.sp-hcard {
+  flex-shrink: 0; width: 110px;
+  background: #fff; border: 1px solid #dde5f3; border-radius: .65rem;
+  padding: .8rem .75rem;
+}
+.sp-hcard.active { border-color: rgba(90,233,215,.4); background: rgba(90,233,215,.05); }
+.sp-hcard-num { font-size: .5rem; font-weight: 400; color: var(--tq); letter-spacing: .08em; }
+.sp-hcard-title { font-size: .65rem; font-weight: 400; color: var(--navy); margin-top: .2rem; }
+.sp-hcard-bar { height: 2px; border-radius: 1px; background: #dde5f3; margin-top: .6rem; }
+.sp-hcard.active .sp-hcard-bar { background: var(--tq); }
+
+
+/* ═══════════════════════════════════════════════════
+   4. MOTION DEMOS
+   ═══════════════════════════════════════════════════ */
+
+.mo-stage {
+  height: 100%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.2rem; position: relative;
+}
+.mo-stage.light { background: #fbfcff; }
+.mo-stage.photo {
+  background: linear-gradient(rgba(10,18,48,.55), rgba(10,18,48,.55)),
+              url('../AdobeStock_1275181740.jpeg') center/cover;
+}
+
+.mo-replay {
+  position: absolute; top: .6rem; right: .75rem;
+  font-size: .55rem; font-weight: 400; color: rgba(255,255,255,.35);
+  border: 1px solid rgba(255,255,255,.15); padding: .2rem .5rem; border-radius: .25rem;
+  cursor: pointer; transition: color .2s;
+}
+.mo-replay:hover { color: var(--tq); border-color: rgba(90,233,215,.4); }
+.mo-replay.dark { color: rgba(19,31,74,.35); border-color: rgba(19,31,74,.15); }
+.mo-replay.dark:hover { color: var(--navy); }
+
+/* Fade-up stagger */
+.fu-items { display: flex; flex-direction: column; gap: .4rem; width: 100%; }
+.fu-item {
+  height: 28px; border-radius: .35rem;
+  background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1);
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.fu-item.fu-go { opacity: 1; transform: translateY(0); }
+.fu-item:nth-child(1) { transition-delay: 0s; width: 85%; }
+.fu-item:nth-child(2) { transition-delay: .1s; width: 70%; }
+.fu-item:nth-child(3) { transition-delay: .2s; width: 55%; }
+.fu-item:nth-child(4) { transition-delay: .3s; width: 40%; background: rgba(90,233,215,.2); border-color: rgba(90,233,215,.3); }
+
+/* Count up */
+.cu-stage { display: flex; gap: 1.5rem; }
+.cu-block { text-align: center; }
+.cu-num { font-size: 1.8rem; font-weight: 400; letter-spacing: -.05em; color: #fff; }
+.cu-num span { color: var(--tq); }
+.cu-lbl { font-size: .52rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.35); margin-top: .15rem; }
+
+/* Typewriter */
+.tw-text {
+  font-size: 1rem; font-weight: 400; color: #fff; letter-spacing: -.02em;
+  line-height: 1.25; max-width: 200px;
+}
+.tw-cursor {
+  display: inline-block; width: 2px; height: 1em;
+  background: var(--tq); margin-left: 2px; vertical-align: middle;
+  animation: blink .7s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Crossfade text */
+.cf-stack { position: relative; height: 3rem; display: flex; align-items: center; }
+.cf-item-txt {
+  position: absolute; font-size: .88rem; font-weight: 400; color: #fff;
+  letter-spacing: -.02em; opacity: 0; transition: opacity .6s;
+  white-space: nowrap;
+}
+.cf-item-txt.cf-active { opacity: 1; }
+
+/* Mouse parallax */
+.mp-stage {
+  height: 100%;
+  background: linear-gradient(rgba(10,18,48,.48), rgba(10,18,48,.48)),
+              url('../AdobeStock_130005965.jpeg') center/cover;
+  display: flex; align-items: center; justify-content: center;
+  perspective: 600px;
+}
+.mp-card {
+  width: 140px; padding: 1rem 1.1rem;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(12px); border-radius: .75rem; color: #fff;
+  transition: transform .12s ease;
+  will-change: transform;
+}
+.mp-card-title { font-size: .72rem; font-weight: 400; margin-bottom: .3rem; }
+.mp-card-line { height: 6px; background: rgba(255,255,255,.1); border-radius: 3px; margin-bottom: .2rem; }
+.mp-card-line.tq { background: rgba(90,233,215,.4); width: 60%; }
+
+/* Scroll reveal hint */
+.sr-items { display: flex; gap: .5rem; }
+.sr-item {
+  width: 60px; height: 70px; border-radius: .5rem;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem;
+}
+.sr-item .sr-dot { width: 20px; height: 20px; border-radius: 50%; background: rgba(90,233,215,.2); border: 1px solid var(--tq); }
+.sr-item .sr-bar { width: 36px; height: 5px; background: rgba(255,255,255,.1); border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════
+   5. UI COMPONENTS
+   ═══════════════════════════════════════════════════ */
+
+/* Buttons */
+.ui-btns {
+  height: 100%; background: #fbfcff;
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: .55rem; padding: 1.2rem;
+}
+.btn-base {
+  font-family: var(--font); font-size: .72rem; font-weight: 400; cursor: pointer;
+  padding: .6rem 1.2rem; border-radius: .55rem; border: none; transition: .2s;
+  white-space: nowrap;
+}
+.btn-tq { background: var(--tq); color: var(--navy); }
+.btn-tq:hover { filter: brightness(1.08); }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+.btn-ghost { background: transparent; color: var(--body); border: 1.5px solid #dde5f3; }
+.btn-dark-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3); }
+
+/* Tags */
+.ui-tags {
+  height: 100%; background: #fbfcff;
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: .45rem; padding: 1.2rem;
+}
+.tag { font-family: var(--font); font-size: .62rem; font-weight: 400; letter-spacing: .04em; padding: .3rem .72rem; border-radius: 2rem; }
+.tag-tq { background: rgba(90,233,215,.15); color: #0b7a6a; border: 1px solid rgba(90,233,215,.3); }
+.tag-navy { background: rgba(19,31,74,.08); color: var(--navy); border: 1px solid rgba(19,31,74,.12); }
+.tag-new { background: var(--tq); color: var(--navy); }
+.tag-warn { background: rgba(255,193,7,.12); color: #8a5800; border: 1px solid rgba(255,193,7,.3); }
+.tag-muted { background: #f0f3fb; color: var(--body); border: 1px solid #dde5f3; }
+
+/* Form input */
+.ui-form {
+  height: 100%; background: #fbfcff;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  padding: 1.5rem 1.25rem; gap: .5rem;
+}
+.form-label { font-size: .6rem; font-weight: 400; color: var(--navy); letter-spacing: .04em; text-transform: uppercase; }
+.form-input-wrap { position: relative; width: 100%; }
+.form-input {
+  width: 100%; font-family: var(--font); font-size: .75rem; color: var(--navy);
+  background: #fff; border: 1.5px solid #dde5f3; border-radius: .5rem;
+  padding: .6rem .85rem; outline: none; transition: border-color .2s;
+}
+.form-input:focus { border-color: var(--tq); }
+.form-input-icon {
+  position: absolute; right: .75rem; top: 50%; transform: translateY(-50%);
+  font-size: .7rem; color: var(--body);
+}
+.form-hint { font-size: .6rem; color: var(--body); }
+.form-hint.valid { color: #0b7a6a; }
+
+/* Toast */
+.ui-toast {
+  height: 100%; background: #fbfcff;
+  display: flex; align-items: center; justify-content: center; padding: 1rem;
+}
+.toast {
+  width: 100%; background: var(--navy); border-radius: .65rem;
+  padding: .75rem 1rem; display: flex; align-items: center; gap: .75rem;
+  box-shadow: 0 8px 30px rgba(19,31,74,.25);
+}
+.toast-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(90,233,215,.2); border: 1px solid var(--tq); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.toast-icon svg { width: 12px; height: 12px; stroke: var(--tq); fill: none; stroke-width: 2.5; }
+.toast-title { font-size: .72rem; font-weight: 400; color: #fff; }
+.toast-body { font-size: .62rem; color: rgba(255,255,255,.5); }
+.toast-close { margin-left: auto; font-size: .7rem; color: rgba(255,255,255,.25); cursor: pointer; flex-shrink: 0; }
+
+/* Step indicator */
+.ui-steps {
+  height: 100%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; gap: .5rem; padding: 1rem;
+}
+.step-pip {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .62rem; font-weight: 400; flex-shrink: 0;
+  transition: .3s;
+}
+.step-pip.done { background: rgba(90,233,215,.2); border: 1px solid var(--tq); color: var(--tq); }
+.step-pip.active { background: var(--tq); color: var(--navy); }
+.step-pip.todo { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.25); }
+.step-connector { flex: 1; height: 1px; background: rgba(255,255,255,.1); max-width: 24px; }
+.step-connector.done { background: rgba(90,233,215,.3); }
+.step-labels { display: flex; justify-content: space-around; width: 100%; margin-top: .4rem; }
+.step-lbl { font-size: .52rem; color: rgba(255,255,255,.3); text-align: center; }
+.step-lbl.active { color: var(--tq); }
+.step-block { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+/* Circular progress */
+.ui-circle {
+  height: 100%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+}
+.cp-wrap { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+.cp-ring { width: 60px; height: 60px; position: relative; }
+.cp-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.cp-ring circle { fill: none; stroke-width: 5; stroke-linecap: round; }
+.cp-ring .cp-bg { stroke: rgba(255,255,255,.08); }
+.cp-ring .cp-fill { stroke: var(--tq); stroke-dasharray: 163; transition: stroke-dashoffset 1.5s ease; }
+.cp-value { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 400; color: #fff; }
+.cp-label { font-size: .55rem; color: rgba(255,255,255,.4); text-align: center; }
+
+/* Toggle */
+.ui-toggles {
+  height: 100%; background: #fbfcff;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  gap: .75rem; padding: 1.4rem 1.25rem;
+}
+.toggle-row { display: flex; align-items: center; gap: .75rem; }
+.toggle-track {
+  width: 36px; height: 20px; border-radius: 10px; position: relative; cursor: pointer;
+  transition: background .25s; flex-shrink: 0;
+}
+.toggle-track.on { background: var(--tq); }
+.toggle-track.off { background: #dde5f3; }
+.toggle-thumb {
+  width: 14px; height: 14px; border-radius: 50%; background: #fff;
+  position: absolute; top: 3px; transition: left .25s;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.toggle-track.on .toggle-thumb { left: 19px; }
+.toggle-track.off .toggle-thumb { left: 3px; }
+.toggle-lbl { font-size: .68rem; color: var(--navy); font-weight: 400; }
+.toggle-sub { font-size: .58rem; color: var(--body); }
+
+
+/* ═══════════════════════════════════════════════════
+   6. NAVIGATION
+   ═══════════════════════════════════════════════════ */
+
+/* Standard top bar */
+.nav-stage-light {
+  height: 100%; background: #fff; display: flex; flex-direction: column;
+  border: 1px solid #dde5f3; overflow: hidden;
+}
+.nav-top {
+  padding: .65rem 1.25rem; border-bottom: 1px solid #dde5f3;
+  display: flex; align-items: center; gap: 1rem;
+}
+.nav-logo-mark { font-size: .8rem; font-weight: 400; color: var(--navy); }
+.nav-logo-mark span { color: var(--tq); }
+.nav-links { display: flex; gap: 1rem; margin-left: .5rem; }
+.nav-link { font-size: .62rem; font-weight: 400; color: var(--body); text-decoration: none; }
+.nav-link.active { color: var(--navy); }
+.nav-cta-sm { margin-left: auto; font-size: .62rem; font-weight: 400; color: var(--navy); background: var(--tq); padding: .35rem .85rem; border-radius: .4rem; }
+.nav-page-hint { flex: 1; background: #fbfcff; margin: .75rem; border-radius: .5rem; border: 1px dashed #dde5f3; }
+
+/* Floating pill */
+.nav-stage-dark {
+  height: 100%;
+  background: linear-gradient(rgba(10,18,48,.5), rgba(10,18,48,.5)),
+              url('../AdobeStock_1275181740.jpeg') center/cover;
+  display: flex; flex-direction: column; align-items: center; padding-top: 1rem;
+}
+.nav-pill {
+  display: flex; align-items: center; gap: .75rem;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(16px); border-radius: 3rem; padding: .45rem .65rem .45rem .9rem;
+}
+.nav-pill-logo { font-size: .72rem; font-weight: 400; color: #fff; }
+.nav-pill-logo span { color: var(--tq); }
+.nav-pill-sep { width: 1px; height: 16px; background: rgba(255,255,255,.15); }
+.nav-pill-links { display: flex; gap: .5rem; }
+.nav-pill-link { font-size: .6rem; font-weight: 400; color: rgba(255,255,255,.6); padding: .25rem .55rem; border-radius: 2rem; transition: .2s; }
+.nav-pill-link:hover,
+.nav-pill-link.active { color: #fff; background: rgba(255,255,255,.1); }
+.nav-pill-btn { font-size: .6rem; font-weight: 400; color: var(--navy); background: var(--tq); padding: .35rem .85rem; border-radius: 2rem; border: none; cursor: pointer; font-family: var(--font); }
+
+/* Mobile bottom */
+.nav-stage-mobile {
+  height: 100%; background: #fff; display: flex; flex-direction: column; overflow: hidden;
+}
+.nav-mobile-content { flex: 1; background: #fbfcff; margin: .75rem .75rem 0; border-radius: .5rem; border: 1px dashed #dde5f3; }
+.nav-mobile-bar {
+  padding: .6rem 1.5rem .4rem; border-top: 1px solid #dde5f3;
+  display: flex; align-items: center; justify-content: space-around;
+  background: rgba(255,255,255,.95); backdrop-filter: blur(12px);
+}
+.nav-mb-item { display: flex; flex-direction: column; align-items: center; gap: .2rem; cursor: pointer; }
+.nav-mb-icon { width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; }
+.nav-mb-icon svg { width: 18px; height: 18px; stroke: #b0b8d0; fill: none; stroke-width: 1.8; }
+.nav-mb-item.active .nav-mb-icon svg { stroke: var(--navy); }
+.nav-mb-lbl { font-size: .5rem; font-weight: 400; color: #b0b8d0; }
+.nav-mb-item.active .nav-mb-lbl { color: var(--navy); }
+
+
+/* ═══════════════════════════════════════════════════
+   7. TYPOGRAPHY SCALE
+   ═══════════════════════════════════════════════════ */
+
+.ty-stage {
+  height: 100%; background: #fff; padding: 1.1rem 1.25rem;
+  display: flex; flex-direction: column; justify-content: center; gap: .3rem;
+}
+.ty-row { display: flex; align-items: baseline; gap: .75rem; }
+.ty-label { font-size: .5rem; font-weight: 400; color: #b0b8d0; letter-spacing: .06em; text-transform: uppercase; width: 42px; flex-shrink: 0; }
+.ty-sample { color: var(--navy); letter-spacing: -.02em; font-weight: 400; }
+.ty-stage.dark { background: var(--navy); }
+.ty-stage.dark .ty-sample { color: #fff; }
+.ty-stage.dark .ty-label { color: rgba(255,255,255,.3); }
+
+/* ── Headline weight rule card ────────────────── */
+.ty-rule-card {
+  grid-column: 1 / -1;
+  background: rgba(90,233,215,.06);
+  border: 1px solid rgba(90,233,215,.22);
+  border-radius: 1rem;
+  padding: 1.4rem 1.75rem;
+  display: flex; align-items: flex-start; gap: 1.25rem;
+}
+.ty-rule-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(90,233,215,.15); border: 1px solid rgba(90,233,215,.35);
+  border-radius: .5rem; display: flex; align-items: center; justify-content: center;
+  font-size: .85rem;
+}
+.ty-rule-body { flex: 1; }
+.ty-rule-title {
+  font-size: .78rem; font-weight: 400; color: rgba(255,255,255,.9);
+  margin-bottom: .3rem; letter-spacing: -.01em;
+}
+.ty-rule-title strong { color: var(--tq); }
+.ty-rule-desc { font-size: .68rem; color: rgba(255,255,255,.45); line-height: 1.65; }
+.ty-rule-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .75rem; }
+.ty-chip {
+  font-size: .58rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase;
+  padding: .28rem .65rem; border-radius: .35rem;
+}
+.ty-chip-ok  { background: rgba(90,233,215,.12); color: var(--tq); border: 1px solid rgba(90,233,215,.25); }
+.ty-chip-no  { background: rgba(255,90,90,.08); color: #ff7b7b; border: 1px solid rgba(255,90,90,.2); text-decoration: line-through; }
+
+/* ── Weight contrast preview ─────────────────── */
+.ty-weight-demo {
+  height: 100%; background: #fff; padding: 1.25rem 1.4rem;
+  display: flex; flex-direction: column; justify-content: center; gap: .85rem;
+}
+.tw-row { display: flex; align-items: center; gap: .75rem; }
+.tw-tag {
+  font-size: .5rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase;
+  padding: .2rem .5rem; border-radius: .25rem; flex-shrink: 0; min-width: 48px; text-align: center;
+}
+.tw-tag-ok  { background: rgba(90,233,215,.12); color: #0b7a6a; }
+.tw-tag-no  { background: rgba(255,90,90,.08);  color: #b03030; }
+.tw-sample  { font-family: var(--font); color: var(--navy); letter-spacing: -.03em; line-height: 1; }
+.tw-divider { width: 100%; height: 1px; background: #f0f3fb; margin: .2rem 0; }
+
+.ty-eyebrow {
+  font-size: .6rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--tq);
+}
+.ty-pairing {
+  height: 100%; background: linear-gradient(rgba(10,18,48,.52), rgba(10,18,48,.52)),
+              url('../AdobeStock_130005965.jpeg') center/cover;
+  display: flex; flex-direction: column; justify-content: center; padding: 1.25rem 1.4rem; gap: .4rem;
+}
+.ty-pair-eyebrow { font-size: .58rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--tq); }
+.ty-pair-h1 { font-size: 1.4rem; font-weight: 400; color: #fff; letter-spacing: -.04em; line-height: 1.1; }
+.ty-pair-body { font-size: .68rem; color: rgba(255,255,255,.55); line-height: 1.6; margin-top: .1rem; }
+
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────── -->
+<header class="am-header">
+  <div>
+    <div class="am-brand">
+      <div class="am-dot"></div>
+      <span class="am-wordmark">Link<span>.ai</span></span>
+    </div>
+    <h1 class="am-title">Asset Menu</h1>
+    <p class="am-sub">Design components, patterns, and motion — reference before building</p>
+  </div>
+  <span class="am-badge">Working reference · V5 era</span>
+</header>
+
+<!-- ── JUMP NAV ──────────────────────────────────── -->
+<nav class="am-nav">
+  <a href="#backgrounds" class="active">Backgrounds</a>
+  <a href="#glass">Glass &amp; Cards</a>
+  <a href="#sections">Section Patterns</a>
+  <a href="#motion">Motion</a>
+  <a href="#ui">UI Components</a>
+  <a href="#nav">Navigation</a>
+  <a href="#type">Typography</a>
+</nav>
+
+<div class="am-body">
+
+<!-- ══════════════════════════════════════
+     1 · BACKGROUNDS
+     ══════════════════════════════════════ -->
+<section class="am-section" id="backgrounds">
+  <div class="am-section-hdr">
+    <span class="am-section-num">01</span>
+    <span class="am-section-title">Background Treatments</span>
+    <span class="am-section-count">6 options</span>
+  </div>
+  <div class="am-grid">
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-ps-dark">
+          <span class="bg-label">Palm Springs · 50% dark</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Photo + Dark Navy Overlay</span>
+        <span class="am-item-desc">rgba(10,18,48,.50) · used in toolset section</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-house-dark">
+          <span class="bg-label">Modern house · 45% dark</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Photo + Dark Navy Overlay</span>
+        <span class="am-item-desc">rgba(10,18,48,.45) · used in hero section</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-frosted-lift">
+          <div class="bg-frosted-lift-panel">
+            <span class="bg-label" style="color:#fff;border-color:rgba(255,255,255,.25);">Frosted panel rising from base</span>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Frosted Panel Lift</span>
+        <span class="am-item-desc">Glass card floats up from photo edge</span>
+        <span class="am-item-tag">Try it</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-gradient-fade">
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,16,32,0) 0%,rgba(11,16,32,.92) 100%);z-index:1;"></div>
+          <div style="position:absolute;bottom:1rem;left:1.2rem;z-index:2;">
+            <span class="bg-label">Gradient fade to dark</span>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Photo Fade to Dark</span>
+        <span class="am-item-desc">Transparent → navy, photo bleeds into section below</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-mesh">
+          <span class="bg-label">Gradient mesh · no photo</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Dark Gradient Mesh</span>
+        <span class="am-item-desc">Radial navy + teal blobs, photo-free</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="bg-light">
+          <span class="bg-label dark">Page white · dot grid</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Light Page + Dot Grid</span>
+        <span class="am-item-desc">#fbfcff base with subtle geometric texture</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     2 · GLASS & CARDS
+     ══════════════════════════════════════ -->
+<section class="am-section" id="glass">
+  <div class="am-section-hdr">
+    <span class="am-section-num">02</span>
+    <span class="am-section-title">Glass &amp; Card Styles</span>
+    <span class="am-section-count">6 options</span>
+  </div>
+  <div class="am-grid">
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage">
+          <div class="g-card g-light">
+            <div class="g-title">Frosted Light</div>
+            <div class="g-body">White tint at 12% over photo background with 14px blur</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Frosted Glass · Light</span>
+        <span class="am-item-desc">rgba(255,255,255,.12) · blur 14px</span>
+        <span class="am-item-tag">In use · hero card</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage">
+          <div class="g-card g-medium">
+            <div class="g-title" style="color:var(--navy)">Frosted Medium</div>
+            <div class="g-body" style="color:var(--body)">Higher opacity for readability — feels more material</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Frosted Glass · Medium</span>
+        <span class="am-item-desc">rgba(255,255,255,.20) · blur 20px · dark text</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage">
+          <div class="g-card g-dark-glass">
+            <div class="g-title">Frosted Dark</div>
+            <div class="g-body">Navy tint with blur — strong contrast, photo visible</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Frosted Glass · Dark</span>
+        <span class="am-item-desc">rgba(10,18,48,.55) · blur 18px</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage dark-bg">
+          <div class="g-card g-white" style="max-width:200px">
+            <div class="g-title" style="color:var(--navy)">Clean White</div>
+            <div class="g-body" style="color:var(--body)">Standard card for light sections with soft border</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Clean White Card</span>
+        <span class="am-item-desc">#fff · 1px #dde5f3 border · soft shadow</span>
+        <span class="am-item-tag">In use · tool cards</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage dark-bg">
+          <div class="g-card g-dark-solid" style="max-width:200px">
+            <div class="g-title">Dark Solid</div>
+            <div class="g-body">Navy background — strong, no transparency needed</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Dark Solid Card</span>
+        <span class="am-item-desc">#131f4a · white text · minimal border</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="glass-stage">
+          <div class="g-card g-tq-glow">
+            <div class="g-title" style="color:var(--tq)">Turquoise Glow</div>
+            <div class="g-body">Active state or featured item — turquoise border + ambient glow</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Turquoise Glow Card</span>
+        <span class="am-item-desc">rgba(90,233,215,.5) border · glow box-shadow</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     3 · SECTION PATTERNS
+     ══════════════════════════════════════ -->
+<section class="am-section" id="sections">
+  <div class="am-section-hdr">
+    <span class="am-section-num">03</span>
+    <span class="am-section-title">Section Patterns</span>
+    <span class="am-section-count">7 patterns</span>
+  </div>
+  <div class="am-grid wide">
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-stats">
+          <div class="sp-stat">
+            <div class="sp-stat-num">847<span>+</span></div>
+            <div class="sp-stat-label">Agents on platform</div>
+          </div>
+          <div class="sp-stat">
+            <div class="sp-stat-num">$2.4<span>B</span></div>
+            <div class="sp-stat-label">In transactions</div>
+          </div>
+          <div class="sp-stat">
+            <div class="sp-stat-num">94<span>%</span></div>
+            <div class="sp-stat-label">Lead response rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Stats Band</span>
+        <span class="am-item-desc">3-column metrics over photo overlay — turquoise on key numbers</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-quote">
+          <div class="sp-quote-mark">"</div>
+          <p class="sp-quote-text">My clients come pre-qualified now. I stopped wasting Saturdays on unqualified showings the week I launched my Link page.</p>
+          <div class="sp-quote-author">
+            <div class="sp-quote-avatar"></div>
+            <div>
+              <div class="sp-quote-name">Marcus T.</div>
+              <div class="sp-quote-role">Realtor · Austin, TX · 14 years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Testimonial Card</span>
+        <span class="am-item-desc">Pull quote with avatar — white card on dark section</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-features">
+          <div class="sp-feat">
+            <div class="sp-feat-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="sp-feat-name">Six tools</div>
+            <div class="sp-feat-desc">Every workflow in one link</div>
+          </div>
+          <div class="sp-feat">
+            <div class="sp-feat-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div class="sp-feat-name">Instant setup</div>
+            <div class="sp-feat-desc">Live in under 5 minutes</div>
+          </div>
+          <div class="sp-feat">
+            <div class="sp-feat-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="sp-feat-name">Live analytics</div>
+            <div class="sp-feat-desc">Every click attributed</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Feature Grid</span>
+        <span class="am-item-desc">3-column with icon, name, description — light section</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-pricing">
+          <div class="sp-price-card">
+            <div class="sp-price-tier">Pro Agent</div>
+            <div class="sp-price-num">$49<sub>/mo</sub></div>
+            <div class="sp-price-line"><div class="sp-price-check"></div><span class="sp-price-feat">All 6 tools included</span></div>
+            <div class="sp-price-line"><div class="sp-price-check"></div><span class="sp-price-feat">Unlimited client links</span></div>
+            <div class="sp-price-line"><div class="sp-price-check"></div><span class="sp-price-feat">White-label branding</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Pricing Card</span>
+        <span class="am-item-desc">Frosted glass tier card on dark navy background</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-steps">
+          <div class="sp-step">
+            <div class="sp-step-num" style="background:var(--tq);color:var(--navy)">1</div>
+            <div class="sp-step-label">Create link</div>
+            <div class="sp-step-desc">30 seconds</div>
+          </div>
+          <div class="sp-step">
+            <div class="sp-step-num">2</div>
+            <div class="sp-step-label">Share it</div>
+            <div class="sp-step-desc">Any surface</div>
+          </div>
+          <div class="sp-step">
+            <div class="sp-step-num">3</div>
+            <div class="sp-step-label">Get leads</div>
+            <div class="sp-step-desc">Auto-captured</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Process Steps</span>
+        <span class="am-item-desc">3-step numbered flow with connector lines</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-cta-band">
+          <div class="sp-cta-headline">Your link is ready.<br>Your clients aren't waiting.</div>
+          <div class="sp-cta-sub">Join 847 agents already on Link.ai</div>
+          <button class="sp-cta-btn">Get early access →</button>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">CTA Band</span>
+        <span class="am-item-desc">Full-width dark navy with headline + primary button</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="sp-hscroll">
+          <div class="sp-hcard active">
+            <div class="sp-hcard-num">01 / 06</div>
+            <div class="sp-hcard-title">Pre-Qual</div>
+            <div class="sp-hcard-bar"></div>
+          </div>
+          <div class="sp-hcard">
+            <div class="sp-hcard-num">02 / 06</div>
+            <div class="sp-hcard-title">Listing AI</div>
+            <div class="sp-hcard-bar"></div>
+          </div>
+          <div class="sp-hcard">
+            <div class="sp-hcard-num">03 / 06</div>
+            <div class="sp-hcard-title">Valuation</div>
+            <div class="sp-hcard-bar"></div>
+          </div>
+          <div class="sp-hcard">
+            <div class="sp-hcard-num">04 / 06</div>
+            <div class="sp-hcard-title">Net Sheet</div>
+            <div class="sp-hcard-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Horizontal Tool Scroll</span>
+        <span class="am-item-desc">Peek cards — active state highlighted in turquoise</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     4 · MOTION
+     ══════════════════════════════════════ -->
+<section class="am-section" id="motion">
+  <div class="am-section-hdr">
+    <span class="am-section-num">04</span>
+    <span class="am-section-title">Motion &amp; Animation</span>
+    <span class="am-section-count">5 demos — click to replay</span>
+  </div>
+  <div class="am-grid">
+
+    <!-- Fade up stagger -->
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="mo-stage">
+          <button class="mo-replay" onclick="runFadeUp()">↺ Replay</button>
+          <div class="fu-items" id="fuItems">
+            <div class="fu-item"></div>
+            <div class="fu-item"></div>
+            <div class="fu-item"></div>
+            <div class="fu-item"></div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Fade-Up Stagger</span>
+        <span class="am-item-desc">Staggered 100ms delay between items, ease curve</span>
+        <span class="am-item-tag">On scroll</span>
+      </div>
+    </div>
+
+    <!-- Count up -->
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="mo-stage photo">
+          <button class="mo-replay" onclick="runCount()">↺ Replay</button>
+          <div class="cu-stage">
+            <div class="cu-block">
+              <div class="cu-num" id="cuA">0<span>+</span></div>
+              <div class="cu-lbl">Agents</div>
+            </div>
+            <div class="cu-block">
+              <div class="cu-num" id="cuB">$0<span>B</span></div>
+              <div class="cu-lbl">Transactions</div>
+            </div>
+            <div class="cu-block">
+              <div class="cu-num" id="cuC">0<span>%</span></div>
+              <div class="cu-lbl">Response</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Number Count-Up</span>
+        <span class="am-item-desc">Eased integer animation on scroll enter</span>
+        <span class="am-item-tag">On scroll</span>
+      </div>
+    </div>
+
+    <!-- Typewriter -->
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="mo-stage">
+          <button class="mo-replay" onclick="runTypewriter()">↺ Replay</button>
+          <div class="tw-text" id="twText"><span id="twContent"></span><span class="tw-cursor" id="twCursor"></span></div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Typewriter Headline</span>
+        <span class="am-item-desc">Character-by-character with blinking cursor</span>
+        <span class="am-item-tag">Entrance</span>
+      </div>
+    </div>
+
+    <!-- Crossfade text -->
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="mo-stage">
+          <div style="width:100%">
+            <div style="font-size:.52rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem;">Auto-cycling · 2s</div>
+            <div class="cf-stack" id="cfStack">
+              <span class="cf-item-txt cf-active" data-cf="0">Know who can buy.</span>
+              <span class="cf-item-txt" data-cf="1">Your listing answers 24/7.</span>
+              <span class="cf-item-txt" data-cf="2">Turn valuations into leads.</span>
+              <span class="cf-item-txt" data-cf="3">Show sellers their net sheet.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Crossfade Text Stack</span>
+        <span class="am-item-desc">grid-area overlay technique — no layout shift</span>
+        <span class="am-item-tag">In use · section 2</span>
+      </div>
+    </div>
+
+    <!-- Mouse parallax -->
+    <div class="am-item">
+      <div class="am-preview tall">
+        <div class="mp-stage" id="mpStage">
+          <div style="position:absolute;top:.6rem;right:.75rem;font-size:.52rem;color:rgba(255,255,255,.3);letter-spacing:.04em;">↔ Move mouse</div>
+          <div class="mp-card" id="mpCard">
+            <div class="mp-card-title">Pre-Qualification</div>
+            <div class="mp-card-line tq"></div>
+            <div class="mp-card-line"></div>
+            <div class="mp-card-line" style="width:80%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Mouse Parallax Card</span>
+        <span class="am-item-desc">3D tilt on mousemove — perspective 600px</span>
+        <span class="am-item-tag">Hover</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     5 · UI COMPONENTS
+     ══════════════════════════════════════ -->
+<section class="am-section" id="ui">
+  <div class="am-section-hdr">
+    <span class="am-section-num">05</span>
+    <span class="am-section-title">UI Components</span>
+    <span class="am-section-count">7 components</span>
+  </div>
+  <div class="am-grid">
+
+    <div class="am-item span2">
+      <div class="am-preview short">
+        <div class="ui-btns">
+          <button class="btn-base btn-tq">Get early access</button>
+          <button class="btn-base btn-navy">Sign in</button>
+          <button class="btn-base btn-outline">Learn more</button>
+          <button class="btn-base btn-ghost">View demo</button>
+          <button class="btn-base btn-dark-outline" style="background:rgba(255,255,255,0);color:rgba(19,31,74,.7);border-color:#dde5f3">See pricing</button>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Button Family</span>
+        <span class="am-item-desc">Turquoise primary · navy secondary · outline · ghost · muted outline</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <div class="am-item span2">
+      <div class="am-preview short">
+        <div class="ui-tags">
+          <span class="tag tag-tq">Pre-Qualification</span>
+          <span class="tag tag-navy">Listing Copilot</span>
+          <span class="tag tag-new">New in v2</span>
+          <span class="tag tag-warn">Beta</span>
+          <span class="tag tag-muted">Net Sheet</span>
+          <span class="tag tag-tq">Home Valuation</span>
+          <span class="tag tag-navy">Link Manager</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Tags &amp; Badges</span>
+        <span class="am-item-desc">Turquoise · navy · accent · warning · muted</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="ui-form">
+          <span class="form-label">Your name</span>
+          <div class="form-input-wrap">
+            <input class="form-input" placeholder="Sarah Johnson" value="Sarah Johnson" readonly>
+          </div>
+          <span class="form-label" style="margin-top:.4rem">Email address</span>
+          <div class="form-input-wrap">
+            <input class="form-input" placeholder="sarah@example.com" style="border-color:var(--tq);" value="sarah@link.ai" readonly>
+            <span class="form-input-icon">✓</span>
+          </div>
+          <span class="form-hint valid">✓ Verified</span>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Form Fields</span>
+        <span class="am-item-desc">Label + input + validation state — turquoise focus ring</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="ui-toast">
+          <div class="toast">
+            <div class="toast-icon">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="toast-title">Lead captured</div>
+              <div class="toast-body">Marcus T. completed pre-qualification · just now</div>
+            </div>
+            <span class="toast-close">✕</span>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Toast Notification</span>
+        <span class="am-item-desc">Dark navy · turquoise icon · dismiss action</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="ui-steps">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;width:100%">
+            <div style="display:flex;align-items:center;gap:.25rem;width:100%">
+              <div class="step-pip done">✓</div>
+              <div class="step-connector done"></div>
+              <div class="step-pip done">✓</div>
+              <div class="step-connector done"></div>
+              <div class="step-pip active">3</div>
+              <div class="step-connector"></div>
+              <div class="step-pip todo">4</div>
+              <div class="step-connector"></div>
+              <div class="step-pip todo">5</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;width:100%;padding:0 .5rem">
+              <span class="step-lbl" style="color:rgba(90,233,215,.6)">Intake</span>
+              <span class="step-lbl" style="color:rgba(90,233,215,.6)">Income</span>
+              <span class="step-lbl active">Credit</span>
+              <span class="step-lbl">Review</span>
+              <span class="step-lbl">Done</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Progress Stepper</span>
+        <span class="am-item-desc">5-step flow — done / active / pending states</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="ui-circle">
+          <div class="cp-wrap">
+            <div class="cp-ring">
+              <svg viewBox="0 0 60 60">
+                <circle class="cp-bg" cx="30" cy="30" r="26"/>
+                <circle class="cp-fill" cx="30" cy="30" r="26" style="stroke-dashoffset:40"/>
+              </svg>
+              <div class="cp-value">75%</div>
+            </div>
+            <div class="cp-label">Profile<br>complete</div>
+          </div>
+          <div class="cp-wrap">
+            <div class="cp-ring">
+              <svg viewBox="0 0 60 60">
+                <circle class="cp-bg" cx="30" cy="30" r="26"/>
+                <circle class="cp-fill" cx="30" cy="30" r="26" style="stroke-dashoffset:98;stroke:rgba(90,233,215,.45)"/>
+              </svg>
+              <div class="cp-value" style="font-size:.62rem">3/6</div>
+            </div>
+            <div class="cp-label">Tools<br>active</div>
+          </div>
+          <div class="cp-wrap">
+            <div class="cp-ring">
+              <svg viewBox="0 0 60 60">
+                <circle class="cp-bg" cx="30" cy="30" r="26"/>
+                <circle class="cp-fill" cx="30" cy="30" r="26" style="stroke-dashoffset:17"/>
+              </svg>
+              <div class="cp-value">90%</div>
+            </div>
+            <div class="cp-label">Response<br>rate</div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Circular Progress</span>
+        <span class="am-item-desc">SVG ring with turquoise stroke — profile, tools, stats</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="ui-toggles">
+          <div class="toggle-row">
+            <div class="toggle-track on"><div class="toggle-thumb"></div></div>
+            <div>
+              <div class="toggle-lbl">Email notifications</div>
+              <div class="toggle-sub">Lead capture alerts</div>
+            </div>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-track on"><div class="toggle-thumb"></div></div>
+            <div>
+              <div class="toggle-lbl">Auto-route to lender</div>
+              <div class="toggle-sub">Pre-qual submissions</div>
+            </div>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-track off"><div class="toggle-thumb"></div></div>
+            <div>
+              <div class="toggle-lbl">Public profile</div>
+              <div class="toggle-sub">Currently hidden</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Toggle Switch</span>
+        <span class="am-item-desc">On/off with label and subtitle — turquoise active state</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     6 · NAVIGATION
+     ══════════════════════════════════════ -->
+<section class="am-section" id="nav">
+  <div class="am-section-hdr">
+    <span class="am-section-num">06</span>
+    <span class="am-section-title">Navigation Concepts</span>
+    <span class="am-section-count">3 options</span>
+  </div>
+  <div class="am-grid wide">
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="nav-stage-light">
+          <div class="nav-top">
+            <span class="nav-logo-mark">Link<span>.ai</span></span>
+            <div class="nav-links">
+              <a class="nav-link active">Product</a>
+              <a class="nav-link">Pricing</a>
+              <a class="nav-link">Agents</a>
+              <a class="nav-link">Blog</a>
+            </div>
+            <span class="nav-cta-sm">Get started →</span>
+          </div>
+          <div class="nav-page-hint"></div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Standard Top Bar</span>
+        <span class="am-item-desc">White · logo left · links center · CTA right · 1px border</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="nav-stage-dark">
+          <div class="nav-pill">
+            <span class="nav-pill-logo">Link<span style="color:var(--tq)">.ai</span></span>
+            <div class="nav-pill-sep"></div>
+            <div class="nav-pill-links">
+              <a class="nav-pill-link active">Product</a>
+              <a class="nav-pill-link">Pricing</a>
+              <a class="nav-pill-link">Agents</a>
+            </div>
+            <button class="nav-pill-btn">Get started</button>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Floating Pill Nav</span>
+        <span class="am-item-desc">Frosted glass · centered · floats over photo hero</span>
+        <span class="am-item-tag">Try it</span>
+      </div>
+    </div>
+
+    <div class="am-item">
+      <div class="am-preview">
+        <div class="nav-stage-mobile">
+          <div class="nav-mobile-content"></div>
+          <div class="nav-mobile-bar">
+            <div class="nav-mb-item active">
+              <div class="nav-mb-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <span class="nav-mb-lbl">Home</span>
+            </div>
+            <div class="nav-mb-item">
+              <div class="nav-mb-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <span class="nav-mb-lbl">Leads</span>
+            </div>
+            <div class="nav-mb-item">
+              <div class="nav-mb-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+              <span class="nav-mb-lbl">Tools</span>
+            </div>
+            <div class="nav-mb-item">
+              <div class="nav-mb-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+              <span class="nav-mb-lbl">Profile</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Mobile Bottom Nav</span>
+        <span class="am-item-desc">4 tabs · frosted bar · active state in navy</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     7 · TYPOGRAPHY
+     ══════════════════════════════════════ -->
+<section class="am-section" id="type">
+  <div class="am-section-hdr">
+    <span class="am-section-num">07</span>
+    <span class="am-section-title">Typography — Mont</span>
+    <span class="am-section-count">5 references</span>
+  </div>
+  <div class="am-grid wide">
+
+    <!-- Headline weight rule -->
+    <div class="ty-rule-card">
+      <div class="ty-rule-icon">⚖</div>
+      <div class="ty-rule-body">
+        <div class="ty-rule-title"><strong>Rule: Mont 400 everywhere. No exceptions.</strong></div>
+        <div class="ty-rule-desc">
+          Every element in this project — headlines, body, captions, buttons, labels, nav — uses Mont 400 Regular.
+          Impact comes from size, letter-spacing, and color, not weight. Bold type reads as loud; 400 reads as confident.
+        </div>
+        <div class="ty-rule-chips">
+          <span class="ty-chip ty-chip-ok">400 · All text ✓</span>
+          <span class="ty-chip ty-chip-no">600 ✗</span>
+          <span class="ty-chip ty-chip-no">700 ✗</span>
+          <span class="ty-chip ty-chip-no">800 ✗</span>
+          <span class="ty-chip ty-chip-no">900 ✗</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weight contrast: correct vs incorrect -->
+    <div class="am-item">
+      <div class="am-preview tall">
+        <div class="ty-weight-demo">
+          <div style="font-size:.55rem;font-weight:400;color:#0b7a6a;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.1rem">✓ Correct — Mont 400</div>
+          <div style="font-family:'Mont',sans-serif;font-size:1.55rem;font-weight:400;color:#131f4a;letter-spacing:-.03em;line-height:1.1">Your modern real estate partner.</div>
+          <div class="tw-divider"></div>
+          <div style="font-size:.55rem;font-weight:400;color:#b03030;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.1rem">✗ Do not use — Mont 700/800</div>
+          <div style="font-family:'Mont',sans-serif;font-size:1.55rem;font-weight:400;color:#131f4a;letter-spacing:-.03em;line-height:1.1;opacity:.45;text-decoration:line-through">Your modern real estate partner.</div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Headline Weight — Right vs Wrong</span>
+        <span class="am-item-desc">Same sentence at 400 vs 700 · 400 wins every time</span>
+        <span class="am-item-tag">Rule</span>
+      </div>
+    </div>
+
+    <!-- Type scale light (corrected to 400 headlines) -->
+    <div class="am-item">
+      <div class="am-preview tall">
+        <div class="ty-stage">
+          <div class="ty-row"><span class="ty-label">Display</span><span class="ty-sample" style="font-size:1.8rem;font-weight:400">Your clients, ready</span></div>
+          <div class="ty-row"><span class="ty-label">H1</span><span class="ty-sample" style="font-size:1.3rem;font-weight:400">Your modern partner</span></div>
+          <div class="ty-row"><span class="ty-label">H2</span><span class="ty-sample" style="font-size:1rem;font-weight:400">Six tools. One link.</span></div>
+          <div class="ty-row"><span class="ty-label">H3</span><span class="ty-sample" style="font-size:.8rem;font-weight:400">Pre-Qualification</span></div>
+          <div class="ty-row"><span class="ty-label">Body</span><span class="ty-sample" style="font-size:.8rem;font-weight:400;color:#636b87">Conversational buyer intake with a soft credit pull.</span></div>
+          <div class="ty-row"><span class="ty-label">Caption</span><span class="ty-sample" style="font-size:.65rem;font-weight:400;color:#b0b8d0;letter-spacing:.06em;text-transform:uppercase">01 / 06 · Pre-Qualification</span></div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Type Scale · Light</span>
+        <span class="am-item-desc">Headlines Mont 400 · captions 600 · body 400 #636b87</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <!-- Type scale dark (corrected to 400 headlines) -->
+    <div class="am-item">
+      <div class="am-preview tall">
+        <div class="ty-stage dark">
+          <div class="ty-row"><span class="ty-label">Display</span><span class="ty-sample" style="font-size:1.8rem;font-weight:400">Your clients, ready</span></div>
+          <div class="ty-row"><span class="ty-label">H1</span><span class="ty-sample" style="font-size:1.3rem;font-weight:400">Your modern partner</span></div>
+          <div class="ty-row"><span class="ty-label">H2</span><span class="ty-sample" style="font-size:1rem;font-weight:400">Six tools. One link.</span></div>
+          <div class="ty-row"><span class="ty-label">H3</span><span class="ty-sample" style="font-size:.8rem;font-weight:400">Pre-Qualification</span></div>
+          <div class="ty-row"><span class="ty-label">Body</span><span class="ty-sample" style="font-size:.8rem;font-weight:400;color:rgba(255,255,255,.55)">Conversational buyer intake with a soft credit pull.</span></div>
+          <div class="ty-row"><span class="ty-label">Eyebrow</span><span class="ty-sample" style="font-size:.65rem;font-weight:400;color:var(--tq);letter-spacing:.1em;text-transform:uppercase">01 / 06 · Pre-Qualification</span></div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Type Scale · Dark</span>
+        <span class="am-item-desc">Headlines Mont 400 on navy · turquoise eyebrow 700</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+    <!-- Hero pairing (corrected) -->
+    <div class="am-item">
+      <div class="am-preview tall">
+        <div class="ty-pairing">
+          <div class="ty-pair-eyebrow">Platform · Real Estate AI</div>
+          <div class="ty-pair-h1">One link for every client, every step.</div>
+          <div class="ty-pair-body">Link.ai gives agents a single shareable URL that contains every tool their clients need — from pre-qualification to property search. No app download, no login required.</div>
+        </div>
+      </div>
+      <div class="am-meta">
+        <span class="am-item-name">Eyebrow + Hero Pairing</span>
+        <span class="am-item-desc">Eyebrow 700 turquoise → headline 400 white → body 400 muted</span>
+        <span class="am-item-tag">In use</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /am-body -->
+
+<script>
+// ── Jump nav active state ──────────────────────────
+const sections = document.querySelectorAll('.am-section');
+const navLinks = document.querySelectorAll('.am-nav a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+}, { passive: true });
+
+// ── Fade-up stagger ───────────────────────────────
+function runFadeUp() {
+  const items = document.querySelectorAll('.fu-item');
+  items.forEach(el => el.classList.remove('fu-go'));
+  void document.getElementById('fuItems').offsetWidth;
+  items.forEach(el => el.classList.add('fu-go'));
+}
+runFadeUp();
+
+// ── Count up ──────────────────────────────────────
+function countTo(el, target, prefix, suffix, duration) {
+  let start = 0; const step = target / (duration / 16);
+  const tick = () => {
+    start = Math.min(start + step, target);
+    el.innerHTML = prefix + Math.floor(start) + '<span>' + suffix + '</span>';
+    if (start < target) requestAnimationFrame(tick);
+  };
+  tick();
+}
+function runCount() {
+  countTo(document.getElementById('cuA'), 847, '', '+', 1200);
+  countTo(document.getElementById('cuB'), 24, '$', 'B', 1400);
+  countTo(document.getElementById('cuC'), 94, '', '%', 1000);
+}
+runCount();
+
+// ── Typewriter ────────────────────────────────────
+const twPhrases = ['Know who can buy.', 'Answers. Always on.', 'Your link. Your brand.'];
+let twPhrase = 0;
+function runTypewriter() {
+  const el = document.getElementById('twContent');
+  el.textContent = '';
+  const text = twPhrases[twPhrase % twPhrases.length];
+  twPhrase++;
+  let i = 0;
+  const tick = () => { el.textContent += text[i++]; if (i < text.length) setTimeout(tick, 60); };
+  tick();
+}
+runTypewriter();
+
+// ── Crossfade text ────────────────────────────────
+let cfIdx = 0;
+const cfItems = document.querySelectorAll('.cf-item-txt');
+setInterval(() => {
+  cfItems[cfIdx].classList.remove('cf-active');
+  cfIdx = (cfIdx + 1) % cfItems.length;
+  cfItems[cfIdx].classList.add('cf-active');
+}, 2000);
+
+// ── Mouse parallax ────────────────────────────────
+const mpStage = document.getElementById('mpStage');
+const mpCard  = document.getElementById('mpCard');
+if (mpStage) {
+  mpStage.addEventListener('mousemove', e => {
+    const r = mpStage.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - .5) * 18;
+    const y = ((e.clientY - r.top)  / r.height - .5) * 14;
+    mpCard.style.transform = `rotateY(${x}deg) rotateX(${-y}deg) scale(1.04)`;
+  });
+  mpStage.addEventListener('mouseleave', () => { mpCard.style.transform = ''; });
+}
+</script>
+</body>
+</html>

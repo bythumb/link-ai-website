@@ -1,0 +1,23 @@
+<svg width="1424" height="718" viewBox="0 0 1424 718" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_4101_2642" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="-27" width="1424" height="745">
+<rect y="-27" width="1424" height="745" rx="20" fill="url(#paint0_linear_4101_2642)"/>
+</mask>
+<g mask="url(#mask0_4101_2642)">
+<rect x="224.5" y="359.5" width="975" height="263" rx="59.5" stroke="white"/>
+<rect x="164.5" y="299.5" width="1095" height="383" rx="39.5" stroke="white"/>
+<rect x="104.4" y="239.4" width="1215.2" height="503.2" rx="59.6" stroke="white" stroke-width="0.8"/>
+<rect x="44.35" y="179.35" width="1335.3" height="623.3" rx="79.65" stroke="white" stroke-width="0.7"/>
+<rect x="-15.6" y="119.4" width="1455.2" height="743.2" rx="99.6" stroke="white" stroke-width="0.8"/>
+<rect x="-75.75" y="59.25" width="1575.5" height="863.5" rx="119.75" stroke="white" stroke-width="0.5"/>
+<rect x="-134.605" y="0.395397" width="1693.21" height="981.209" rx="178.605" stroke="white" stroke-width="2.79079"/>
+<rect x="-194.505" y="-59.5053" width="1813.01" height="1101.01" rx="128.505" stroke="white" stroke-width="2.98933"/>
+<rect x="-254.407" y="-119.407" width="1932.81" height="1220.81" rx="138.407" stroke="white" stroke-width="3.18686"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_4101_2642" x1="712" y1="-27" x2="712" y2="718" gradientUnits="userSpaceOnUse">
+<stop offset="0.0288833" stop-color="white" stop-opacity="0"/>
+<stop offset="0.322361" stop-color="white" stop-opacity="0.861871"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

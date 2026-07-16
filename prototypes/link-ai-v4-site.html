@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>link.ai — The AI platform for real estate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap">
+  <style>
+
+@font-face { font-family:Mont; src:url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
+@font-face { font-family:Mont; src:url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight:600; font-display:swap; }
+@font-face { font-family:Mont; src:url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight:700; font-display:swap; }
+@font-face { font-family:Mont; src:url('../reference/webflow-export/fonts/Mont-ExtraBold.woff2') format('woff2'); font-weight:800; font-display:swap; }
+@font-face { font-family:Mont; src:url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight:900; font-display:swap; }
+
+:root {
+  --white:  #ffffff;
+  --page:   #fbfcff;
+  --border: #dde5f3;
+  --muted:  #e9eef7;
+  --body:   #636b87;
+  --navy:   #131f4a;
+  --tq:     #5ae9d7;
+  --font:   Mont, Montserrat, Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 1rem; scroll-behavior: smooth; }
+@media (max-width:1600px) and (min-width:992px) { html { font-size: 1vw; } }
+
+body {
+  font-family: var(--font);
+  background: var(--page);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ══ NAV ════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 60px; padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(251,252,255,.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(221,229,243,.5);
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 28px; width: auto; display: block; }
+.nav-right { display: flex; align-items: center; gap: 2rem; }
+.nav-link { font-size: .8rem; font-weight: 500; color: var(--body); text-decoration: none; transition: color .2s; }
+.nav-link:hover { color: var(--navy); }
+.nav-cta {
+  font-size: .8rem; font-weight: 700; color: #0a5e55;
+  text-decoration: none; padding: .45rem 1.1rem;
+  background: var(--tq); border-radius: .7rem; transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .85; }
+
+/* ══ OUTER HERO SCENE (scroll-jack) ════════════════ */
+.hero-scene { height: 760vh; }
+
+.hero-outer {
+  position: sticky; top: 0;
+  height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: space-between;
+  padding: 60px 0 2.5rem;
+  background: var(--page);
+}
+
+/* ambient glow */
+.hero-outer::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 65% 60% at 70% 55%, rgba(90,233,215,.09) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 45% at 20% 85%, rgba(90,233,215,.04) 0%, transparent 55%);
+}
+
+/* ── TOP: headline copy ───────────────────────────── */
+.hero-top {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1100px;
+  padding: 2.5rem 4rem 0;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  gap: .45rem;
+  opacity: 0; animation: fadeIn .8s ease forwards .1s;
+}
+.ht-eyebrow {
+  font-size: .62rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--tq);
+  display: block;
+}
+.ht-h1 {
+  font-size: clamp(2rem, 3.2vw, 3.8rem);
+  font-weight: 600; letter-spacing: -.03em;
+  line-height: 1.12; color: var(--navy);
+  text-wrap: balance;
+}
+.ht-desc {
+  font-size: clamp(.8rem, .9vw, .88rem);
+  font-weight: 400; line-height: 1.65; color: var(--body);
+  max-width: 400px;
+}
+
+/* CTAs pinned to bottom of hero */
+.hero-cta-bar {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.1rem;
+  padding-bottom: 2rem;
+  opacity: 0; animation: fadeIn .8s ease forwards .55s;
+}
+.ht-cta {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: var(--font); font-size: .82rem; font-weight: 700;
+  color: #0a5e55; background: var(--tq);
+  padding: .65rem 1.4rem; border-radius: .7rem;
+  border: none; text-decoration: none; cursor: pointer;
+  transition: opacity .2s;
+}
+.ht-cta:hover { opacity: .85; }
+.ht-cta-ghost {
+  font-size: .8rem; font-weight: 500; color: var(--body);
+  text-decoration: none; display: flex; align-items: center; gap: .3rem;
+  transition: color .2s;
+}
+.ht-cta-ghost:hover { color: var(--navy); }
+.ht-cta-ghost::after { content: '→'; }
+
+/* ── BOTTOM: embedded demo ───────────────────────── */
+.hero-demo {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1100px;
+  padding: 0 4rem;
+  flex: 1;
+  display: flex; flex-direction: column; justify-content: center;
+  opacity: 0; animation: fadeIn .9s ease forwards .35s;
+}
+
+/* demo header */
+.demo-header {
+  margin-bottom: 1.1rem;
+}
+.demo-label {
+  font-size: .62rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--body); margin-bottom: .45rem;
+}
+.demo-sub {
+  font-size: clamp(.72rem, .8vw, .76rem);
+  font-weight: 500; letter-spacing: .01em;
+  line-height: 1.5; color: #9aa3bc;
+  margin-bottom: .4rem;
+}
+.demo-tagline {
+  font-size: clamp(.9rem, 1.2vw, 1.15rem);
+  font-weight: 500; letter-spacing: -.02em;
+  line-height: 1.3; color: var(--body);
+  transition: opacity .2s ease;
+}
+.demo-tagline.fade { opacity: 0; }
+
+/* demo body: tool list + wireframe */
+.demo-body {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── tool list ───────────────────────────────────── */
+.tool-list { display: flex; flex-direction: column; gap: 0; }
+.tl-item {
+  display: flex; align-items: center; gap: 1rem;
+  padding: .75rem .85rem .75rem .65rem;
+  border-left: 2px solid transparent;
+  border-radius: 0 .5rem .5rem 0;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  user-select: none;
+}
+.tl-item:hover { background: rgba(90,233,215,.07); }
+.tl-item.active { border-left-color: transparent; background: transparent; }
+.tl-num {
+  font-size: .55rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: #c4cce2; min-width: 18px;
+  transition: color .25s;
+}
+.tl-item.active .tl-num { color: var(--tq); }
+.tl-name {
+  font-size: 1rem; font-weight: 700; color: #b0bbcf;
+  letter-spacing: -.015em; transition: color .25s;
+}
+.tl-item.active .tl-name { color: var(--tq); }
+
+/* ── wireframe frame ─────────────────────────────── */
+.hero-frame {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 1.1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 6px 24px rgba(19,31,74,.06), 0 24px 64px rgba(19,31,74,.07);
+  overflow: hidden;
+}
+.hf-chrome {
+  padding: .6rem .9rem; background: var(--muted);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: .4rem;
+}
+.hf-dots { display: flex; gap: 4px; }
+.hf-dot  { width: 7px; height: 7px; border-radius: 50%; }
+.hf-dot.r { background: #ffc7c5; }
+.hf-dot.y { background: #ffe5a0; }
+.hf-dot.g { background: var(--tq); }
+.hf-url {
+  flex: 1; margin-left: .45rem;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: .28rem; padding: .14rem .6rem;
+  font-size: .6rem; color: #b0b8d0;
+}
+.hf-stack { display: grid; min-height: 300px; }
+.hf-card {
+  grid-area: 1/1; padding: 1.4rem 1.6rem 1.6rem;
+  opacity: 0; pointer-events: none; transition: opacity .35s ease;
+}
+.hf-card.active  { opacity: 1; pointer-events: auto; }
+.hf-card.instant { transition: none; }
+
+/* ── wireframe atoms ──────────────────────────────── */
+.pq-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .48rem .6rem; border-radius: .4rem; margin-bottom: .28rem;
+  background: var(--page); border: 1px solid var(--border);
+}
+.pq-row.hi { background: var(--muted); }
+.pq-lbl  { font-size: .7rem; font-weight: 500; color: var(--body); }
+.pq-val  { font-size: .7rem; font-weight: 700; color: var(--navy); }
+.pq-pend { font-size: .66rem; font-weight: 600; color: var(--body); }
+.pq-result {
+  margin-top: .85rem; background: var(--muted); border: 1px solid var(--border);
+  border-radius: .6rem; padding: .85rem 1rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pq-rlbl { font-size: .54rem; font-weight: 500; color: var(--body); margin-bottom: .12rem; }
+.pq-rval { font-size: 1.4rem; font-weight: 900; color: var(--navy); letter-spacing: -.04em; }
+.pq-rtag {
+  font-size: .58rem; font-weight: 700; color: var(--body);
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: .32rem; padding: .28rem .55rem;
+}
+
+.lc-hdr  { padding-bottom: .6rem; border-bottom: 1px solid var(--border); margin-bottom: .7rem; }
+.lc-addr { font-size: .8rem; font-weight: 700; color: var(--navy); }
+.lc-sub  { font-size: .62rem; color: var(--body); margin-top: .08rem; }
+.lc-chat { display: flex; flex-direction: column; gap: .38rem; margin-bottom: .7rem; }
+.lc-msg  { padding: .48rem .68rem; border-radius: .5rem; font-size: .68rem; line-height: 1.45; max-width: 90%; }
+.lc-msg.q { background: var(--muted); color: var(--body); border-radius: .5rem .5rem .5rem .15rem; }
+.lc-msg.a { background: var(--page); color: var(--navy); border: 1px solid var(--border); align-self: flex-end; border-radius: .5rem .5rem .15rem .5rem; }
+.lc-lead { display: inline-flex; align-items: center; gap: .3rem; font-size: .62rem; font-weight: 600; color: #1abba6; }
+.lc-lead::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--tq); display:block; }
+
+.val-big  { font-size: 1.85rem; font-weight: 900; letter-spacing: -.04em; color: var(--navy); margin-bottom: .15rem; }
+.val-addr { font-size: .62rem; color: var(--body); margin-bottom: .75rem; }
+.val-line { height: 1px; background: var(--border); margin: .5rem 0; }
+.val-row  { display: flex; justify-content: space-between; padding: .26rem 0; }
+.val-lbl  { font-size: .68rem; color: var(--body); }
+.val-val  { font-size: .68rem; font-weight: 600; color: var(--navy); }
+.val-val.neg { color: #ef6b6b; }
+.val-tot  { display: flex; justify-content: space-between; padding-top: .45rem; margin-top: .3rem; border-top: 1.5px solid var(--navy); }
+.val-tlbl { font-size: .75rem; font-weight: 700; color: var(--navy); }
+.val-tval { font-size: 1.05rem; font-weight: 900; color: var(--navy); letter-spacing: -.03em; }
+
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .42rem; margin: .6rem 0; }
+.comp-card { background: var(--page); border: 1px solid var(--border); border-radius: .45rem; padding: .52rem .62rem; }
+.comp-card.hi { background: var(--muted); }
+.comp-lbl { font-size: .5rem; color: #b0b8d0; margin-bottom: .12rem; }
+.comp-val { font-size: .76rem; font-weight: 700; color: var(--navy); }
+.comp-sub { font-size: .54rem; color: var(--body); margin-top: .04rem; }
+.tq-tag   { display: inline-flex; align-items: center; gap: .28rem; font-size: .58rem; font-weight: 600; color: #1abba6; }
+.tq-tag::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--tq); display:block; }
+
+.ns-title { font-size: .68rem; font-weight: 600; color: var(--body); margin-bottom: .55rem; }
+
+.ps-q {
+  padding: .52rem .75rem; background: var(--muted); border: 1px solid var(--border);
+  border-radius: .42rem; font-size: .72rem; font-style: italic; color: var(--body); margin-bottom: .75rem;
+}
+.ps-row { display: flex; justify-content: space-between; align-items: center; padding: .48rem 0; border-bottom: 1px solid var(--border); }
+.ps-row:last-of-type { border-bottom: none; }
+.ps-addr  { font-size: .7rem; font-weight: 600; color: var(--navy); }
+.ps-det   { font-size: .6rem; color: var(--body); margin-top: .05rem; }
+.ps-price { font-size: .72rem; font-weight: 700; color: var(--navy); white-space: nowrap; }
+.ps-saved { margin-top: .75rem; font-size: .6rem; font-weight: 600; color: #1abba6; display: flex; align-items: center; gap: .28rem; }
+.ps-saved::before { content:''; width:5px; height:5px; border-radius:50%; background:var(--tq); display:block; }
+
+.lm-row { display: flex; align-items: center; gap: .65rem; padding: .55rem 0; border-bottom: 1px solid var(--border); }
+.lm-row:last-child { border-bottom: none; }
+.lm-icon { width: 26px; height: 26px; border-radius: .38rem; flex-shrink: 0; background: var(--muted); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: .48rem; font-weight: 700; color: var(--body); }
+.lm-info { flex: 1; min-width: 0; }
+.lm-name { font-size: .68rem; font-weight: 600; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lm-url  { font-size: .56rem; color: var(--body); margin-top: .05rem; }
+.lm-stat { font-size: .6rem; font-weight: 600; color: var(--body); white-space: nowrap; }
+.lm-stat.hi { color: #1abba6; }
+.lm-total { margin-top: .75rem; font-size: .68rem; color: var(--body); }
+.lm-total strong { color: var(--navy); }
+
+/* ══ PLATFORM SECTION ══════════════════════════════ */
+.platform-wrap {
+  padding: .56rem;
+}
+.platform {
+  background: var(--navy);
+  border-radius: 1.39rem;
+  padding: 6rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.platform-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 60% at 50% 0%, rgba(90,233,215,.08) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 40% at 90% 90%, rgba(90,233,215,.05) 0%, transparent 55%);
+}
+.platform-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* left + right columns */
+.platform-left, .platform-right {
+  display: flex; flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+.platform-h2 {
+  font-size: clamp(2rem, 2.8vw, 3.4rem);
+  font-weight: 900; letter-spacing: -.04em;
+  line-height: 1.1; color: var(--white);
+}
+.platform-desc {
+  font-size: clamp(.88rem, 1vw, 1rem);
+  font-weight: 400; line-height: 1.75;
+  color: rgba(255,255,255,.4);
+}
+.pf-features { display: flex; flex-direction: column; gap: 2rem; }
+.pf-feat { display: flex; flex-direction: row; align-items: flex-start; gap: 1rem; }
+.pf-icon {
+  color: rgba(255,255,255,.35);
+  width: 22px; height: 22px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: .18rem;
+}
+.pf-text {
+  font-size: clamp(.88rem, 1vw, .98rem);
+  font-weight: 400; line-height: 1.65;
+  color: rgba(255,255,255,.55);
+}
+
+/* center: phone */
+.platform-center {
+  display: flex; align-items: center; justify-content: center;
+}
+.phone-shell {
+  width: 290px;
+  background: #0c1330;
+  border-radius: 3.2rem;
+  padding: 9px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.07),
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 0 0 1px rgba(0,0,0,.5),
+    0 20px 60px rgba(0,0,0,.45),
+    0 4px 12px rgba(0,0,0,.3);
+  position: relative;
+}
+/* side buttons */
+.phone-shell::before {
+  content: '';
+  position: absolute; right: -3px; top: 30%;
+  width: 3px; height: 13%; border-radius: 0 2px 2px 0;
+  background: #1a2550;
+  box-shadow: 0 calc(100% + 7px) 0 #1a2550;
+}
+.phone-shell::after {
+  content: '';
+  position: absolute; left: -3px; top: 22%;
+  width: 3px; height: 9%;
+  border-radius: 2px 0 0 2px;
+  background: #1a2550;
+  box-shadow: 0 calc(100% + 6px) 0 #1a2550, 0 calc(200% + 12px) 0 #1a2550;
+}
+.phone-island {
+  width: 88px; height: 24px;
+  background: #0c1330;
+  border-radius: 1.2rem;
+  margin: 0 auto 10px;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+}
+.phone-camera {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #1a2140;
+}
+.phone-speaker {
+  width: 26px; height: 4px; border-radius: 2px;
+  background: #1a2140;
+}
+.phone-screen {
+  background: var(--white);
+  border-radius: calc(3.2rem - 9px);
+  overflow: hidden;
+}
+/* status bar */
+.phone-status {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .5rem 1.1rem .25rem;
+  font-size: .6rem; font-weight: 700; color: var(--navy);
+}
+.phone-status-icons { display: flex; gap: .35rem; align-items: center; }
+.phone-status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--navy); }
+/* app header */
+.phone-header {
+  padding: .4rem 1.1rem .7rem;
+  border-bottom: 1px solid var(--border);
+}
+.phone-greeting { font-size: .66rem; color: var(--body); }
+.phone-name { font-size: .96rem; font-weight: 800; color: var(--navy); letter-spacing: -.02em; }
+/* phone stats grid */
+.phone-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .5rem; padding: .8rem .85rem .55rem;
+}
+.phone-stat {
+  background: var(--page); border: 1px solid var(--border);
+  border-radius: .75rem; padding: .7rem .85rem;
+}
+.pf-stat-lbl {
+  font-size: .48rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: #b0b8d0; margin-bottom: .25rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pf-stat-val {
+  font-size: 1.05rem; font-weight: 800; color: var(--navy);
+  letter-spacing: -.03em; line-height: 1;
+}
+.pf-stat-sub { font-size: .56rem; color: var(--body); margin-top: .15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-stat-tag {
+  display: inline-flex; align-items: center; gap: 3px;
+  margin-top: .35rem; font-size: .52rem; font-weight: 600; color: #1abba6;
+}
+.pf-stat-tag::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--tq); display: block;
+}
+/* phone activity */
+.phone-divider { height: 1px; background: var(--border); margin: 0 .85rem; }
+.phone-activity { padding: .6rem .85rem .8rem; }
+.pf-act-lbl {
+  font-size: .54rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: #b0b8d0; margin-bottom: .45rem;
+}
+.pf-act-row {
+  display: grid; grid-template-columns: 4.5rem 1fr auto;
+  align-items: center; gap: .45rem;
+  padding: .35rem 0; border-bottom: 1px solid var(--border);
+}
+.pf-act-row:last-child { border-bottom: none; padding-bottom: 0; }
+.pf-act-name { font-size: .64rem; font-weight: 600; color: var(--navy); }
+.pf-act-tool {
+  background: var(--muted); border-radius: .28rem;
+  padding: .1rem .38rem; font-size: .58rem;
+  font-weight: 500; color: var(--body); white-space: nowrap;
+}
+.pf-act-time { font-size: .58rem; color: #b0b8d0; white-space: nowrap; }
+/* home indicator */
+.phone-home-bar {
+  display: flex; justify-content: center;
+  padding: 6px 0 4px;
+  background: var(--white);
+}
+.phone-home-bar span {
+  width: 64px; height: 3px; border-radius: 2px;
+  background: #c8d0e8;
+}
+
+@media (max-width: 960px) {
+  .platform { padding: 4rem 2.5rem; }
+  .platform-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .platform-right { order: 3; }
+  .platform-left, .platform-right { padding: 0; gap: 2rem; }
+}
+
+/* ══ ANIMATIONS ════════════════════════════════════ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ══ RESPONSIVE ════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-top { padding: 2rem 2.5rem 0; }
+  .hero-demo { padding: 0 2.5rem; }
+  .demo-body { gap: 2.5rem; }
+}
+@media (max-width: 860px) {
+  .hero-scene { height: auto; }
+  .hero-outer { position: relative; height: auto; padding-bottom: 4rem; }
+  .demo-body { grid-template-columns: 1fr; }
+  .hero-top, .hero-demo { padding-left: 1.75rem; padding-right: 1.75rem; }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="../Full logo_dark color.png" alt="link.ai">
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#">Tools</a>
+    <a class="nav-link" href="#">How it works</a>
+    <a class="nav-link" href="#">For brokerages</a>
+    <a class="nav-cta" href="#">Get early access</a>
+  </div>
+</nav>
+
+
+<!-- ══ HERO ═════════════════════════════════════════ -->
+<div class="hero-scene">
+<section class="hero-outer">
+
+  <!-- top: centered headline + description -->
+  <div class="hero-top">
+    <span class="ht-eyebrow">Now in early access</span>
+    <h1 class="ht-h1">A modern toolkit for real estate.</h1>
+    <p class="ht-desc">link.ai gives every agent a suite of AI-powered tools — pre-qualification, valuations, listing AI, and more — all from a single shareable link.</p>
+  </div>
+
+  <!-- bottom: embedded demo (tool list + wireframe) -->
+  <div class="hero-demo">
+
+    <div class="demo-header">
+      <div class="demo-label">link.ai Feature Showcase</div>
+      <div class="demo-sub">Six real estate tools to engage potential clients and generate leads.</div>
+      <div class="demo-tagline"></div>
+    </div>
+
+    <div class="demo-body">
+
+      <!-- tool list -->
+      <div class="tool-list">
+        <div class="tl-item active" data-index="0"><span class="tl-num">01</span><span class="tl-name">Pre-Qualification</span></div>
+        <div class="tl-item" data-index="1"><span class="tl-num">02</span><span class="tl-name">Listing Copilot</span></div>
+        <div class="tl-item" data-index="2"><span class="tl-num">03</span><span class="tl-name">Home Valuation</span></div>
+        <div class="tl-item" data-index="3"><span class="tl-num">04</span><span class="tl-name">Net Sheet</span></div>
+        <div class="tl-item" data-index="4"><span class="tl-num">05</span><span class="tl-name">Property Search</span></div>
+        <div class="tl-item" data-index="5"><span class="tl-num">06</span><span class="tl-name">Lead Manager</span></div>
+      </div>
+
+      <!-- wireframe -->
+      <div class="hero-frame">
+        <div class="hf-chrome">
+          <div class="hf-dots">
+            <div class="hf-dot r"></div><div class="hf-dot y"></div><div class="hf-dot g"></div>
+          </div>
+          <div class="hf-url">link.ai/prequal/sarah-johnson</div>
+        </div>
+        <div class="hf-stack">
+
+          <!-- 0: Pre-Qualification -->
+          <div class="hf-card active" data-tool="0">
+            <div class="pq-row"><span class="pq-lbl">Annual income</span><span class="pq-val">$185,000</span></div>
+            <div class="pq-row"><span class="pq-lbl">Down payment</span><span class="pq-val">$120,000</span></div>
+            <div class="pq-row"><span class="pq-lbl">Monthly debt</span><span class="pq-val">$640 / mo</span></div>
+            <div class="pq-row hi"><span class="pq-lbl">Credit consent</span><span class="pq-pend">Soft pull pending…</span></div>
+            <div class="pq-result">
+              <div><div class="pq-rlbl">Estimated buying power</div><div class="pq-rval">$847,000</div></div>
+              <div class="pq-rtag">Conv 30yr</div>
+            </div>
+          </div>
+
+          <!-- 1: Listing Copilot -->
+          <div class="hf-card" data-tool="1">
+            <div class="lc-hdr">
+              <div class="lc-addr">4521 Maple Ave · $1,249,000</div>
+              <div class="lc-sub">4 bd · 3 ba · 2,180 sqft · Sherman Oaks</div>
+            </div>
+            <div class="lc-chat">
+              <div class="lc-msg q">"Is there parking available?"</div>
+              <div class="lc-msg a">Yes — 2-car attached garage plus unrestricted street parking on the block.</div>
+              <div class="lc-msg q">"How are the nearby schools?"</div>
+              <div class="lc-msg a">Encino Charter Elementary — rated 9/10 on GreatSchools.</div>
+            </div>
+            <div class="lc-lead">Lead captured — Jared M., (818) 555-0142</div>
+          </div>
+
+          <!-- 2: Home Valuation -->
+          <div class="hf-card" data-tool="2">
+            <div class="val-big">$1,264,000</div>
+            <div class="val-addr">4521 Maple Ave · Updated today</div>
+            <div class="comp-grid">
+              <div class="comp-card"><div class="comp-lbl">Comp 1</div><div class="comp-val">$1.24M</div><div class="comp-sub">4,350 Maple</div></div>
+              <div class="comp-card"><div class="comp-lbl">Comp 2</div><div class="comp-val">$1.29M</div><div class="comp-sub">4,611 Oak</div></div>
+              <div class="comp-card hi"><div class="comp-lbl">AVM Est.</div><div class="comp-val">$1.26M</div><div class="comp-sub">Your home</div></div>
+            </div>
+            <div class="tq-tag">Updated today · 3 new comps</div>
+          </div>
+
+          <!-- 3: Net Sheet -->
+          <div class="hf-card" data-tool="3">
+            <div class="ns-title">Seller Net Proceeds · 4521 Maple Ave</div>
+            <div class="val-line" style="margin:0 0 .5rem;"></div>
+            <div class="val-row"><span class="val-lbl">Sale price (est.)</span><span class="val-val">$1,264,000</span></div>
+            <div class="val-row"><span class="val-lbl">Agent commission (5%)</span><span class="val-val neg">− $63,200</span></div>
+            <div class="val-row"><span class="val-lbl">Escrow &amp; title</span><span class="val-val neg">− $11,800</span></div>
+            <div class="val-row"><span class="val-lbl">Remaining mortgage</span><span class="val-val neg">− $995,600</span></div>
+            <div class="val-line"></div>
+            <div class="val-tot"><span class="val-tlbl">Net proceeds</span><span class="val-tval">$193,400</span></div>
+            <div class="tq-tag" style="margin-top:.8rem;">Escrow team notified automatically</div>
+          </div>
+
+          <!-- 4: Property Search -->
+          <div class="hf-card" data-tool="4">
+            <div class="ps-q">"2 bed in Encino, under $900k, good schools"</div>
+            <div class="ps-row"><div><div class="ps-addr">17432 Burbank Blvd</div><div class="ps-det">2 bd · 2 ba · 1,340 sqft</div></div><div class="ps-price">$869K</div></div>
+            <div class="ps-row"><div><div class="ps-addr">16801 Ventura Blvd #204</div><div class="ps-det">2 bd · 2 ba · 1,180 sqft</div></div><div class="ps-price">$824K</div></div>
+            <div class="ps-row"><div><div class="ps-addr">17011 Magnolia Blvd</div><div class="ps-det">2 bd · 1 ba · 1,050 sqft</div></div><div class="ps-price">$789K</div></div>
+            <div class="ps-saved">Saved search · alerts on for new matches</div>
+          </div>
+
+          <!-- 5: Lead Manager -->
+          <div class="hf-card" data-tool="5">
+            <div class="lm-row"><div class="lm-icon">QR</div><div class="lm-info"><div class="lm-name">General agent link</div><div class="lm-url">link.ai/sarah-johnson</div></div><div class="lm-stat hi">↗ 284 views</div></div>
+            <div class="lm-row"><div class="lm-icon">QR</div><div class="lm-info"><div class="lm-name">4521 Maple Ave listing</div><div class="lm-url">link.ai/l/maple-4521</div></div><div class="lm-stat">↗ 91 views</div></div>
+            <div class="lm-row"><div class="lm-icon">QR</div><div class="lm-info"><div class="lm-name">Home valuation lead magnet</div><div class="lm-url">link.ai/val/sarah-johnson</div></div><div class="lm-stat hi">↗ 437 views</div></div>
+            <div class="lm-row"><div class="lm-icon">QR</div><div class="lm-info"><div class="lm-name">Pre-qual entry</div><div class="lm-url">link.ai/prequal/sarah-johnson</div></div><div class="lm-stat hi">↗ 58 leads</div></div>
+            <div class="lm-total"><strong>12 new leads</strong> captured this week</div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /demo-body -->
+  </div><!-- /hero-demo -->
+
+  <!-- bottom: CTAs -->
+  <div class="hero-cta-bar">
+    <a class="ht-cta" href="#">Get early access</a>
+    <a class="ht-cta-ghost" href="#">See how it works</a>
+  </div>
+
+</section>
+</div><!-- /hero-scene -->
+
+
+<!-- ══ PLATFORM SECTION ══════════════════════════════ -->
+<div class="platform-wrap">
+<section class="platform">
+
+  <!-- glow -->
+  <div class="platform-glow"></div>
+
+  <!-- 3-column grid -->
+  <div class="platform-grid">
+
+    <!-- LEFT column -->
+    <div class="platform-left">
+      <h2 class="platform-h2">One platform for every part of your day.</h2>
+      <p class="platform-desc">link.ai replaces the fragmented stack — no more juggling separate tools for buyers, sellers, and listings. Everything runs from a single link.</p>
+
+      <div class="pf-features">
+        <div class="pf-feat">
+          <div class="pf-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M6 6h8M6 9.5h8M6 13h5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p class="pf-text">Qualify buyers instantly — before you spend time on a single showing.</p>
+        </div>
+        <div class="pf-feat">
+          <div class="pf-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2a6 6 0 1 1 0 12A6 6 0 0 1 10 2z" stroke="currentColor" stroke-width="1.4"/><path d="M14.5 14.5L18 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p class="pf-text">Conversational property search that captures every lead automatically.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER column: phone mockup -->
+    <div class="platform-center">
+      <div class="phone-shell">
+        <div class="phone-island">
+          <div class="phone-speaker"></div>
+          <div class="phone-camera"></div>
+        </div>
+        <div class="phone-screen">
+          <!-- status bar -->
+          <div class="phone-status">
+            <span>9:41</span>
+            <div class="phone-status-icons">
+              <div class="phone-status-dot"></div>
+              <div class="phone-status-dot"></div>
+              <div class="phone-status-dot"></div>
+            </div>
+          </div>
+          <!-- app header -->
+          <div class="phone-header">
+            <div class="phone-greeting">Good morning,</div>
+            <div class="phone-name">Sarah Johnson</div>
+          </div>
+          <!-- stats -->
+          <div class="phone-stats">
+            <div class="phone-stat">
+              <div class="pf-stat-lbl">Pre-qualification</div>
+              <div class="pf-stat-val">$847K</div>
+              <div class="pf-stat-sub">Buying power</div>
+              <div class="pf-stat-tag">Ready</div>
+            </div>
+            <div class="phone-stat">
+              <div class="pf-stat-lbl">Home valuation</div>
+              <div class="pf-stat-val">$1.26M</div>
+              <div class="pf-stat-sub">4521 Maple Ave</div>
+              <div class="pf-stat-tag">Updated today</div>
+            </div>
+            <div class="phone-stat">
+              <div class="pf-stat-lbl">Net sheet</div>
+              <div class="pf-stat-val">$193K</div>
+              <div class="pf-stat-sub">Est. proceeds</div>
+              <div class="pf-stat-tag">Escrow routed</div>
+            </div>
+            <div class="phone-stat">
+              <div class="pf-stat-lbl">Links this week</div>
+              <div class="pf-stat-val">12</div>
+              <div class="pf-stat-sub">New leads</div>
+              <div class="pf-stat-tag">↗ +4 today</div>
+            </div>
+          </div>
+          <!-- activity -->
+          <div class="phone-divider"></div>
+          <div class="phone-activity">
+            <div class="pf-act-lbl">Recent activity</div>
+            <div class="pf-act-row"><span class="pf-act-name">Marcus T.</span><span class="pf-act-tool">Pre-qual</span><span class="pf-act-time">2m ago</span></div>
+            <div class="pf-act-row"><span class="pf-act-name">Linda S.</span><span class="pf-act-tool">Valuation</span><span class="pf-act-time">14m</span></div>
+            <div class="pf-act-row"><span class="pf-act-name">David R.</span><span class="pf-act-tool">New lead</span><span class="pf-act-time">1h ago</span></div>
+            <div class="pf-act-row"><span class="pf-act-name">Priya N.</span><span class="pf-act-tool">Copilot</span><span class="pf-act-time">2h ago</span></div>
+          </div>
+          <div class="phone-home-bar"><span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT column -->
+    <div class="platform-right">
+      <p class="platform-desc">Every interaction your clients have with link.ai lands in your dashboard with full context — so you always know exactly where each relationship stands.</p>
+
+      <div class="pf-features">
+        <div class="pf-feat">
+          <div class="pf-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h9M3 15h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="16" cy="14" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M18.5 16.5l1.5 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </div>
+          <p class="pf-text">Listings that answer buyer questions and capture leads around the clock.</p>
+        </div>
+        <div class="pf-feat">
+          <div class="pf-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 3H4a1 1 0 0 0-1 1v3M7 17H4a1 1 0 0 1-1-1v-3M13 3h3a1 1 0 0 1 1 1v3M13 17h3a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><rect x="7" y="7" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.4"/></svg>
+          </div>
+          <p class="pf-text">Every lead tracked by source — sign, card, email, MLS — in one dashboard.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+
+<script>
+const heroScene  = document.querySelector('.hero-scene');
+const hfUrl      = document.querySelector('.hf-url');
+const tlItems    = document.querySelectorAll('.tl-item');
+const hfCards    = document.querySelectorAll('.hf-card');
+const taglineEl  = document.querySelector('.demo-tagline');
+const TOTAL      = 6;
+
+const URLS = [
+  'link.ai/prequal/sarah-johnson',
+  'link.ai/l/maple-4521',
+  'link.ai/val/sarah-johnson',
+  'link.ai/net/sarah-johnson',
+  'link.ai/sarah-johnson · Search',
+  'link.ai/dashboard · Links',
+];
+const TAGLINES = [
+  'Know exactly who can buy before you spend time showing a single home.',
+  'Your listings answer buyer questions around the clock — without you.',
+  'Turn every valuation request into a seller lead. Automatically.',
+  'Show sellers what they walk away with. No spreadsheets, no waiting.',
+  'Buyers search in plain language. You capture the lead every time.',
+  'Every lead in one place. Every click, scan, and source tracked.',
+];
+
+let current     = 0;
+let autoPlaying = true;
+let autoId;
+let scrollTimer;
+
+function show(idx, instant) {
+  if (idx === current && hfCards[idx].classList.contains('active')) return;
+  current = idx;
+  hfCards.forEach((c, i) => { c.classList.toggle('instant', !!instant); c.classList.toggle('active', i === idx); });
+  tlItems.forEach((el, i) => el.classList.toggle('active', i === idx));
+  if (hfUrl) hfUrl.textContent = URLS[idx];
+  if (taglineEl) {
+    taglineEl.classList.add('fade');
+    setTimeout(() => { taglineEl.textContent = TAGLINES[idx]; taglineEl.classList.remove('fade'); }, instant ? 0 : 200);
+  }
+}
+
+function startAuto() {
+  clearInterval(autoId);
+  autoId = setInterval(() => {
+    if (autoPlaying) { hfCards.forEach(c => c.classList.remove('instant')); show((current + 1) % TOTAL, false); }
+  }, 2600);
+}
+
+if (taglineEl) taglineEl.textContent = TAGLINES[0];
+show(0, false);
+startAuto();
+
+window.addEventListener('scroll', () => {
+  if (!heroScene) return;
+  const rect = heroScene.getBoundingClientRect();
+  const total = heroScene.offsetHeight - window.innerHeight;
+  const scrolled = -rect.top;
+  if (scrolled >= 0 && scrolled <= total) {
+    autoPlaying = false; clearInterval(autoId);
+    show(Math.min(TOTAL - 1, Math.floor((scrolled / total) * TOTAL)), true);
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => { autoPlaying = true; startAuto(); }, 2800);
+  }
+}, { passive: true });
+
+tlItems.forEach((el, i) => {
+  el.addEventListener('click', () => {
+    autoPlaying = false; clearInterval(autoId);
+    hfCards.forEach(c => c.classList.remove('instant'));
+    show(i, false);
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => { autoPlaying = true; startAuto(); }, 4000);
+  });
+});
+</script>
+
+</body>
+</html>

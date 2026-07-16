@@ -1,0 +1,82 @@
+LINK BROKERAGES — STYLE CHEAT SHEET
+Source: Webflow export  |  April 2026
+================================================================
+
+
+FONT
+────
+  Family:   Mont, Arial, sans-serif
+  Body:     1.11rem, weight 400, line-height 162%
+  Headings: weight 600
+            H1 5rem | H2 4rem | H3 3.33rem | H4 1.875rem | H5 1.39rem
+  Caption:  0.83rem, weight 400
+  Scaling:  html { font-size: 1vw } between 992px–1600px (fluid)
+
+
+BACKGROUNDS
+───────────
+  Page body          #FBFCFF
+  White sections     #FFFFFF               (hero, footer, cards)
+  Gray sections      #E9EEF7               (alternating feature blocks)
+  CTA sections       linear-gradient(24deg, #131F4A, #022B6D)
+                     text goes #FFFFFF on dark sections
+  Cards              #FFFFFF, border 2px solid #DDE5F3
+  Inputs             #FFFFFF, focus border #1CCFB8
+
+
+BUTTONS
+───────
+  PRIMARY (turquoise)
+    bg #5AE9D7 | text #202537 | border 1px solid #FFF
+    padding 0.9rem 1.94rem 0.76rem | font 1rem/600
+    hover: white radial glow overlay on #5AE9D7
+
+  SECONDARY (white)
+    bg #FFF | text #202537 | border 1px solid #CCD0E0
+    padding 0.9rem 1.94rem 0.76rem | font 1rem/600
+    shadow 0 1px 2px #E5E8EBCC
+    hover: bg #FBFCFF
+
+  Both use border-radius 0.83rem and transition 0.35s.
+
+
+CORNER ROUNDING
+───────────────
+  0.28rem    tags, checkboxes
+  0.56rem    nav links, small badges
+  0.83rem    buttons, inputs
+  1.11rem    cards
+  1.39rem    section wrappers
+  1.67rem    pill badges
+
+
+TEXT COLORS
+───────────
+  Primary    #202537    (headings, button text)
+  Secondary  #636B87    (body, footer links)
+  Muted      #9197AE    (placeholders, captions)
+  On dark    #FFFFFF
+  Links      #1CCFB8    (nav hover also uses this)
+  Accent     #FF7958    (tags, alerts)
+
+
+CARD SHADOW
+───────────
+  Applied together
+  box-shadow: 0px 12px 12px -8px #E5E8EB99;
+  box-shadow: 0px 1px 2px 0px #E5E8EBCC;  
+
+  box-shadow: 0 40px 64px -12px rgba(0,0,0,.02),
+              0 32px 48px -8px  rgba(0,0,0,.02),
+              0 12px 12px -8px  rgba(229,232,235,.50);
+
+
+
+
+
+SPACING (common values)
+───────────────────────
+  Card padding         2.22rem
+  Card grid gap        1.67rem
+  Section padding      4.17rem top/bottom
+  Section max-width    99vw (near full-bleed with rounded corners)

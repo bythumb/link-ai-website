@@ -1,0 +1,28 @@
+<svg width="1424" height="928" viewBox="0 0 1424 928" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_4101_2748" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1424" height="928">
+<rect width="1424" height="928" rx="20" fill="white"/>
+</mask>
+<g mask="url(#mask0_4101_2748)">
+<mask id="mask1_4101_2748" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="-34" width="1424" height="745">
+<rect y="-34" width="1424" height="745" rx="20" fill="url(#paint0_linear_4101_2748)"/>
+</mask>
+<g mask="url(#mask1_4101_2748)">
+<rect x="224.5" y="365.5" width="975" height="263" rx="59.5" stroke="#DDE5F3"/>
+<rect x="164.5" y="305.5" width="1095" height="383" rx="39.5" stroke="#DDE5F3"/>
+<rect x="104.4" y="245.4" width="1215.2" height="503.2" rx="59.6" stroke="#DDE5F3" stroke-width="0.8"/>
+<rect x="44.35" y="185.35" width="1335.3" height="623.3" rx="79.65" stroke="#DDE5F3" stroke-width="0.7"/>
+<rect x="-15.6" y="125.4" width="1455.2" height="743.2" rx="99.6" stroke="#DDE5F3" stroke-width="0.8"/>
+<rect x="-75.75" y="65.25" width="1575.5" height="863.5" rx="119.75" stroke="#DDE5F3" stroke-width="0.5"/>
+<rect x="-134.605" y="6.3954" width="1693.21" height="981.209" rx="178.605" stroke="#DDE5F3" stroke-width="2.79079"/>
+<rect x="-194.505" y="-53.5053" width="1813.01" height="1101.01" rx="128.505" stroke="#DDE5F3" stroke-width="2.98933"/>
+<rect x="-254.407" y="-113.407" width="1932.81" height="1220.81" rx="138.407" stroke="#DDE5F3" stroke-width="3.18686"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_4101_2748" x1="712" y1="-34" x2="712" y2="711" gradientUnits="userSpaceOnUse">
+<stop offset="0.0288833" stop-color="white" stop-opacity="0"/>
+<stop offset="0.322361" stop-color="white" stop-opacity="0.861871"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

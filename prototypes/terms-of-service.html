@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Black.woff2') format('woff2'); font-weight: 900; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    .page-hero {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem; text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--body); margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.6; }
+
+    .content-wrap {
+      max-width: 820px; margin: 0 auto; padding: 3rem 2rem 4rem;
+    }
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.5rem 0 0.75rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h3 {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      margin: 1.5rem 0 0.4rem;
+    }
+    .content-wrap p { margin-bottom: 0.9rem; font-size: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.35rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    .disclosure-box {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border); border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.85rem;
+    }
+
+    .site-footer { background: var(--white); padding: 2rem 2rem 1.6rem; font-family: var(--font); }
+    .site-footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy { width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .content-wrap { padding: 2rem 1.2rem 3rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    .disclosure-box { background: none; border: none; border-left: none; padding: 0; margin: .9rem 0; font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="link-ai-v5-combined.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="link-ai-v5-combined.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Terms of Service</h1>
+  <div class="page-updated">Updated May 15, 2025</div>
+</div>
+
+<main class="content-wrap">
+
+  <p>Please read these Terms of Service carefully before using Link's platform and services. By accessing or using our Services, you agree to be bound by these Terms. If you do not agree, do not use the Services.</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>These Terms of Service ("Terms") govern your use of the services provided by Link Management Systems, Inc. ("Link," "we," "us," or "our"), including our website, mobile applications, real estate platform tools, mortgage origination services, and escrow services (collectively, the "Services"). By creating an account or using the Services, you confirm that you are at least 18 years of age, have read and understood these Terms, and agree to be bound by them.</p>
+
+  <h2>2. Description of Services</h2>
+  <p>Link provides an integrated real estate technology platform designed for real estate agents, brokers, buyers, and sellers. Our Services include:</p>
+  <ul>
+    <li>Real estate transaction management and coordination tools</li>
+    <li>Pre-qualification and mortgage origination services (through First Link Mortgage, NMLS #2527988)</li>
+    <li>Escrow and settlement services (through licensed escrow entities)</li>
+    <li>Property search, valuation, and market analysis tools</li>
+    <li>Client relationship management (CRM) features</li>
+    <li>Document management and e-signature integration</li>
+    <li>Agent and brokerage management tools</li>
+  </ul>
+
+  <h2>3. Account Registration</h2>
+  <p>To use certain features of the Services, you must create an account. You agree to:</p>
+  <ul>
+    <li>Provide accurate, current, and complete information during registration</li>
+    <li>Maintain and promptly update your account information</li>
+    <li>Maintain the security of your password and account</li>
+    <li>Accept responsibility for all activities occurring under your account</li>
+    <li>Notify us immediately of any unauthorized use of your account</li>
+  </ul>
+  <p>We reserve the right to refuse service, terminate accounts, or remove content at our discretion.</p>
+
+  <h2>4. Professional Licensing</h2>
+  <p>Real estate agents and brokers using our Services represent and warrant that they hold all required licenses in their jurisdiction(s) of practice and will maintain such licenses in good standing. You agree to comply with all applicable state and federal real estate laws, regulations, and MLS rules. Link does not provide legal advice and nothing in the Services constitutes legal advice.</p>
+
+  <h2>5. Permitted Use</h2>
+  <p>You may use the Services only for lawful purposes and in accordance with these Terms. You agree not to:</p>
+  <ul>
+    <li>Violate any applicable law or regulation</li>
+    <li>Infringe the intellectual property rights of others</li>
+    <li>Transmit any harmful, offensive, or disruptive content</li>
+    <li>Attempt to gain unauthorized access to any part of the Services</li>
+    <li>Use automated systems to scrape, crawl, or extract data without permission</li>
+    <li>Interfere with or disrupt the integrity or performance of the Services</li>
+    <li>Use the Services to send unsolicited communications</li>
+    <li>Misrepresent your identity or affiliation</li>
+  </ul>
+
+  <h2>6. User Content</h2>
+  <p>You retain ownership of content you submit to the Services ("User Content"). By submitting User Content, you grant Link a non-exclusive, worldwide, royalty-free license to use, copy, modify, and display such content solely to provide and improve the Services. You represent that you have all rights necessary to grant this license and that your User Content does not violate any third-party rights.</p>
+
+  <h2>7. Intellectual Property</h2>
+  <p>The Services and all related content, features, and functionality (including software, text, graphics, logos, icons, and images) are owned by Link or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, or create derivative works from our intellectual property without our express written permission.</p>
+
+  <h2>8. Mortgage Services</h2>
+  <p>Mortgage origination services are provided by First Link Mortgage, NMLS #2527988, a licensed mortgage company. By applying for mortgage services, you authorize First Link Mortgage to obtain credit reports, verify employment and income, and share your application information with investors and other parties necessary to process your application. Mortgage services are subject to additional terms, disclosures, and applicable federal and state laws including TILA, RESPA, ECOA, and state mortgage regulations.</p>
+
+  <h2>9. Escrow Services</h2>
+  <p>Escrow services are provided through licensed escrow entities. Escrow services are subject to applicable state escrow laws and separate escrow instructions. Link is not responsible for delays or losses arising from third-party actions in the escrow process beyond our control.</p>
+
+  <h2>10. Fees and Payment</h2>
+  <p>Certain Services may require payment of fees. All fees are disclosed prior to purchase and are non-refundable unless otherwise stated or required by law. We reserve the right to modify pricing with reasonable notice. Failure to pay may result in suspension or termination of access.</p>
+
+  <h2>11. Privacy</h2>
+  <p>Our collection and use of personal information is governed by our <a href="privacy-policy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+
+  <h2>12. Third-Party Services</h2>
+  <p>The Services may integrate with or link to third-party services, including MLS systems, title companies, lenders, and other real estate service providers. We are not responsible for the content, privacy practices, or terms of third-party services. Your use of third-party services is governed by their respective terms.</p>
+
+  <h2>13. Disclaimers</h2>
+  <div class="disclosure-box">
+    THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. LINK DISCLAIMS ALL WARRANTIES, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE.
+  </div>
+  <p>Property valuations, market analyses, and other data provided through the Services are estimates based on available data and are not appraisals or guarantees of value. You should not rely solely on such estimates for financial decisions.</p>
+
+  <h2>14. Limitation of Liability</h2>
+  <div class="disclosure-box">
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, LINK SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICES. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID TO LINK IN THE TWELVE MONTHS PRECEDING THE CLAIM.
+  </div>
+
+  <h2>15. Indemnification</h2>
+  <p>You agree to indemnify and hold harmless Link, its affiliates, officers, directors, employees, and agents from any claims, liabilities, damages, and expenses (including reasonable attorneys' fees) arising from your use of the Services, your User Content, or your violation of these Terms.</p>
+
+  <h2>16. Termination</h2>
+  <p>We may suspend or terminate your access to the Services at any time for any reason, including violation of these Terms. Upon termination, your right to use the Services will cease immediately. Provisions that by their nature should survive termination will survive, including ownership, disclaimers, indemnification, and limitation of liability.</p>
+
+  <h2>17. Governing Law and Dispute Resolution</h2>
+  <p>These Terms are governed by the laws of the State of California without regard to conflict of law principles. Any disputes arising from these Terms or the Services shall be resolved through binding arbitration under the rules of the American Arbitration Association, except that either party may seek injunctive relief in court for intellectual property violations. You waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+  <h2>18. Equal Housing Opportunity</h2>
+  <p>Link and its affiliated real estate professionals are committed to the principles of the Fair Housing Act and the Equal Opportunity Act. We do not discriminate based on race, color, religion, sex, handicap, familial status, national origin, or any other protected class.</p>
+
+  <h2>19. Changes to Terms</h2>
+  <p>We may modify these Terms at any time. We will provide notice of material changes by posting updated Terms on our website and, where appropriate, notifying you via email. Your continued use of the Services after the effective date constitutes acceptance of the updated Terms.</p>
+
+  <h2>20. Severability</h2>
+  <p>If any provision of these Terms is found unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+  <h2>21. Contact</h2>
+  <div class="disclosure-box">
+    <strong>Link Management Systems, Inc.</strong><br>
+    202 W 140th St, Los Angeles, CA 90061<br>
+    Email: <a href="mailto:contact@link.ai">contact@link.ai</a><br>
+    Phone: (310) 695-6510
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo"><img src="../Full%20logo_dark%20color.png" alt="Link"></div>
+    <div class="site-footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="compliance.html">Compliance</a>
+    </div>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
+    </div>
+    <div class="site-footer-copy">© 2025 Link Management Systems. All rights reserved. Equal Housing Opportunity. NMLS #2527988.</div>
+  </div>
+</footer>
+
+</body>
+</html>

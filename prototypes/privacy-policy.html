@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Black.woff2') format('woff2'); font-weight: 900; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    /* Page hero */
+    .page-hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--body);
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.6; }
+
+    /* Content */
+    .content-wrap {
+      max-width: 820px; margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h3 {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      margin: 1.5rem 0 0.4rem;
+    }
+    .content-wrap p { margin-bottom: 0.9rem; font-size: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.35rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    .disclosure-box {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--white); padding: 2rem 2rem 1.6rem;
+      font-family: var(--font);
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--border); display: flex;
+      align-items: center; justify-content: center;
+    }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy {
+      width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .content-wrap { padding: 2rem 1.2rem 3rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    .disclosure-box { background: none; border: none; border-left: none; padding: 0; margin: .9rem 0; font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="link-ai-v5-combined.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="link-ai-v5-combined.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="page-updated">Updated May 15, 2025</div>
+</div>
+
+<main class="content-wrap">
+
+  <p>This Privacy Policy describes how Link Management Systems, Inc. ("Link," "we," "us," or "our") collects, uses, and shares information about you when you use our services, including our website, mobile applications, and related products and services (collectively, the "Services").</p>
+
+  <h2>1. Information We Collect</h2>
+  <h3>Information You Provide</h3>
+  <p>We collect information you provide directly to us, including:</p>
+  <ul>
+    <li>Account registration details (name, email address, phone number, password)</li>
+    <li>Profile information (professional license numbers, brokerage affiliation, profile photo)</li>
+    <li>Transaction data and client information entered into the platform</li>
+    <li>Communications you send to us or through our platform</li>
+    <li>Payment information (processed securely through third-party providers)</li>
+  </ul>
+
+  <h3>Information Collected Automatically</h3>
+  <p>When you use our Services, we automatically collect:</p>
+  <ul>
+    <li>Log data (IP address, browser type, pages visited, time and date of visits)</li>
+    <li>Device information (hardware model, operating system, unique device identifiers)</li>
+    <li>Location data (if you grant permission)</li>
+    <li>Usage data and analytics about how you interact with the Services</li>
+    <li>Cookies and similar tracking technologies</li>
+  </ul>
+
+  <h3>Information from Third Parties</h3>
+  <p>We may receive information about you from third parties, including:</p>
+  <ul>
+    <li>Multiple Listing Services (MLS) and real estate data providers</li>
+    <li>Social media platforms (if you connect your account)</li>
+    <li>Identity verification and background check services</li>
+    <li>Analytics partners</li>
+  </ul>
+
+  <h2>2. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, maintain, and improve our Services</li>
+    <li>Process transactions and send related information</li>
+    <li>Send technical notices, updates, security alerts, and support messages</li>
+    <li>Respond to your comments, questions, and requests</li>
+    <li>Facilitate communication between agents, clients, and transaction parties</li>
+    <li>Monitor and analyze trends, usage, and activities in connection with our Services</li>
+    <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+    <li>Comply with legal obligations</li>
+    <li>Personalize and improve your experience</li>
+    <li>Send promotional communications (with your consent where required)</li>
+  </ul>
+
+  <h2>3. Sharing of Information</h2>
+  <p>We may share your information as follows:</p>
+  <ul>
+    <li><strong>With your consent</strong> — we share information when you direct us to</li>
+    <li><strong>Service providers</strong> — vendors who assist in our operations (hosting, analytics, payment processing, customer support)</li>
+    <li><strong>Business transfers</strong> — in connection with a merger, acquisition, or sale of assets</li>
+    <li><strong>Legal compliance</strong> — when required by law or to protect rights and safety</li>
+    <li><strong>Affiliates</strong> — with our parent company, subsidiaries, and affiliates</li>
+    <li><strong>Real estate professionals</strong> — information shared as part of a transaction (subject to applicable MLS rules and real estate regulations)</li>
+  </ul>
+  <p>We do not sell your personal information to third parties for their direct marketing purposes.</p>
+
+  <h2>4. Data Retention</h2>
+  <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. For transaction records, we retain data in accordance with applicable real estate, mortgage, and escrow regulations, which may require retention for several years after a transaction closes.</p>
+
+  <h2>5. Security</h2>
+  <p>We implement commercially reasonable technical and organizational measures designed to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no security system is impenetrable, and we cannot guarantee the security of our systems.</p>
+  <p>We use industry-standard encryption (TLS) for data in transit and AES-256 encryption for sensitive data at rest. Access controls, audit logs, and regular security reviews are part of our security program.</p>
+
+  <h2>6. Your Choices and Rights</h2>
+  <h3>Account Information</h3>
+  <p>You may update or correct your account information at any time by logging into your account settings. You may also request deletion of your account by contacting us, subject to certain exceptions for legal compliance.</p>
+
+  <h3>Communications</h3>
+  <p>You may opt out of receiving promotional emails from us by following the unsubscribe instructions in those messages. You may not opt out of transactional or service-related communications.</p>
+
+  <h3>California Residents</h3>
+  <p>California residents have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, correct, and opt out of the sale/sharing of personal information. To exercise these rights, contact us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <h3>Nevada Residents</h3>
+  <p>Nevada residents may opt out of the sale of personal information by contacting us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <h2>7. Cookies</h2>
+  <p>We use cookies and similar technologies to collect usage data, remember your preferences, and improve your experience. You can control cookies through your browser settings, though disabling cookies may affect functionality. We use:</p>
+  <ul>
+    <li><strong>Essential cookies</strong> — required for the Services to function</li>
+    <li><strong>Analytics cookies</strong> — help us understand how users interact with our Services</li>
+    <li><strong>Preference cookies</strong> — remember your settings and choices</li>
+    <li><strong>Marketing cookies</strong> — deliver relevant advertising (with consent where required)</li>
+  </ul>
+
+  <h2>8. Third-Party Links</h2>
+  <p>Our Services may contain links to third-party websites and services. We are not responsible for the privacy practices of those third parties, and we encourage you to review their privacy policies.</p>
+
+  <h2>9. Children's Privacy</h2>
+  <p>Our Services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy on our website and, where appropriate, sending you an email notification. Your continued use of our Services after the effective date of the revised policy constitutes your acceptance of the changes.</p>
+
+  <h2>11. Contact Us</h2>
+  <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+  <div class="disclosure-box">
+    <strong>Link Management Systems, Inc.</strong><br>
+    202 W 140th St, Los Angeles, CA 90061<br>
+    Email: <a href="mailto:privacy@link.ai">privacy@link.ai</a><br>
+    Phone: (310) 695-6510
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo">
+      <img src="../Full%20logo_dark%20color.png" alt="Link">
+    </div>
+    <div class="site-footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="compliance.html">Compliance</a>
+    </div>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
+    </div>
+    <div class="site-footer-copy">© 2025 Link Management Systems. All rights reserved. Equal Housing Opportunity. NMLS #2527988.</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1302 @@
+LINK AI STAGING - COMPLETE SITE TEXT CONTENT
+================================================================================
+Extracted from: link-ai-staging.webflow/
+Total pages: 33
+================================================================================
+
+
+################################################################################
+# MAIN PAGES
+################################################################################
+
+================================================================================
+PAGE: Home (index.html)
+URL: /
+================================================================================
+
+Your Modern
+Real Estate Partner
+Link makes real estate easier and affordable by combining technology with local agents
+Help me find and buy a property
+Prepare my property for sale
+I have a real estate question
+As seen on
+Talk to a Local Agent
+Skip the guessing. Get direct answers from a local pro and turn your search into a simple, confident next step.
+Get Started
+Start Your Search
+Easily explore listings, refine your options, and understand your buying power. Link guides you from search to close with confidence. Bundle Link Brokerages and Link Mortgage services to qualify for closing credits.
+Up to $20,000 in Credits¹
+Smart Property Matching
+Buying Power and Loan Insights
+Neighborhood Research
+Saved Favorites and Listing Alerts
+Start Searching
+Get an instant home valuation
+Our AI estimates your home’s value using real-time data and comps, then guides you through pricing, listing, and negotiations with expert support. Bundle Link Brokerages and Link Escrow services to qualify for free escrow services.
+FREE escrow services²
+AI-Powered Pricing
+Real-Time Market Analysis
+Step-by-Step Selling Recommendations
+Listing, Offer, and Closing Coordination
+Value Your Property
+What Our Users Are Saying
+Real people. Real stories. See how Link AI has transformed the real estate journey for countless clients.
+Elevate Your Agent Experience
+Join a brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Learn More
+
+================================================================================
+PAGE: Buy (buy.html)
+URL: /buy
+================================================================================
+
+Qualify for Up to $20,000 in Credits¹
+Find Your Dream Home
+Search smarter, find the right fit faster, and get the best deal with expert precision.
+Search with AI
+or
+Talk to an Agent
+Why Buy with Us?
+Get 24/7 AI support and expert guidance. Link streamlines your search and transaction while licensed professionals handle negotiations, compliance, and in-person needs.
+Start Your Search with AI
+Buying a home should feel effortless. Link helps you search with precision, stay ahead with real-time insights, and move forward with confidence
+Start Searching
+Bundle and Save
+Buy with a Link agent and bundle mortgage services to unlock exclusive savings, with up to $20,000 credited at closing. Close with confidence and keep more in your pocket.¹
+Talk to a Local Agent
+Skip the guessing. Get direct answers from a local pro and turn your search into a simple, confident next step.
+Get Started
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Sell (sell.html)
+URL: /sell
+================================================================================
+
+FREE ESCROW²
+Sell with Ease
+Sell faster and smarter with AI-powered pricing, targeted marketing, expert support, and competitive rates.
+Value Your Property
+or
+Talk to an Agent
+Why Sell with Us?
+Traditional selling is slow, costly, and uncertain. Link delivers accurate pricing, real-time insights, and a seamless process so you can sell with confidence.
+Start with an AI Valuation
+Link.ai prices your home, finds serious buyers, and streamlines the sale. AI handles market analysis and listing optimization, while experts manage negotiations and closing—so you sell faster and keep more.
+Value Your Property
+Bundle and Save
+Sell with a Link agent and get escrow services free when you bundle. Keep more of your profit and enjoy a smoother closing experience.²
+Talk to a Local Agent
+Skip the guessing. Get direct answers from a local pro and turn your search into a simple, confident next step.
+Get Started
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Technology (technology.html)
+URL: /technology
+================================================================================
+
+Tech Built by Agents
+Link builds AI-powered real estate tech to make transactions easier, faster, and more rewarding.
+AI Real Estate Advice
+The first conversational AI that lets you search properties, compare neighborhoods, and calculate market value. In real time, for free.
+Try Link
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What documents do I need to buy property as a non-U.S. resident?
+49 Crescent Fig Dr, Los Angeles CA 90027
+Search for properties in San Diego with a pool.
+Show me properties under $500k in Encinitas with schools nearby.
+Help me calculate mortgage costs for a house in California.
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+What are the best financing options for first-time homebuyers?
+How does escrow work in a real estate transaction?
+What neighborhoods are friendliest for families in San Diego
+24 Serenity Dr. Spc 2 Oxnard, CA 93035
+I just renovated my kitchen, how much is my property worth?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+122 Campion, Irvine, CA 92618
+I am ready to buy a house, connect me with an agent!
+Find me 10 of the most affordable cities to live in Southern California
+Search for properties in Temecula without an HOA
+I make $120,000 a year how much can I afford?
+Features
+Works 24/7
+Link’s AI platform offers advanced features, but at its core, it’s designed to make real estate more accessible. It brings together brokerage, mortgage, and escrow to reduce costs and streamline every step.
+Real Estate Questions
+Property Search
+Property Valuation
+Neighborhood Insights
+Collaboration
+Supercharging Agents with Technology
+Link builds and improves tools around how agents actually work. Technology helps agents move faster, stay consistent, and give clearer answers with fewer delays.
+Tech-Based Back Office
+Link agents are supported by a tech-based back office that keeps every transaction on track. It manages tasks, documents, and deadlines in one place, reduces back-and-forth, and helps clients and agents get to close with fewer surprises.
+Smart AI. Real Experts.
+When you're ready, Link connects you with a licensed expert. Our streamlined process saves time and money.
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Bundle Program (bundle-program.html)
+URL: /brokerage/bundle-program
+================================================================================
+
+Unlock Savings for Your Clients
+Use Link to offer buyers up to $20,000 in savings and sellers free escrow services. By bundling brokerage with mortgage or escrow, you give your clients a smoother, more affordable experience.
+Buy Bundle
+Help Clients Lower Their Homebuying Costs
+Offer exclusive savings by bundling brokerage and mortgage through Link. Clients reduce closing costs and loan-related fees, making homeownership more affordable.
+Offer Up to $20,000 in Credits¹
+SELL BUNDLE
+Help Sellers Keep More of Their Profit
+With Link, you can offer sellers bundled brokerage and escrow services that reduce fees and streamline the closing process, so they walk away with more.
+Offer FREE ESCROW²
+Frequently Asked Questions
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Join Today
+
+================================================================================
+PAGE: Independent Agents (independent-agents.html)
+URL: /brokerage/independent-agents
+================================================================================
+
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you: offering automated operational systems, on-demand support, and 90/10 baseline commission splits.
+Join as an agent
+Choose Your Path to Success
+Join a Team
+Join a team that fits you goals and values, with access to support, resources, and tailored mentorship or specialized services.
+Join as a Solo Agent
+Join our Virtual Team with a 90/10 split, back end support, and advanced tools - perfect for independent agents without the mentorship needs.
+Keep More of Your Hard-Earned
+Commission
+Benefit from industry-leading 90/10 commission splits on every transaction, without hidden fees. Enjoy affordable membership fees and earn a 2% revenue share on referred agents' closed deals for 2 years.
+90/10 commission split on every transaction
+$20,000 personal commission cap every year
+Focus on Your Clients, Let Us Streamline the Rest
+Enhance your competitive edge and save time with our proprietary software, designed and built by agents. Our all-in-one platform simplifies your real estate operations, allowing you to focus on delivering exceptional service to your clients while we handle the rest.
+One platform
+Virtual office
+Website, CRM, brand
+Full-Service Solutions for Real Estate Agents
+Link Brokerages offers a full suite of services to ensure a smooth and efficient transaction process from start to finish, providing white-glove service every step of the way, enabling effortless expansion across state borders, and offering exclusive savings for your clients.
+Email, SMS, phone support
+Growth programs
+Partnered discounts
+Flexible Membership Options
+Choose the plan that best fits your business needs. Our flexible options ensure that you can access all the resources and support you need without breaking the bank.
+Find a team to join
+Explore our partnered teams for a tailored real estate experience with personalized mentorship and support.
+Price Varies
+Get Started
+Includes:
+Split set by Team Lead
+Proprietary technology access & CRM
+Personalized mentorship & training
+View some available teams
+Join our virtual team
+Build your real estate business on our streamlined platform and retain more of your hard-earned commission.
+$70
+/ per month
+Get Started
+What this plan includes :
+90/10 commission split
+$20,000 personal cap
+Proprietary technology access & CRM
+Marketing & operational support
+On-demand mentorship & training
+Lite
+Build your real estate team on our turnkey platform.
+$0
+/ per month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Membership subscription system
+Back office software
+Templated digital assets
+General email support
+View and compare all features
+Pro
+Build your real estate team on our turnkey platform.
+$210
+/ per month
+billed annually
+Get Started
+Free tools and services, plus:
+$15,000 personal cap
+Revenue share 2% GCI
+White labeled back office software
+Custom digital asset template creator
+DBA filing
+Dedicated account manager
+Multi-state operation
+Enhanced SMS / phone / email support
+View and compare all features
+Enterprise
+Build your real estate team on our turnkey platform.
+$0
+/ per month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Membership subscription system
+Back office software
+Templated digital assets
+General email support
+View and compare all features
+Qualification: Close $4M in sales or 10 transactions in the last 12 months.
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Join Today
+
+================================================================================
+PAGE: Join Link (join-link.html)
+URL: /brokerage/join-link
+================================================================================
+
+Let's Have a Conversation
+Fill out the form to schedule a demo and explore flexible options tailored to your business, support, and goals.
+First name
+Last name
+Email
+Phone
+How many deals did you close in the last 12 months?
+Select
+Working on my first deal!
+1+
+5+
+10+
+20+
+30+
+Choose how you'd like to get involved.
+Select
+Find a team to join
+Join our virtual team
+Start a team
+Grow your team
+Operating state
+Select
+AZ
+CA
+CO
+GA
+NC
+NY
+SC
+Other
+Checkbox
+Privacy Policy
+and
+Terms & Conditions
+to learn how your data is used.
+Request Received
+Thanks for your interest. A team member will reach out shortly to schedule your demo.
+Ok
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Link Brokerages (link-brokerages.html)
+URL: /brokerage/link-brokerages
+================================================================================
+
+5.0
+from 105+ reviews
+Grow Your Real Estate Career With Link
+Link empowers real estate agents at every career stage with a virtual-first model, innovative tech, and 90/10 commission splits to support seamless growth and success.
+Join Today
+We Are Your Modern Real Estate Partner
+We offer a unique combination of advanced technology, comprehensive support, and exclusive benefits—making us the ideal choice for real estate professionals looking to grow their business.
+How to Join
+Link Brokerages offers premier real estate services across multiple states, supported by experienced managing brokers who provide expert guidance and local market insights.
+Join a Team
+Join a team that fits you goals and values, with access to support, resources, and tailored mentorship or specialized services.
+Join as a Solo Agent
+Join our Virtual Team with a 90/10 split, back end support, and advanced tools - perfect for independent agents without the mentorship needs.
+For Teams
+Lead your own team with our white-labeled, plug-and-play solution. Build your brand with full backend support and no startup costs as a partner.
+For Independent Brokerages
+Onboard your independent brokerage and scale your business. Use our infrastructure, tools, and support to simplify managment and scale.
+Maximize Your Earnings
+90/10 Baseline Commission Splits
+Keep more of your earnings with one of the most competitive splits in the industry.
+$15,000 ~ $20,000 Cap
+Keep more of your income with our $20,000 baseline cap. Upgrade to a $15,000 cap as a Pro-Partner.
+Commission Revenue Share
+As a Pro Partner, earn a baseline 20% revenue share (2% of GCI) from your team’s production. You can also set custom agent splits and keep the difference above Link’s 90/10 baseline. For example, with a 70/30 split, you’d earn 22% of GCI.
+Subscription Revenue Share
+Create recurring income by setting a monthly fee for your agents. Earn 80% of all subscription revenue to build a steady stream for your business.
+90/10 Baseline Commission Splits
+Keep more of your earnings with one of the most competitive splits in the industry.
+$15,000 ~ $20,000 Cap
+Keep more of your income with our $20,000 baseline cap. Upgrade to a $15,000 cap as a Pro-Partner.
+Commission Revenue Share
+As a Pro Partner, earn a baseline 20% revenue share (2% of GCI) from your team’s production. You can also set custom agent splits and keep the difference above Link’s 90/10 baseline. For example, with a 70/30 split, you’d earn 22% of GCI.
+Subscription Revenue Share
+Create recurring income by setting a monthly fee for your agents. Earn 80% of all subscription revenue to build a steady stream for your business.
+Proprietary Software Built by Agents to Streamline Operations
+Digital Onboarding and Training
+Get fully onboarded in under 30 minutes with our easy-to-use platform. Access a curated launch checklist, step-by-step setup, and personalized support to start strong.
+Deal Manager with Built-In Compliance
+Manage clients, forms, and compliance in one place with our Deal Manager. Add TCs and compliance officers to your deals, follow the checklist, and submit for final review—simple, secure, and stress-free.
+Marketing and Operations
+Use our integrated Canva templates to create branded marketing materials instantly. Manage tasks, contacts, and calendars in one place to keep your business organized and efficient.
+White Labeled Solutions
+Scale your team with ease using one platform for both team and personal deals. Customize onboarding and agent workflows while our built-in compliance tools handle the details.
+Digital Onboarding and Training
+Get fully onboarded in under 30 minutes with our easy-to-use platform. Access a curated launch checklist, step-by-step setup, and personalized support to start strong.
+Deal Manager with Built-In Compliance
+Manage clients, forms, and compliance in one place with our Deal Manager. Add TCs and compliance officers to your deals, follow the checklist, and submit for final review—simple, secure, and stress-free.
+Marketing and Operations
+Use our integrated Canva templates to create branded marketing materials instantly. Manage tasks, contacts, and calendars in one place to keep your business organized and efficient.
+White Labeled Solutions
+Scale your team with ease using one platform for both team and personal deals. Customize onboarding and agent workflows while our built-in compliance tools handle the details.
+End to End Services Designed to Support and Enhance Your Business
+Support & Concierge Service
+Get support when you need it through SMS, email, or phone. Our team is here to help with deals, systems, and strategy. Team leaders also offer mentorship on transactions, marketing, and career growth.
+Website, Branding, & Marketing Partners
+Stand out with a personalized, IDX-integrated website tailored to your brand. Get connected with trusted partners offering exclusive discounts on design and branding tools to help you grow your online presence and close more deals.
+Multi-State Operation
+Licensed in multiple states? Link makes it easy to expand. Operate or join teams across CA, AZ, CO, NY, SC, NC, and GA with a system built for multi-state scalability and mentorship opportunities.
+In-House Mortgage & Escrow Services
+Offer clients a seamless experience with our built-in mortgage and escrow services. Our all-in-one model simplifies transactions and unlocks exclusive discounts when clients use the full Link ecosystem.
+Support & Concierge Service
+Get support when you need it through SMS, email, or phone. Our team is here to help with deals, systems, and strategy. Team leaders also offer mentorship on transactions, marketing, and career growth.
+Website, Branding, Marketing Partners
+Stand out with a personalized, IDX-integrated website tailored to your brand. Get connected with trusted partners offering exclusive discounts on design and branding tools to help you grow your online presence and close more deals.
+Multi-State Operation
+Licensed in multiple states? Link makes it easy to expand. Operate or join teams across CA, AZ, CO, NY, SC, NC, and GA with a system built for multi-state scalability and mentorship opportunities.
+In-House Mortgage & Escrow Services
+Offer clients a seamless experience with our built-in mortgage and escrow services. Our all-in-one model simplifies transactions and unlocks exclusive discounts when clients use the full Link ecosystem.
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Join Today
+
+================================================================================
+PAGE: Platform (platform.html)
+URL: /brokerage/platform
+================================================================================
+
+Built by Agents for Agents
+Link helps brokerages, mortgage lenders, and escrow companies scale faster with exclusive leads, vertical integration, and AI-powered automation.
+Learn More
+Work From Anywhere
+Link is a 100% virtual platform that lets you work from anywhere with full access to tools, documents, and support whenever you need them.
+Your Full-Service Digital Brokerage
+Launch your business with instant access to onboarding, training, marketing assets, and daily tools. Whether you are an individual agent or a team, the platform can be customized or white labeled to match your brand. Our support team is always available for on demand help, guidance, and mentorship whenever you need it.
+Smart Compliance from Open to Close
+Manage your transactions virtually with built-in compliance systems that guide you from opening to closing. Our certified compliance officers review each file, giving you peace of mind every step of the way. Need extra support? Add a transaction coordinator—we can assign one for you or you can bring your own.
+Instant Leads with Real Intent
+As a qualified agent, you get access to leads through our Link AI system. Each lead is fully summarized and ready to move, whether they are looking to list or start touring. This feature is currently in beta and available only to approved agents.
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Join Today
+
+================================================================================
+PAGE: Teams and Brokerages (teams-and-brokerages.html)
+URL: /brokerage/teams-and-brokerages
+================================================================================
+
+Become Bigger Than Your Brokerage
+Take your career to the next level with a white labeled plug-and-play solution. Build your own brand and grow your own team with full backend support.
+Partner with Link
+Join Our Growing Partner Network
+Explore our diverse network of partnered teams across various states. See how other professionals have leveraged Link Brokerages to grow their businesses and achieve success.
+For Teams
+Lead your own team with our white-labeled, plug-and-play solution. Build your brand with full backend support and no startup costs as a partner.
+For Independent Brokerages
+Onboard your independent brokerage and scale your business. Use our infrastructure, tools, and support to simplify managment and scale.
+More Money in Your Pocket, in More Ways Than One
+Benefit from industry-leading 90/10 splits and $15,000 personal caps, alongside our unique compensation structure, allowing our partners to earn more through various revenue streams, ensuring financial growth and stability.
+Commission revenue share
+Subscription revenue share
+Plug-and-Play Proprietary Software Built for Teams
+Easily manage your team’s training, deals, and operations from one dashboard alongside your own. Stay in control with built-in compliance and management tools from Link.
+One platform
+Virtual infrastructure
+Website, CRM, brand
+Full-Service Solution for Real Estate Teams
+Link Brokerages provides full-service support for smooth, efficient transactions from start to finish. Deliver white glove service, expand across states, and offer exclusive savings to your clients.
+Email, SMS, phone support
+Growth programs
+Partnered discounts
+Flexible Membership Options
+Choose the plan that best fits your business needs. Our flexible options ensure that you can access all the resources and support you need without breaking the bank.
+Monthly
+Annually
+25% off
+Lite
+A streamlined plan for qualified real estate agents who meet our production standards and are ready to take their business to the next level.
+$0
+/ per month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Ability to use personal brand
+Split Setting / Revenue Share
+Membership Creation
+Proprietary back-office technology
+Branded IDX-integrated website
+CRM with GoHighLevel
+Templated branded digital assets
+General email support
+View and compare all features
+Pro
+Designed for agents aiming to elevate visibility and grow with greater impact, this plan includes enhanced branding, marketing, and dedicated support.
+$80
+/ per month
+Get Started
+Everything on Lite Plan, plus:
+$15,000 personal cap
+White-labeled back office technology
+Full website build-out
+Full CRM buildout
+Dedicated account manager
+DBA filing
+Custom digital asset template creator
+Multi-state operation
+Enhanced SMS / phone / email support
+View and compare all features
+Enterprise
+Built for independent brokerages or high-performing agents looking to scale their team rapidly and increase their bottom line.
+$280
+/ per month
+Get Started
+Everything on Lite & Pro Plan, plus:
+Additional 2% GCI revenue share
+Monthly recruitment leads
+Branded recruitment job posting
+Full-service recruitment support
+Ad creation & management
+Templated assets created & installed
+Exclusive Bundle & Save leads
+View and compare all features
+Qualification: Close $4M in sales or 10 transactions in the last 12 months.
+Lite
+A streamlined plan for qualified real estate agents who meet our production standards and are ready to take their business to the next level.
+$0
+/ month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Ability to use personal brand
+Split Setting / Revenue Share
+Membership Creation
+Proprietary back-office technology
+Branded IDX-integrated website
+CRM with GoHighLevel
+Templated branded digital assets
+General email support
+View and compare all features
+Pro
+Designed for agents aiming to elevate visibility and grow with greater impact, this plan includes enhanced branding, marketing, and dedicated support.
+$60
+/ month
+(billed annually)
+Get Started
+Everything on Lite Plan, plus:
+$15,000 personal cap
+White-labeled back office technology
+Full website build-out
+Full CRM buildout
+Dedicated account manager
+DBA filing
+Custom digital asset template creator
+Multi-state operation
+Enhanced SMS / phone / email support
+View and compare all features
+Enterprise
+Built for independent brokerages or high-performing agents looking to scale their team rapidly and increase their bottom line.
+$210
+/ month
+(billed annually)
+Get Started
+Everything on Lite & Pro Plan, plus:
+Additional 2% GCI revenue share
+Monthly recruitment leads
+Branded recruitment job posting
+Full-service recruitment support
+Ad creation & management
+Templated assets created & installed
+Exclusive Bundle & Save leads
+View and compare all features
+Qualification: Close $4M in sales or 10 transactions in the last 12 months.
+Elevate Your Agent Experience
+The modern real estate brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Join Today
+
+================================================================================
+PAGE: About Us (about-us.html)
+URL: /company/about-us
+================================================================================
+
+Making Real Estate Easy and Affordable for Everyone
+Why Real Estate is Failing Us
+Buying or selling a home is harder and more expensive than it should be. The system is outdated, overloaded with middlemen, and driven by misaligned incentives. It is not just inefficient. It is broken. Real estate needs more than another app. It needs a full rebuild that puts people first.
+A Smarter, More Accessible System
+Link brings agents, mortgage, and escrow into one AI powered platform, aligning incentives and streamlining the process to reduce costs and pass savings to our clients. Built on nationally approved procedures and connected to live listing data, Link helps users ask questions, explore options, and understand the market. When they are ready, we connect them to an agent.
+Real Estate Experts and Tech Innovators
+We’re a team of engineers, real estate professionals, and entrepreneurs making it easier to buy, sell, and find a great place to live. Our goal is to change the industry for good.
+Elevate Your Agent Experience
+Join a brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Learn More
+
+================================================================================
+PAGE: Careers (careers.html)
+URL: /company/careers
+================================================================================
+
+Join the Link Team
+We’re looking for talent ready to challenge the norm and help make homeownership more accessible.
+Opportunities at Link
+Apply
+Apply
+Elevate Your Agent Experience
+Join a brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Learn More
+
+================================================================================
+PAGE: Contact Us (contact-us.html)
+URL: /company/contact-us
+================================================================================
+
+Contact Us
+Have questions or need help? Reach out to our team and we’ll get back to you as soon as possible.
+First name
+Last name
+Email
+Phone
+Inquiry Type
+Select
+Using the Link.ai System
+Buying or Selling a Home
+Joining Link as an Agent
+Mortgage Questions or Loan Application
+Escrow Services / Open or Track Escrow
+Technical Issue or Bug Report
+Partnership, Licensing, or Business Inquiry
+General Inquiry
+Message
+Checkbox
+Privacy Policy
+and
+Terms & Conditions
+to learn how your data is used.
+Thank You for Reaching Out
+We've received your message and will be in touch soon.
+Ok
+Elevate Your Agent Experience
+Join a brokerage that works for you-offering on-demand support, automated operating systems, and 90/10 baseline commissions splits.
+Learn More
+
+================================================================================
+PAGE: FAQs (faqs.html)
+URL: /company/faqs
+================================================================================
+
+Frequently Asked Questions
+Find quick answers to common questions about how Link works, what we offer, and how to get started. If you need more help, we’re here for you.
+Answers to Your Most Common Questions
+General
+Brokerage
+Mortgage
+Escrow
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: News (news.html)
+URL: /company/news
+================================================================================
+
+Insights & Updates From Link
+Discover the latest news, partnerships, and innovations as Link reshapes the future of real estate.
+Latest News
+2 min to read
+Coming Soon
+Previous
+Show more
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: For Sale By Owner (for-sale-by-owner.html)
+URL: /escrow/for-sale-by-owner
+================================================================================
+
+FSBO with Confidence
+Sell faster and smarter with AI-powered pricing, targeted marketing, expert support, and free escrow for eligible FSBO sellers.
+Schedule a Consultation
+Free Escrow for FSBO Sellers
+Link Escrow is running a limited FSBO promotion that covers escrow fees for eligible sellers, helping reduce closing costs while keeping the transaction fully supported from open to close.
+FSBO Promo
+Eligible FSBO sellers can have escrow fees covered, with the same coordination and closing support as a standard escrow. Schedule a short call to confirm eligibility, review the offer, and walk through a net sheet for the sale.
+$0
+fee
+Schedule a Consultation
+Types of Transactions:
+Residential
+Commercial
+Multi-Family
+Do an AI Valuation
+Link.ai helps sellers estimate value, compare nearby comps, and chat to adjust the valuation based on property details and the seller’s specific situations.
+Value Your Property
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Link Escrow (link-escrow.html)
+URL: /escrow/link-escrow
+================================================================================
+
+Security and Support at Every Step
+Experience a stress-free escrow process with expert guidance, upfront pricing, and real-time updates whenever you need them.
+Get Started
+The Right Escrow Solution for Every Deal
+Whether you’re bundling services or just need escrow support, Link gives you flexible options to fit your needs.
+Use the System
+Our fully integrated escrow service works seamlessly with Link’s brokerage and mortgage, creating a faster, more efficient closing process with fewer delays and lower costs.
+Or Use Us Independently
+Already working with another brokerage or lender? You can still use Link’s escrow services separately, ensuring a smooth and secure transaction.
+Stay in Control
+Escrow shouldn’t feel like a waiting game. Link keeps you informed with instant updates, so you stay clear and confident from open to close.
+Pricing
+Transparent Pricing
+We understand that every real estate journey is unique. That's why we offer flexible pricing options designed to cater to your specific needs.
+General Deal
+Guaranteed satisfaction for every type of transaction in real estate.
+$500
+base + 0.25% of price
+Get Started
+Types of Transactions:
+Residential
+Commercial
+Multi-Family
+For Sale By Owner
+1031 Exchange
+Refinance
+The longer your refi takes, the more it costs — we help you close faster.
+$650
+flat fee
+Get Started
+Types of Transactions:
+All Loan Types
+Rate-and-Term
+Cash-Out
+Cash-In
+Reverse Mortgage
+Lite
+Build your real estate team on our turnkey platform.
+$0
+/ per month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Membership subscription system
+Back office software
+Templated digital assets
+General email support
+View and compare all features
+Pro
+Build your real estate team on our turnkey platform.
+$210
+/ per month
+billed annually
+Get Started
+Free tools and services, plus:
+$15,000 personal cap
+Revenue share 2% GCI
+White labeled back office software
+Custom digital asset template creator
+DBA filing
+Dedicated account manager
+Multi-state operation
+Enhanced SMS / phone / email support
+View and compare all features
+Enterprise
+Build your real estate team on our turnkey platform.
+$0
+/ per month
+Get Started
+Includes:
+90/10 commission split
+$20,000 personal cap
+Membership subscription system
+Back office software
+Templated digital assets
+General email support
+View and compare all features
+Qualification: Close $4M in sales or 10 transactions in the last 12 months.
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Open Escrow (open-escrow.html)
+URL: /escrow/open-escrow
+================================================================================
+
+Open Escrow
+Submit your details to open escrow. Our team will follow up to guide you through the next steps.
+First Name
+Last Name
+Email
+Phone
+Escrow Type
+Select
+Sale
+Refinancing
+Address
+Timing
+Select
+ASAP
+1-3 months
+4-6 months
+7+ months
+Checkbox
+Privacy Policy
+and
+Terms & Conditions
+to learn how your data is used.
+Escrow Request Received
+Thank you. A member of our escrow team will contact you shortly to begin the process.
+Ok
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Services (services.html)
+URL: /escrow/services
+================================================================================
+
+Services You Can Trust
+Protecting your investments with seamless escrow services designed for clarity, safety, and simplicity.
+Get Started
+Purchase
+Sell with Confidence, Close with Ease
+Buying or selling a home is a major transaction. Link ensures a smooth, hassle-free closing with complete transparency.
+Real-Time Updates
+Secure, Reliable Transactions
+Seamless Integration
+Transparent Pricing
+Refinance
+Lower Your Rate. Shorten Your Term. Save More.
+Refinancing should be fast, transparent, and hassle-free. Linked streamlines the process so you can lock in savings without unnecessary delays.
+Faster Closings
+Real-Time Status Updates
+Clear, Upfront Pricing
+Secure Transactions
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: All Loans (all-loans.html)
+URL: /mortgage/all-loans
+================================================================================
+
+Financing Solutions for Every Need
+Beyond traditional home loans, Link offers specialized loans designed to help you access equity, fund renovations, or invest in real estate.
+Get Started
+Explore Your Loan Options
+HELOC (Home Equity Line of Credit)
+A HELOC lets you borrow against your home’s equity with a flexible line of credit. Use it for renovations, debt consolidation, or unexpected expenses—only pay interest on what you use.
+Reverse Mortgage
+For homeowners 62 and older, a reverse mortgage allows you to convert home equity into tax-free cash without monthly mortgage payments. Stay in your home while accessing the funds you need.
+VA Loans
+VA loans offer zero down payment, lower interest rates, and no private mortgage insurance (PMI) for eligible veterans and active-duty service members—making homeownership more accessible.
+FHA Loans
+Designed for first-time buyers and those with lower credit scores, FHA loans require as little as 3.5% down and offer more flexible qualification criteria than conventional loans.
+Construction Loans
+Financing designed for new construction, a construction loan gives you the funds to build while offering flexible draw schedules and interest-only payments during the build phase.
+Renovation Loans
+Finance home improvements with a loan designed for renovations, covering everything from minor upgrades to full remodels—all with competitive rates and simple terms.
+DSCR Loans (Debt-Service Coverage Ratio)
+A DSCR loan is tailored for real estate investors looking to qualify based on rental income rather than personal income—perfect for expanding your portfolio with flexible terms.
+Bridge Loans
+Need to buy a new home before selling your current one? A bridge loan provides temporary financing so you can move forward without delays.
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Get a Loan (get-a-loan.html)
+URL: /mortgage/get-a-loan
+================================================================================
+
+Start My Approval
+Apply in minutes to get pre-qualified with competitive rates and expert support from start to finish.
+First Name
+Last Name
+Email
+Phone
+Loan Type
+Select
+Purchase
+Refinance
+Other
+Down Payment
+Estimated Monthly Income
+Estimated Monthly Debt
+Estimated Credit Score
+Timing
+Select
+ASAP
+1-3 months
+4-6 months
+7+ months
+Checkbox
+Privacy Policy
+and
+Terms & Conditions
+to learn how your data is used.
+Request Received
+Thanks for reaching out. A loan specialist will contact you soon to discuss your options.
+Ok
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Link Mortgage (link-mortgage.html)
+URL: /mortgage/link-mortgage
+================================================================================
+
+Financing that Works for You
+Unlock low rates, private discounts, and a fully integrated process. Get pre-qualified in just 5 minutes.
+Get Started
+Better Rates. Seamless Process. More Savings.
+Bundle & Save
+Use Link’s automated system to finance your home, bundle brokerage services, and lower closing costs by up to $20,000.
+Mortgage Only
+Just need a loan? Fill out a quick form and access competitive rates—get pre-qualified in 5 minutes.
+Purchase
+Buy with Confidence
+Financing through Link means lower costs, faster approvals, and a hassle-free process from start to finish.
+Unlock Low Rates
+Pre-Qualification in Minutes
+Seamless Process
+Lower Closing Costs
+Refinance
+Refinance and Save More
+Lower your rate, cash out equity, or shorten your loan term—Link makes refinancing easy and cost-effective.
+Lower Your Monthly Payments
+Cash-Out Refinancing
+Faster Approvals
+Reduced Fees
+All Loans
+Many Lending Options
+No matter your situation, Link offers a full range of loan options to fit your goals and needs.
+Conventional
+FHA & VA
+HELOC
+Reverse Mortgages
+More Loans
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Purchase (purchase.html)
+URL: /mortgage/purchase
+================================================================================
+
+Simple Home Loans
+Link makes it easy to access property loans with competitive rates and quick pre-qualification so you can move forward with confidence.
+Get Started
+Choose How You Apply
+Whether you prefer a traditional approach or want to get started with AI, Link gives you two simple ways to apply for your mortgage.
+Apply Instantly With AI
+Start your application with Link AI to get pre-qualified in minutes. Explore your options and move at your own pace without waiting.
+Work With a Loan Officer
+Connect with a licensed expert for personalized guidance, loan comparisons, and full support from pre-approval through closing.
+Beta
+From Application to Approval
+We make the loan process smooth, simple, and stress-free.
+Ask Link
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Refinance (refinance.html)
+URL: /mortgage/refinance
+================================================================================
+
+Unlock Equity
+Unlock better rates, lower payments, or cash out equity with Link’s fast, hassle-free refinancing designed to maximize your home’s value.
+Get Started
+What Are Your Refinance Goals?
+Refinancing shouldn’t be complicated. With Link, you can apply online, get pre-qualified in minutes, and start saving right away.
+Take Out Cash
+Tap into your home’s equity for upgrades, debt, or big expenses with fast approval and easy access to funds.
+Lower Your Payments
+Secure a better rate, reduce your monthly mortgage payments, or shorten your loan term to save thousands over time.
+COMING SOON
+Apply Online
+Refinancing with Link is easy—just follow these three steps:
+Ask Link
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Accessibility (accessibility.html)
+URL: /utility/accessibility
+================================================================================
+
+Updated May 15, 2025
+Accessibility
+At Link Management Systems Inc., we are committed to ensuring that our website,
+https://www.link.ai
+, is accessible to everyone, including individuals with disabilities. We strive to provide a user-friendly experience that is inclusive and allows all users to access the information and services we offer.
+1. Our Commitment
+We are continuously working to enhance the accessibility of our website by adhering to best practices and standards as defined by the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. Our goal is to make our website as accessible as possible for all users, regardless of their abilities. Accessibility is integrated into our development process, and we treat it as a core principle in delivering equitable digital services.
+2. Accessibility Features
+Our website is designed to be navigable by both keyboard and mouse users. We aim to ensure that all interactive elements, including menus, buttons, and forms, can be accessed and used via keyboard navigation. We provide text alternatives for all non-text content, such as images and multimedia, so that users relying on assistive technologies like screen readers can understand and interact with the content. We strive to present our information clearly and concisely, using straightforward language and an organized structure to enhance readability. The website uses responsive design techniques to ensure optimal display across devices, including desktops, tablets, and smartphones, regardless of screen size or orientation.
+3. Continuous Improvement
+We are committed to ongoing improvements in digital accessibility. Our team conducts periodic audits and usability reviews to identify and fix accessibility barriers. We stay informed about evolving accessibility standards and implement updates to ensure our website remains inclusive and easy to use for everyone.
+4. Third-Party Content
+Some areas of our website may include third-party content, components, or plugins that are not under our direct control and may not fully conform to our accessibility standards. While we cannot guarantee the accessibility of external systems, we encourage all third-party providers we work with to meet accessibility guidelines and collaborate with them where possible to improve usability for all users.
+5. Feedback and Assistance
+We welcome your feedback on the accessibility of our website. If you encounter any barriers or have suggestions for improvement, please contact us at
+contact@link.ai
+. We will make every reasonable effort to address your concerns promptly and to provide the information or service in a format that is accessible to you.
+6. Contact Information
+F
+or questions, feedback, or assistance related to website accessibility, you may contact us at:
+Link Management Systems Inc.
+202 W 140th St, Los Angeles, CA 90061
+Email:
+contact@link.ai
+Phone:
+(310) 695-6510
+Thank you for visiting link.ai. We remain committed to making our website accessible to all users and appreciate your support in achieving this goal.
+
+================================================================================
+PAGE: Fair Housing and Equal Opportunity (fair-housing-and-equal-opportunity.html)
+URL: /utility/fair-housing-and-equal-opportunity
+================================================================================
+
+Updated May 15, 2025
+Fair Housing and Equal Opportunity
+At Link Management Systems Inc., which oversees Link Brokerages, First Link Mortgage, and Linked Escrow, we are dedicated to providing equal professional service to all individuals. We believe that fair housing and equal opportunity are fundamental rights, and we are committed to ensuring that everyone—regardless of background or circumstance—has access to housing, financing, and settlement services without discrimination.
+1. Commitment to Fair Housing
+Link Management Systems Inc. fully supports the principles of the Fair Housing Act (Title VIII of the Civil Rights Act of 1968) and the Fair Housing Amendments Act of 1988. These federal laws prohibit discrimination based on race, color, religion, sex, disability, familial status, national origin, and other protected characteristics. Our commitment extends across all business lines, including real estate brokerage, mortgage lending, and escrow services. We are dedicated to providing equal access to housing and related services without bias, promoting an inclusive environment where all individuals feel welcome, and maintaining full compliance with all applicable federal, state, and local fair housing laws and regulations.
+2. Prohibited Practices
+Discrimination in any form is strictly prohibited at Link Management Systems Inc. and its affiliated services. We do not allow any refusal to rent, sell, or negotiate housing or financing based on a protected characteristic. Similarly, we do not permit imposing different terms, conditions, or privileges for housing, loans, or escrow services due to an individual’s race, religion, disability, or other protected status. The use of discriminatory language or preferences in advertising or marketing is not tolerated, and we prohibit misrepresenting the availability of any property or service based on identity. Discriminatory lending practices, including offering different mortgage terms based on a protected characteristic, are also strictly forbidden.
+3. Reasonable Accommodations and Modifications
+We are committed to making reasonable accommodations and allowing necessary modifications for individuals with disabilities to ensure full and equal access to our services. This includes adjusting policies, practices, or procedures as needed to provide equal opportunity in the use and enjoyment of housing. We also support the right of individuals with disabilities to make physical modifications to their dwelling spaces when such changes are necessary to accommodate their needs. This commitment applies across our brokerage, mortgage, and escrow operations.
+4. Reporting Discrimination
+If you believe you have experienced discrimination or have observed any practices inconsistent with fair housing laws or this policy, we encourage you to report the issue. You may contact us directly, and we will take your concerns seriously and work to address them promptly. You may also choose to file a formal complaint with a state or federal fair housing enforcement agency. Our team is committed to maintaining an environment where all individuals feel empowered to raise concerns without fear of retaliation.
+5. Contact Information
+For more information about our commitment to fair housing and equal opportunity, or to report suspected discrimination, please contact us:
+Link Management Systems Inc.
+202 W 140th St, Los Angeles, CA 90061
+Email:
+contact@link.ai
+Phone:
+(310) 695-6510
+
+================================================================================
+PAGE: Privacy Policy (privacy-policy.html)
+URL: /utility/privacy-policy
+================================================================================
+
+Updated May 15, 2025
+Privacy Policy
+Link Management Systems, Inc. (“Link,” “we,” “us,” or “our”) is committed to protecting your privacy. This Privacy Policy describes how we collect, use, share, and safeguard your personal information when you visit our website,
+https://www.link.ai
+(the “Website”), and engage with the services we offer. This policy applies solely to activities conducted through the Website and is intended for U.S. residents only.
+Scope and Definitions
+For purposes of this Privacy Policy, “Affiliates” include companies such as Linked Escrow (“Linked Escrow”), First Link Mortgage (“FLM”), and other real estate brokerages owned and operated by Link Management Systems, Inc. “Agents” refers to independent contractors, third-party partners, real estate agents, and brokers. While some Agents may use our branding or marketing materials, they are not employees of Link. Interactions with Agents outside of the link.ai Website or services may be governed by third-party terms and are not covered by this Privacy Policy.
+California residents should also refer to Section 10 for additional rights under the California Consumer Privacy Act (CCPA)
+.
+Information We Collect
+When you visit link.ai or engage with our services, we may collect both personal and non-personal information. Personal information may include your name, contact details, mailing address, employment data, Social Security number, banking and financial information, background checks, and details such as income tax records or social media profiles. We also collect non-personal information such as browser type, IP address, device information, and referring URLs. Cookies and similar technologies are used to recognize you, remember your preferences, and track your usage of the Website. Details about cookies are provided in Section 8.
+How We Collect Information
+We collect information directly from you when you voluntarily submit it via forms on the Website, when engaging with an Agent, subscribing to communications, or contacting us. Information is also collected automatically through tracking tools such as cookies, reCAPTCHA, and analytics platforms like Google Analytics, which monitor how users navigate and interact with the Website. Additionally, we may obtain information from third-party sources including public databases, social media platforms, and integrated technology partners.
+How We Use Your Information
+Your information is used to deliver and improve our services. This includes enabling property searches, facilitating transactions, providing communications, personalizing user experience, and developing our technology platform. We may also use your data to send you updates, newsletters, or promotional communications via tools like FreshSales. Information is used to prevent fraud and ensure platform security. Where required by law, we use your data to fulfill legal obligations and respond to regulatory requests.
+How We Share Your Information
+We do not sell your personal information for marketing purposes. However, we may share your information with trusted service providers that support our business operations, including website hosting, digital communications, document management, and analytics. We may also share information with our Affiliates and Agents to support real estate transactions, which may include landlords, tenants, buyers, co-brokers, and financial institutions. In the event of a merger, acquisition, or business transition, your information may be transferred to the new entity. Where legally required, we may also disclose information to comply with court orders or regulatory inquiries. Note that any opt-in consent for SMS communications will never be shared with third parties for marketing purposes.
+How We Protect Your Data
+We take appropriate technical and administrative measures to protect your personal data. This includes encryption protocols, secure servers, and access controls designed to prevent unauthorized access, disclosure, or misuse. Sensitive data such as e-signature records are securely managed through third-party providers like DocuSign and are not stored directly on our servers.
+Your Rights and Choices
+If you reside in California or another jurisdiction that grants data access rights, you have the right to request access to the personal data we collect, correct inaccurate data, and request deletion of your information, subject to exceptions allowed by law. While we do not sell your data, you may opt out of data sharing used for advertising purposes by adjusting your browser settings or contacting us directly. You may unsubscribe from marketing communications at any time by following the instructions in our emails or contacting us at
+contact@link.ai
+.
+AI Use and Limitations
+Our platform includes features powered by artificial intelligence (AI) and large language models (LLMs) designed to enhance your experience and assist with tasks such as summarizing information, answering questions, or guiding you through the real estate process. These tools are intended for informational and support purposes only. AI-generated responses should not be considered legal, financial, or professional advice. You should independently verify any AI-provided information with a licensed real estate broker, legal advisor, or financial professional before relying on it in any decision-making process.
+Cookies and Tracking Technologies
+We use cookies and other tracking technologies to enhance user experience, improve functionality, and analyze user behavior on the Website. These technologies help us personalize your experience, secure the site from malicious use, and deliver targeted advertising through platforms such as Google and Facebook. You may manage or disable cookies through your browser settings.
+Third-Party Links
+The Website may contain links to third-party websites and services, including those used for analytics, marketing automation, or customer support. We are not responsible for the privacy practices or content of these third-party sites. Users are encouraged to review the privacy policies of those platforms before interacting with them.
+For California Residents
+If you are a California resident, you have rights under the California Consumer Privacy Act (CCPA), including the right to know what personal data we collect, to request access to that data, and to ask for its deletion. You also have the right to opt out of certain types of data sharing. You may submit requests through our privacy request portal or by contacting us at
+contact@link.ai
+.
+Changes to This Privacy Policy
+We may update this Privacy Policy periodically to reflect changes in technology, regulation, or company practices. When changes are made, we will update the effective date and post the revised version on our Website. If material changes are made, we may notify you through email or through the Website. Continued use of link.ai after changes are posted indicates your acceptance of the revised policy.
+Contact Information
+If you have questions about this Privacy Policy or how your data is handled, please contact us at:
+Link Management Systems Inc.
+202 W 140th St, Los Angeles, CA 90061
+Email:
+contact@link.ai
+
+================================================================================
+PAGE: State Licenses (state-licenses.html)
+URL: /utility/state-licenses
+================================================================================
+
+Licenses
+View our full list of state licenses and regulatory credentials for Link Brokerages, Link Mortgage, and Link Escrow. We operate in compliance with all applicable state and federal regulations.
+Brokerage
+Updated On:
+Mortgage
+Updated On:
+Escrow
+Updated On:
+
+================================================================================
+PAGE: Terms of Service (terms-of-service.html)
+URL: /utility/terms-of-service
+================================================================================
+
+Updated May 15, 2025
+Terms of Service
+These Terms of Service (“Terms”) govern your access to and use of our website,
+https://www.link.ai
+, and any related services provided by Link Management Systems Inc. (“Link”, “we”, “us”, or “our”). By using this website or engaging with any of our services, you agree to be bound by these Terms. If you do not agree, you must discontinue all use of our website and services immediately. “Affiliates” refers to our associated entities including Link Brokerages, First Link Mortgage, and Linked Escrow, each of which is operated under Link Management Systems Inc. “Agents” include licensed professionals and independent contractors who may provide real estate services under one of our brands. These individuals are not employees of Link Management Systems Inc. unless explicitly stated. These Terms do not apply to your interactions with Agents outside of this website. For such interactions, additional or separate terms may apply.
+PLEASE READ THESE TERMS CAREFULLY. THEY INCLUDE A MANDATORY ARBITRATION CLAUSE AND CLASS ACTION WAIVER (SEE SECTIONS 15 AND 16).
+1. Acceptance of Terms of Service
+By accessing, browsing, or registering on
+https://www.link.ai
+(the “Site”), or by using any of the services, tools, or features offered by Link Management Systems Inc. (“Link”, “we”, “us”, or “our”), including services provided through its subsidiaries and affiliates Link Brokerages, First Link Mortgage, and Linked Escrow, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service (“Terms”). These Terms apply to all users of the Site, whether you are visiting the Site as a guest or registered user, and govern your use of any content, tools, or services made available on or through the Site. If you do not agree with these Terms, you may not use the Site. If you are accessing the Site on behalf of a business or other legal entity, you represent that you have the authority to bind that entity to these Terms. If you do not have such authority, you may not use the Site or accept these Terms on its behalf.
+2. Eligibility
+You must be at least 18 years old and capable of forming a binding legal agreement to use the services provided through the Site. By accessing or using the Site, you represent and warrant that you meet this requirement. The Site is intended for use within the United States. If you access the Site from outside the U.S., you do so at your own risk and are responsible for compliance with all applicable laws. You also agree that your data may be stored and processed in the United States, which may have different privacy laws than your jurisdiction. We reserve the right to restrict access to the Site or its features at our sole discretion, including for violations of these Terms or applicable law.
+3. Services Provided by Link
+Link Management Systems Inc. offers a centralized platform for users to access services across real estate brokerage, mortgage financing, and escrow settlement. Through this Site, users may search for properties, request mortgage information, view closing services, and use AI-driven tools to support the real estate transaction process.We serve as a technology and service facilitator. Link does not own any of the properties listed on the Site and does not act as a party in real estate transactions unless otherwise stated. Users are encouraged to conduct their own due diligence, including consulting licensed professionals, reviewing contracts carefully, and verifying the condition and details of any property prior to proceeding with a transaction.
+4. Registration
+To access certain tools and services—such as saving property searches, applying for a mortgage, or receiving personalized updates—you may be required to create an account (“Account”). You agree to: (Provide accurate, current, and complete registration information; Keep your credentials secure and confidential; Be responsible for all activity that occurs under your Account). You may not create an Account using false information or on behalf of someone else without authorization. If you believe your Account has been compromised, please notify us immediately at
+contact@link.ai
+. You may request deletion of your Account at any time by contacting us at the same address.
+5. User Responsibilities and Conduct
+You agree to use the Site and its services for lawful purposes only. In using the Site, you must not: (Attempt to gain unauthorized access to the Site, its systems, or other users’ accounts; Interfere with the normal operation of the Site or attempt to compromise its security; Use automated scripts, scrapers, or bots without our prior written approval; Reproduce, duplicate, or exploit the Site’s content or design for commercial use without authorization; Provide false or misleading information while using our services; Violation of these rules may result in suspension or termination of your access to the Site and may expose you to civil or criminal liability).
+6. Equal Housing Opportunity
+We are committed to the principles of the Fair Housing Act and all applicable state housing laws. Link prohibits discrimination in housing based on race, color, religion, sex, disability, familial status, national origin, gender identity, sexual orientation, or any other protected characteristic. Our platform and affiliated brokerages strive to ensure that all users, buyers, sellers, and renters are treated equally and with fairness.
+For more information
+7. Intellectual Property Rights
+All content, materials, trademarks, logos, software, and design elements displayed on the Site are the property of Link Management Systems Inc. or its licensed partners, and are protected under U.S. and international intellectual property laws. You are granted a limited, revocable, non-transferable license to access and use the Site for personal, non-commercial use only. You may not copy, reproduce, distribute, or modify any part of the Site without our prior written permission.Unauthorized use of our intellectual property or misuse of the Site may result in legal action.
+8. MLS Disclosure
+This website aggregates data from Multiple Listing Services (MLS), including California Regional Multiple Listing Service (CRMLS), and is intended solely for personal, non-commercial use by consumers. The information is provided to help visitors identify prospective properties for purchase or lease. The content, including property details and images, may originate from the Internet Data Exchange (IDX) program and could include listings from brokerage firms other than the brokerage operating this website. All information displayed is deemed reliable but is not guaranteed and should be independently verified through personal inspection and consultation with qualified professionals. All data on the Site is protected under applicable copyright laws. Any unauthorized reproduction, resale, distribution, or other misuse of the information is strictly prohibited.
+9. Limitation of Liability
+To the fullest extent permitted by applicable law, Link Management Systems Inc. disclaims any liability for damages of any kind arising out of or related to your use of the Site or its services, including but not limited to: (Direct, indirect, incidental, or consequential damages; Loss of data, revenue, or profits; Errors, inaccuracies, or service interruptions; You understand that use of the Site is at your own risk). We make no guarantees regarding the availability, accuracy, or reliability of any information or service offered on the Site. If you are dissatisfied with the Site, your sole remedy is to stop using it. In no event shall our total liability exceed the amount you paid, if any, to access the services during the prior six-month period.
+10. Indemnification
+You agree to defend, indemnify, and hold harmless Link Management Systems Inc., its subsidiaries (including Link Brokerages, First Link Mortgage, and Linked Escrow), officers, employees, contractors, and agents from any and all claims, liabilities, damages, losses, or expenses (including attorneys’ fees) arising out of or in connection with: (Your access to or use of the Site or its services; Your breach of these Terms Your violation of any applicable law or the rights of any third party; This indemnification obligation will survive the termination of these Terms and your use of the Site).
+11. Dispute Resolution & Governing Law
+These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict-of-law rules or principles. You agree that any dispute, claim, or controversy arising out of or relating to these Terms, your use of the Site, or any services provided, shall be resolved exclusively through binding individual arbitration. The arbitration shall be conducted in accordance with the rules of the American Arbitration Association (AAA) and take place in a mutually agreed-upon location or remotely if necessary. Arbitration must be initiated within one (1) year from the date the cause of action arises. This agreement to arbitrate does not preclude either party from seeking temporary or preliminary injunctive relief in a court of competent jurisdiction located in Delaware, solely to preserve the status quo or prevent irreparable harm. By using the Site and agreeing to these Terms, you consent to the jurisdiction and venue of the state and federal courts located in Delaware for any actions permitted to proceed in court.
+12. Service Modification & Termination
+We reserve the right, at our sole discretion and without prior notice, to modify, suspend, or discontinue the Site or any service, feature, or functionality offered through it. We may terminate or suspend your access to the Site or services for any reason, including but not limited to violations of these Terms, suspected fraudulent activity, or technical or security concerns.Termination of access does not relieve you of any obligations incurred prior to the termination and does not limit any legal or equitable remedies available to Link.
+13. Third-Party Links & Services
+The Site may contain links to third-party websites, services, tools, or content that are not owned or controlled by Link. These links are provided for your convenience only. We do not endorse, assume responsibility for, or make any warranties regarding third-party offerings, and your use of such third-party resources is entirely at your own risk. You acknowledge and agree that Link is not liable for any damages or losses resulting from your access to or use of third-party content.
+14. No Warranties
+The Site and all services, content, and functionality provided through it are offered on an “as is” and “as available” basis. To the fullest extent permitted under law, we disclaim all warranties of any kind, whether express or implied, including but not limited to: (Implied warranties of merchantability, fitness for a particular purpose, and non-infringement; Warranties that the Site or services will be secure, uninterrupted, error-free, or free of viruses or other harmful components; Warranties regarding the accuracy, reliability, or completeness of any content or services). You assume full responsibility for your use of the Site and any decisions made based on its content.
+15. Arbitration Clause
+By agreeing to these Terms, you consent that any and all disputes or claims between you and Link, including disputes involving our affiliates, subsidiaries, employees, contractors, or agents, will be resolved exclusively through binding individual arbitration, not in court. This arbitration will be governed by the Federal Arbitration Act and administered by the AAA. If AAA cannot schedule a hearing within six (6) months, either party may request arbitration through Judicial Arbitration and Mediation Services (JAMS). You acknowledge and agree that you are waiving your right to a jury trial or to participate in a class action lawsuit or class arbitration.
+16. Class Action Waiver
+To the fullest extent permitted by applicable law, you agree that any claim or dispute under these Terms will be conducted only on an individual basis, and not in a class, consolidated, or representative proceeding.You expressly waive any right to bring a class or collective action, or to participate in one as a member or representative. If this waiver is found unenforceable, then the entirety of Section 15 (Arbitration) shall be null and void as to such claim.
+17. AI Use & Limitations
+As part of the services offered through the Site, Link may provide access to a large language model (LLM)-powered AI assistant to support real estate-related queries, assist in navigation, or summarize documents and data. You understand and agree that: (The AI system is designed to assist, not replace, licensed professionals; Information provided by the AI is generated automatically and may contain errors, omissions, or inaccuracies; No content provided by the AI constitutes legal, financial, or real estate advice, nor does it replace consultation with a licensed real estate broker, attorney, or mortgage professional). You are solely responsible for verifying any information received through the AI with appropriate professionals before making decisions based on it. Link makes no guarantees about the accuracy or applicability of AI-generated responses and disclaims all liability arising from their use.
+18. Severability & Waiver
+If any provision of these Terms is held to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect. No waiver of any term or condition set forth in these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to enforce any right or provision shall not constitute a waiver of such right or provision.
+19. Entire Agreement
+These Terms, along with our Privacy Policy and any additional legal notices or service-specific agreements posted on the Site, constitute the entire agreement between you and Link concerning your use of the Site. They supersede any prior or contemporaneous agreements, communications, or understandings, whether oral or written, between you and Link.
+20. Force Majeure
+We are not responsible for any failure or delay in our performance or access to the Site due to circumstances beyond our control, including but not limited to:( Acts of God; Natural disasters; War or terrorism; Government orders or regulations; Internet or utility outages; Labor strikes or shortages; Infrastructure failures). These events shall not constitute a breach of these Terms, and our obligations will be suspended for the duration of the force majeure event.
+21. Contact Information
+If you have questions, comments, or concerns regarding these Terms or your use of the Site, please contact us at:
+Link Management Systems Inc.
+202 W 140th St, Los Angeles, CA 90061
+Email:
+contact@link.ai
+
+================================================================================
+PAGE: Detail FAQs (detail_faqs.html)
+URL: /detail_faqs
+================================================================================
+
+================================================================================
+PAGE: Detail Job Opportunities (detail_job-opportunities.html)
+URL: /detail_job-opportunities
+================================================================================
+
+================================================================================
+PAGE: Detail News Category (detail_news-category.html)
+URL: /detail_news-category
+================================================================================
+
+================================================================================
+PAGE: Detail News (detail_news.html)
+URL: /detail_news
+================================================================================
+
+Back to news
+min to read
+Share
+news
+Recommended For You
+min to read
+Back to news
+Ready When You Are
+Search properties, compare areas, or check your home value. No pressure, just real answers when you need them.
+Ask Link
+
+================================================================================
+PAGE: Detail State Licenses (detail_state-licenses.html)
+URL: /detail_state-licenses
+================================================================================
+
+================================================================================
+PAGE: Detail Team (detail_team.html)
+URL: /detail_team
+================================================================================
+
+================================================================================
+PAGE: Detail Testimonials (detail_testimonials.html)
+URL: /detail_testimonials
+================================================================================
+
+================================================================================
+PAGE: 401 Error (401.html)
+URL: /401
+================================================================================
+
+Protected Page
+Password
+Incorrect password. Please try again.
+
+================================================================================
+PAGE: 404 Error (404.html)
+URL: /404
+================================================================================
+
+404
+Nothing to See Here
+This page doesn’t exist. Let’s pretend you never came here.
+Go back home
+
+
+================================================================================
+DISCLOSURES
+================================================================================
+
+MLS Disclosure
+- This website aggregates data from Multiple Listing Services, including CRMLS, and is intended solely for personal, non-commercial use. The information is provided to assist visitors in identifying potential properties for purchase and may not be repurposed for any other use. All data is protected under applicable copyright laws, and any unauthorized distribution or reproduction is strictly prohibited. Property details displayed on this site may originate from the Internet Data Exchange (IDX) program and could include listings from brokerage firms other than the brokerage operating this website. While all information is believed to be reliable, its accuracy is not guaranteed and should be independently verified through personal inspection and consultation with appropriate professionals.
+
+1 Loan Service Offer Disclosure
+- This offer is available exclusively to clients who are purchasing a home with a Link Brokerages agent or a Link Network agent and financing through First Link Mortgage. Eligible clients will receive a lender-paid credit equal to 1.5% of their total loan amount, up to a maximum of $20,000, to be applied toward closing costs. For example, a $500,000 home purchase with a 20% down payment results in a loan amount of $400,000, yielding a credit of $6,000.Offer may not be redeemed for cash, is nontransferable, and cannot be retroactively applied to loans where the interest rate has already been locked. All loans are subject to credit approval and qualification under full underwriting guidelines. Additional terms, conditions, and exclusions may apply. This is not an offer to extend credit or a commitment to lend.
+
+2 Escrow Service Offer Disclosure
+- This offer is available exclusively to clients who are selling a home with a Link Brokerages agent or a participating Link Network Agent and using Linked Escrow for closing services. Eligible clients will receive escrow services at no charge for the sale transaction, meaning Linked Escrow’s standard service fee will be waived.This offer covers only Linked Escrow’s internal service fee. Third-party charges, government recording fees, courier fees, and other reimbursable expenses incurred during the course of the transaction will still be collected at closing.Offer is nontransferable, may not be redeemed for cash, and cannot be applied retroactively to open transactions or those involving other escrow providers. All services are subject to eligibility verification and compliance with Linked Escrow’s operating guidelines. Terms, conditions, and exclusions apply. Linked Escrow reserves the right to modify or terminate this offer at any time without prior notice.
+
+© 2025 - Link Management Systems | Link Brokerages | Link Mortgage | Linked Escrow
+
+Link Brokerages Inc is a licensed real estate broker operating under the following state licenses: Link Brokerages Inc in California, License #02126177; Link Brokerages Arizona LLC in Arizona, License #LC704861000; Link Brokerages Colorado LLC in Colorado, License #EC.100101324; Link Brokerages New York LLC in New York, License #10991238596; Link Brokerages North Carolina LLC in North Carolina, License #C37889; Link Brokerages South Carolina LLC in South Carolina, License #26832; and Link Brokerages Georgia LLC in Georgia, License #80869.
+
+First Link Mortgage, Inc (DBA-Link Mortgage) is a licensed mortgage lender, NMLS #2527988. Licensed in California under DRE #01527812. For more information, visit www.nmlsconsumeraccess.org. Equal Housing Lender.
+
+Link Escrow services operating under Linked Escrow Inc is licensed by the California Department of Financial Protection and Innovation under license #96DBO-189708 and operates as an independent escrow company.
+
+First Link Mortgage, Linked Escrow, and Link Brokerages are separate and distinct legal entities. Each company operates independently, maintains its own governance structure, and complies with applicable state and regulatory requirements based on its jurisdiction of incorporation.
