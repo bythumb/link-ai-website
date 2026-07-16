@@ -1622,13 +1622,16 @@ footer {
     scroll-snap-align: start;
   }
   /* Mobile carousel uses the same .cc-card as desktop — reset 3D-carousel positioning */
+  .hmv-carousel { font-size: 13px; }
   .hero-mobile-vis .cc-card {
     position: relative; inset: auto; opacity: 1;
-    pointer-events: auto; height: 284px;
+    pointer-events: auto; height: 300px;
     border-radius: 1.1rem;
   }
-  .hero-mobile-vis .cc-chrome { display: none; }
-  .hero-mobile-vis .cc-body { padding: 1.1rem 1rem 1rem; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+  .hero-mobile-vis .cc-chrome {
+    border-radius: 1.1rem 1.1rem 0 0;
+  }
+  .hero-mobile-vis .cc-body { padding: 1rem .9rem .9rem; height: 100%; display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box; }
   /* Dot indicators */
   .hmv-dots-row {
     display: flex; justify-content: center; gap: .35rem;
@@ -1636,10 +1639,10 @@ footer {
   }
   .hmv-dot-ind {
     height: 2px; width: 18px; border-radius: 1px;
-    background: rgba(255,255,255,.25);
+    background: rgba(19,31,74,.2);
     transition: width .3s, background .3s;
   }
-  .hmv-dot-ind.active { width: 28px; background: rgba(255,255,255,.8); }
+  .hmv-dot-ind.active { width: 28px; background: var(--navy); }
 
   /* ─── CTA BUTTON CENTERING ───────── */
   .hero-cta { justify-content: center; width: 100%; }
