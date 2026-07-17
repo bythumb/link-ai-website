@@ -1506,29 +1506,120 @@ footer {
     z-index: 2;
   }
 
-  /* frosted card sits at the bottom, full width */
+  /* glass card anchored to bottom, tall enough to hold copy + carousel */
   .hero-card {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
     width: 100%;
     border-radius: 1.75rem 1.75rem 0 0;
-    padding: 2rem 1.5rem 1.75rem;
-    flex: none;
+    padding: 2rem 1.5rem 1.25rem;
+    min-height: 72svh;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    margin-top: max(160px, 20svh);
+    justify-content: flex-start;
+    box-sizing: border-box;
   }
 
-  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; width: 100%; }
   .hero-right  { display: none; }
-  .hero-brand  { margin-bottom: 1.35rem; }
-  .hero-announce { font-size: .65rem; margin-bottom: 1.25rem; }
-  .hero-headline { font-size: clamp(1.85rem, 7.5vw, 2.8rem); }
-  .hero-sub { font-size: .88rem; line-height: 1.7; margin-bottom: 2rem; max-width: 100%; }
+  .hero-brand  { margin-bottom: 1.25rem; }
+  .hero-announce { font-size: .65rem; margin-bottom: 1.1rem; }
+  .hero-headline { font-size: clamp(1.75rem, 7.5vw, 2.6rem); }
+  .hero-sub { font-size: .85rem; line-height: 1.65; margin-bottom: 1.5rem; max-width: 100%; }
 
-  /* press logo bar: full width under the card */
-  .hero-press {
+  /* carousel is now inside the glass card */
+  .hero-mobile-vis {
     width: 100%;
-    padding: .4rem 0 .6rem;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-top: .25rem;
   }
+  .hmv-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: .65rem;
+    padding: 0 .25rem;
+  }
+  .hmv-carousel::-webkit-scrollbar { display: none; }
+  .hmv-slide {
+    flex: 0 0 calc(100% - 2rem);
+    scroll-snap-align: start;
+  }
+  /* White-outline card style */
+  .hero-mobile-vis .cc-card {
+    position: relative; inset: auto; opacity: 1; pointer-events: auto;
+    height: 220px; border-radius: .85rem;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 2px 12px rgba(0,0,0,.18);
+  }
+  .hero-mobile-vis .cc-chrome {
+    background: rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255,255,255,.14);
+    border-radius: .85rem .85rem 0 0;
+  }
+  .hero-mobile-vis .cc-url {
+    color: rgba(255,255,255,.32);
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.1);
+  }
+  .hero-mobile-vis .cc-body { padding: .75rem .85rem .75rem; height: calc(100% - 28px); display: flex; flex-direction: column; overflow: hidden; box-sizing: border-box; }
+  .hero-mobile-vis .cc-card-title { color: rgba(255,255,255,.92); }
+  .hero-mobile-vis [style*="color:var(--body)"] { color: rgba(255,255,255,.45) !important; }
+  .hero-mobile-vis .cc-row {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(255,255,255,.12);
+  }
+  .hero-mobile-vis .cc-row-l { color: rgba(255,255,255,.5); }
+  .hero-mobile-vis .cc-row-v { color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-result { background: rgba(255,255,255,.12); }
+  .hero-mobile-vis .cc-result-l { color: rgba(255,255,255,.38); }
+  .hero-mobile-vis .cc-result-v { color: #fff; }
+  .hero-mobile-vis .cc-ns-row .cc-ns-l,
+  .hero-mobile-vis .cc-ns-row .cc-ns-v { color: rgba(255,255,255,.55); }
+  .hero-mobile-vis .cc-ns-total { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.15); }
+  .hero-mobile-vis .cc-ns-total-l,
+  .hero-mobile-vis .cc-ns-total-v { color: #fff; }
+  .hero-mobile-vis .cc-big-val { color: #fff; }
+  .hero-mobile-vis .cc-tq-tick { color: var(--tq); }
+  .hero-mobile-vis .cc-comp { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+  .hero-mobile-vis .cc-comp-l,
+  .hero-mobile-vis .cc-comp-v { color: rgba(255,255,255,.7); }
+  .hero-mobile-vis .cc-comp.hi { border-color: rgba(90,233,215,.4); background: rgba(90,233,215,.07); }
+  .hero-mobile-vis .cc-tl-addr { color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-tl-stars { color: var(--tq); }
+  .hero-mobile-vis .cc-tl-note,
+  .hero-mobile-vis .cc-tl-drive { color: rgba(255,255,255,.45); }
+  .hero-mobile-vis .cc-tl-dot { background: var(--tq); }
+  .hero-mobile-vis .cc-tl-vbar { background: rgba(255,255,255,.15); }
+  .hero-mobile-vis .cc-lead-tag { color: var(--tq); background: rgba(90,233,215,.1); border-color: rgba(90,233,215,.25); }
+  .hero-mobile-vis .cc-ps-q { color: rgba(255,255,255,.6); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.12); }
+  .hero-mobile-vis .cc-ps-addr { color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-ps-det { color: rgba(255,255,255,.45); }
+  .hero-mobile-vis .cc-ps-price { color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-ps-new { background: var(--tq); color: #0a5e55; }
+  .hero-mobile-vis .cc-ps-thumb { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); }
+  .hero-mobile-vis .cc-listing-addr { color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-listing-sub { color: rgba(255,255,255,.45); }
+  .hero-mobile-vis .cc-msg.q { background: rgba(255,255,255,.09); color: rgba(255,255,255,.7); }
+  .hero-mobile-vis .cc-msg.a { background: rgba(90,233,215,.18); color: rgba(255,255,255,.88); }
+  .hero-mobile-vis .cc-mini-client { border-color: rgba(255,255,255,.1); }
+  .hero-mobile-vis .cc-mini-av { background: var(--tq); color: #0a5e55; }
+  .hero-mobile-vis .cc-mini-name { color: rgba(255,255,255,.75); }
+  .hero-mobile-vis .cc-mini-badge { color: rgba(90,233,215,.9); }
+  /* Dot indicators: white on glass */
+  .hmv-dots-row { display: flex; justify-content: center; gap: .35rem; padding: 0; }
+  .hmv-dot-ind { height: 2px; width: 18px; border-radius: 1px; background: rgba(255,255,255,.22); transition: width .3s, background .3s; }
+  .hmv-dot-ind.active { width: 28px; background: rgba(255,255,255,.8); }
+
+  /* press bar hidden on mobile (inside card not needed) */
+  .hero-press { display: none; }
   .hero-press-track img { width: 68px; max-height: 15px; }
   .hero-scroll-hint { display: none; }   /* no scroll-jack on mobile */
 
@@ -1888,7 +1979,7 @@ footer {
   </div><!-- /hero-right -->
 
 </div><!-- /hero-inner -->
-  </div><!-- /hero-card -->
+
   <!-- Mobile-only swipeable tool carousel — below copy card -->
   <div class="hero-mobile-vis" id="heroCarousel">
     <div class="hmv-carousel">
@@ -2087,6 +2178,9 @@ footer {
       <span class="hmv-dot-ind"></span>
     </div>
   </div><!-- /hero-mobile-vis -->
+
+  </div><!-- /hero-card -->
+
   <div class="hero-press">
     <div class="hero-press-track-wrap">
       <div class="hero-press-track">
