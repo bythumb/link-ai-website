@@ -1494,16 +1494,17 @@ footer {
     overflow: hidden;
   }
 
-  /* eyebrow floats over the background image */
+  /* eyebrow floats over the background image — top set by JS */
   .hero-eyebrow {
     position: absolute;
-    top: max(90px, 16svh);
+    top: 90px;           /* fallback; overridden by centerEyebrow() */
     left: 0; right: 0;
     font-size: 1.15rem;
     margin: 0;
     padding: 0 1.5rem;
     text-align: center;
     z-index: 2;
+    transition: top .15s ease;
   }
 
   /* glass card stays in flex flow; margin-top: auto pushes it to the bottom
@@ -2802,102 +2803,23 @@ footer {
 
   // Walkthrough playback speed
 
-  // ── Mobile layout live-editor panel ─────────────────────────────────────────
-  (function() {
-    if (window.innerWidth > 768) return; // mobile only
+  // ── Center eyebrow between nav and hero card ─────────────────────────────────
+  function centerEyebrow() {
+    if (window.innerWidth > 768) return;
+    const nav  = document.querySelector('nav');
+    const card = document.querySelector('.hero-card');
+    const brow = document.querySelector('.hero-eyebrow');
+    if (!nav || !card || !brow) return;
+    const navBottom  = nav.getBoundingClientRect().bottom;
+    const cardTop    = card.getBoundingClientRect().top;
+    const browHeight = brow.offsetHeight;
+    const center     = (navBottom + cardTop) / 2;
+    brow.style.top   = Math.round(center - browHeight / 2) + 'px';
+  }
+  // Run after layout settles
+  requestAnimationFrame(() => requestAnimationFrame(centerEyebrow));
+  window.addEventListener('resize', centerEyebrow);
 
-    const controls = [
-      { id: 'cardTop',    label: 'Card top gap',       prop: '--ed-card-top',    min: 100, max: 400, step: 4,  unit: 'px', def: 190 },
-      { id: 'cardPad',    label: 'Card padding',        prop: '--ed-card-pad',    min: 12,  max: 40,  step: 2,  unit: 'px', def: 32 },
-      { id: 'brandGap',   label: 'Pill → headline',     prop: '--ed-brand-gap',   min: 4,   max: 40,  step: 2,  unit: 'px', def: 20 },
-      { id: 'announce',   label: 'Pill → headline gap', prop: '--ed-announce',    min: 4,   max: 40,  step: 2,  unit: 'px', def: 18 },
-      { id: 'subGap',     label: 'Desc → button gap',   prop: '--ed-sub-gap',     min: 8,   max: 60,  step: 2,  unit: 'px', def: 24 },
-      { id: 'mockGap',    label: 'Copy → mocks gap',    prop: '--ed-mock-gap',    min: 0,   max: 40,  step: 2,  unit: 'px', def: 4 },
-      { id: 'mockH',      label: 'Mock card height',    prop: '--ed-mock-h',      min: 160, max: 320, step: 4,  unit: 'px', def: 220 },
-    ];
-
-    // Inject CSS vars
-    const style = document.createElement('style');
-    style.id = 'editorVars';
-    document.head.appendChild(style);
-
-    function applyVars(vals) {
-      const hero = document.querySelector('.hero-card');
-      if (!hero) return;
-      hero.style.marginTop = vals.cardTop + 'px';
-      hero.style.padding = vals.cardPad + 'px ' + (vals.cardPad * 0.75) + 'px';
-      const brand = hero.querySelector('.hero-brand');
-      if (brand) brand.style.marginBottom = vals.brandGap + 'px';
-      const announce = hero.querySelector('.hero-announce');
-      if (announce) announce.style.marginBottom = vals.announce + 'px';
-      const sub = hero.querySelector('.hero-sub');
-      if (sub) sub.style.marginBottom = vals.subGap + 'px';
-      const vis = hero.querySelector('.hero-mobile-vis');
-      if (vis) vis.style.marginTop = vals.mockGap + 'px';
-      hero.querySelectorAll('.hero-mobile-vis .cc-card').forEach(c => c.style.height = vals.mockH + 'px');
-    }
-
-    // Build panel
-    const panel = document.createElement('div');
-    panel.style.cssText = 'position:fixed;bottom:16px;right:12px;z-index:9999;background:rgba(19,31,74,.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:1rem;padding:12px 14px;width:220px;font-family:system-ui,sans-serif;font-size:11px;color:#fff;box-shadow:0 8px 32px rgba(0,0,0,.4)';
-
-    const title = document.createElement('div');
-    title.style.cssText = 'font-weight:700;font-size:12px;margin-bottom:10px;color:#5AE9D7;letter-spacing:.04em';
-    title.textContent = '✦ Layout Editor';
-    panel.appendChild(title);
-
-    const vals = {};
-    controls.forEach(c => {
-      vals[c.id] = c.def;
-      const row = document.createElement('div');
-      row.style.cssText = 'margin-bottom:8px';
-      const lbl = document.createElement('div');
-      lbl.style.cssText = 'display:flex;justify-content:space-between;margin-bottom:2px;color:rgba(255,255,255,.6)';
-      const span = document.createElement('span');
-      span.textContent = c.label;
-      const val = document.createElement('span');
-      val.id = c.id + 'Val';
-      val.style.color = '#5AE9D7';
-      val.textContent = c.def + c.unit;
-      lbl.appendChild(span); lbl.appendChild(val);
-      const input = document.createElement('input');
-      input.type = 'range'; input.min = c.min; input.max = c.max; input.step = c.step; input.value = c.def;
-      input.style.cssText = 'width:100%;accent-color:#5AE9D7;cursor:pointer';
-      input.addEventListener('input', () => {
-        vals[c.id] = +input.value;
-        val.textContent = input.value + c.unit;
-        applyVars(vals);
-      });
-      row.appendChild(lbl); row.appendChild(input);
-      panel.appendChild(row);
-    });
-
-    const btn = document.createElement('button');
-    btn.textContent = 'Copy CSS →';
-    btn.style.cssText = 'margin-top:8px;width:100%;padding:7px;background:#5AE9D7;color:#0a5e55;font-weight:700;font-size:11px;border:none;border-radius:.5rem;cursor:pointer';
-    btn.onclick = () => {
-      const css = [
-        '/* Hero card top margin */',
-        '.hero-card { margin-top: ' + vals.cardTop + 'px; }',
-        '/* Card padding */',
-        '.hero-card { padding: ' + vals.cardPad + 'px ' + Math.round(vals.cardPad*.75) + 'px; }',
-        '/* Pill → headline gap */',
-        '.hero-brand { margin-bottom: ' + vals.brandGap + 'px; }',
-        '/* Pill inner gap */',
-        '.hero-announce { margin-bottom: ' + vals.announce + 'px; }',
-        '/* Desc → button gap */',
-        '.hero-sub { margin-bottom: ' + vals.subGap + 'px; }',
-        '/* Copy → mocks gap */',
-        '.hero-mobile-vis { margin-top: ' + vals.mockGap + 'px; }',
-        '/* Mock card height */',
-        '.hero-mobile-vis .cc-card { height: ' + vals.mockH + 'px; }',
-      ].join('\n');
-      navigator.clipboard.writeText(css).then(() => { btn.textContent = 'Copied! ✓'; setTimeout(() => btn.textContent = 'Copy CSS →', 2000); });
-    };
-    panel.appendChild(btn);
-    document.body.appendChild(panel);
-    applyVars(vals);
-  })();
 
 </script>
 
