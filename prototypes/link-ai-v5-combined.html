@@ -1546,13 +1546,18 @@ footer {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    gap: .65rem;
-    padding: 0 .25rem;
+    gap: 10px;
+    padding: 0;
+    /* bleed past the card's right padding so cards reach the screen edge */
+    margin-right: -27px;
+    scroll-padding-left: 0;
   }
   .hmv-carousel::-webkit-scrollbar { display: none; }
   .hmv-slide {
-    flex: 0 0 calc(100% - 2rem);
+    /* width = viewport minus hero-card left pad minus a peek gap for the next card */
+    flex: 0 0 calc(100vw - 90px);
     scroll-snap-align: start;
+    flex-shrink: 0;
   }
   /* White-outline card style */
   .hero-mobile-vis .cc-card {
