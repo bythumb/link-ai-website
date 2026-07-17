@@ -1487,7 +1487,7 @@ footer {
   .hero {
     position: relative;
     height: auto;
-    min-height: 108svh;
+    min-height: 112svh;
     padding-top: 0;
     justify-content: flex-end;   /* card pinned to bottom */
     align-items: stretch;        /* children go full-width */
@@ -1765,6 +1765,10 @@ footer {
   .site-footer-legal { flex-wrap: wrap; }
   .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
   .site-footer-social { margin-top: .25rem; }
+}
+
+@media (max-width: 768px) and (min-height: 900px) {
+  .hero { min-height: 99svh; }
 }
 
 /* ── Small phones (< 480px) ── */
