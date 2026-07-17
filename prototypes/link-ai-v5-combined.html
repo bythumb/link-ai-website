@@ -968,7 +968,7 @@ footer {
 
 .sc2-left {
   flex-shrink: 0;
-  padding-bottom: 1.4rem;
+  padding-bottom: 1rem;
 }
 
 .sc2-textstack { display: grid; }
@@ -1513,6 +1513,7 @@ footer {
     padding: 1.75rem 1.5rem 1.5rem;
     flex: none;
     align-items: flex-start;
+    margin-top: max(160px, 20svh);
   }
 
   .hero-inner { grid-template-columns: 1fr; gap: 0; }
@@ -1532,8 +1533,10 @@ footer {
   .hero-scroll-hint { display: none; }   /* no scroll-jack on mobile */
 
   /* ─── TOOLS ───────────────────────── */
-  .tools-section { padding: 4rem 1.25rem; }
+  .tools-section { padding: 2.5rem 1.25rem; }
+  .tools-hdr { margin-bottom: 2rem; }
   .tools-list { grid-template-columns: 1fr; }
+  .tool-item { padding: 1.5rem 1.25rem; }
 
   /* ─── PRODUCT SHOWCASE ────────────── */
   .showcase-section { padding: 4rem 1.25rem; }
@@ -1550,8 +1553,13 @@ footer {
   .feature-inner.flip .f-vis  { order: 2; }
 
   /* ─── MOSAIC / RELATIONSHIP ───────── */
-  .rel-section { padding: 4rem 1.25rem; }
-  .rel-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .rel-section { padding: 2.5rem 1.25rem 2rem; }
+  .rel-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .rel-photo-main { height: 220px; }
+  .rel-photo-sm { height: 140px; }
+  .rel-copy { gap: 1rem; }
+  .rel-checklist { gap: .55rem; }
+  .rel-checklist li { font-size: .88rem; }
   .mosaic-grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 220px);
@@ -1576,14 +1584,17 @@ footer {
 
   /* ─── SC2 SCROLL SHOWCASE ─────────── */
   .sc2-scene { height: auto; }
-  .sc2-section { position: relative; height: auto; padding: 3rem 1.25rem 4rem; }
-  .sc2-card { padding: 1rem 0; }
-  .sc2-cols { grid-template-columns: 1fr; gap: 1.25rem; }
-  .sc2-tl-card { padding: .75rem .6rem; justify-content: flex-start; align-items: flex-start; }
-  .tl-list { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem .5rem; }
-  .tl-item { border-left: none; border-bottom: 2px solid transparent; border-radius: .45rem; padding: .4rem .7rem; }
+  .sc2-section { position: relative; height: auto; padding: 2.5rem 1.25rem 3rem; }
+  .sc2-card { padding: .75rem 0; }
+  .sc2-name { font-size: clamp(1.6rem, 6vw, 2.2rem); line-height: 1.15; }
+  .sc2-desc { font-size: .875rem; max-width: 100%; }
+  .sc2-cols { grid-template-columns: 1fr; gap: 1rem; }
+  .sc2-tl-card { padding: .85rem .75rem; justify-content: flex-start; align-items: flex-start; width: 100%; box-sizing: border-box; }
+  .tl-list { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .4rem; width: 100%; }
+  .tl-item { border-left: none; border-bottom: 2px solid transparent; border-radius: .45rem; padding: .5rem .6rem; min-height: 2.5rem; display: flex; align-items: center; }
   .tl-item.active { border-bottom-color: var(--tq); }
-  .tl-name { font-size: .78rem; }
+  .tl-num { display: none; }
+  .tl-name { font-size: .8rem; }
   .sc2-slide { opacity: 0; transition: none; }
   .sc2-slide.active { opacity: 1; }
   .hero-frame { display: none; }
@@ -1591,8 +1602,10 @@ footer {
   .hf-stack { min-height: 0; }
 
   /* ─── WALKTHROUGH ─────────────────── */
-  .walkthrough-section { padding: 3rem 1.25rem 4rem; }
-  .walkthrough-inner { width: 100%; }
+  .walkthrough-section { padding: 2rem 1.25rem 2.5rem; }
+  .walkthrough-inner { width: 100%; gap: 1.5rem; }
+  .walkthrough-frame { min-height: 220px; }
+  .walkthrough-hdr .f-h3 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
 
   /* ─── PRESS SECTION ───────────────── */
   .press-section { padding: 2rem 0; }
@@ -1613,7 +1626,7 @@ footer {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: .75rem;
-    padding: 0 .75rem;
+    padding: 0 1.5rem 0 .75rem;
     scroll-padding-left: .75rem;
   }
   .hmv-carousel::-webkit-scrollbar { display: none; }
@@ -1668,6 +1681,10 @@ footer {
   .cta-h2 { font-size: clamp(1.75rem, 9vw, 2.4rem); }
   .tools-section, .showcase-section, .feature,
   .rel-section, .hiw, .walkthrough-section { padding-left: 1rem; padding-right: 1rem; }
+  .tool-item { padding: 1.25rem 1rem; }
+  .rel-photo-main { height: 190px; }
+  .rel-photo-sm { height: 120px; }
+  .sc2-name { font-size: clamp(1.45rem, 6vw, 1.8rem); }
 }
 
   </style>
