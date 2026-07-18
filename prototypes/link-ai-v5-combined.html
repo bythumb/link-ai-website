@@ -1223,6 +1223,21 @@ footer {
 .cc-nav svg { width: .85rem; height: .85rem; stroke: #fff; stroke-width: 2; fill: none; }
 .cc-prev { left: .75rem; }
 .cc-next { right: .75rem; }
+
+/* ── Mid-screen: hide side-peek cards, show arrow buttons ── */
+@media (min-width: 769px) and (max-width: 1279px) {
+  .carousel-scene { overflow: hidden; }
+  .cc-card:not(.active) { opacity: 0 !important; pointer-events: none !important; }
+  .cc-nav {
+    opacity: 1;
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.32) !important;
+    backdrop-filter: blur(8px);
+    width: 2.6rem; height: 2.6rem;
+    transition: background .2s;
+  }
+  .cc-nav:hover { background: rgba(255,255,255,0.32); }
+}
 .cc-chrome {
   padding: .5rem .85rem;
   background: #f3f5f9;
@@ -1839,6 +1854,12 @@ footer {
     </div>
 
     <div class="carousel-scene">
+      <button class="cc-nav cc-prev" aria-label="Previous" onclick="ccNavClick(-1)">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="cc-nav cc-next" aria-label="Next" onclick="ccNavClick(+1)">
+        <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
       <div class="carousel-cylinder" id="carouselCylinder">
 
         <!-- 0: Pre-Qualification -->
@@ -2715,6 +2736,12 @@ footer {
       clearInterval(autoTimer);
       autoTimer = setInterval(() => rotate(+STEP), 5000);
     }
+
+    /* exposed for mid-screen arrow buttons */
+    window.ccNavClick = function(dir) {
+      rotate(dir * STEP);
+      resetAuto();
+    };
 
     /* ── click side card to pull it to center ── */
     ccCards.forEach((card, i) => {
