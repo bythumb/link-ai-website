@@ -1224,8 +1224,8 @@ footer {
 .cc-prev { left: .75rem; }
 .cc-next { right: .75rem; }
 
-/* ── Mid-screen: hide side-peek cards, show arrow buttons ── */
-@media (min-width: 769px) and (max-width: 1279px) {
+/* ── 769–1023px: single card + arrows at card bottom ── */
+@media (min-width: 769px) and (max-width: 1023px) {
   .carousel-scene { overflow: hidden; }
   .cc-card:not(.active) { opacity: 0 !important; pointer-events: none !important; }
   .cc-nav {
@@ -1233,10 +1233,31 @@ footer {
     background: rgba(255,255,255,0.18);
     border: 1.5px solid rgba(255,255,255,0.32) !important;
     backdrop-filter: blur(8px);
-    width: 2.6rem; height: 2.6rem;
+    width: 2.4rem; height: 2.4rem;
     transition: background .2s;
+    top: auto; transform: none; bottom: 0.9rem;
   }
+  .cc-prev { left: auto; right: calc(50% + 0.4rem); }
+  .cc-next { right: auto; left: calc(50% + 0.4rem); }
   .cc-nav:hover { background: rgba(255,255,255,0.32); }
+}
+
+/* ── 1024–1549px: scaled 3-card view, proportional shrink ── */
+@media (min-width: 1024px) and (max-width: 1149px) {
+  .hero-right { overflow: hidden; }
+  .carousel-scene { transform: scale(0.66); transform-origin: top center; margin-bottom: -143px; }
+}
+@media (min-width: 1150px) and (max-width: 1299px) {
+  .hero-right { overflow: hidden; }
+  .carousel-scene { transform: scale(0.78); transform-origin: top center; margin-bottom: -92px; }
+}
+@media (min-width: 1300px) and (max-width: 1449px) {
+  .hero-right { overflow: hidden; }
+  .carousel-scene { transform: scale(0.88); transform-origin: top center; margin-bottom: -50px; }
+}
+@media (min-width: 1450px) and (max-width: 1549px) {
+  .hero-right { overflow: hidden; }
+  .carousel-scene { transform: scale(0.95); transform-origin: top center; margin-bottom: -21px; }
 }
 .cc-chrome {
   padding: .5rem .85rem;
