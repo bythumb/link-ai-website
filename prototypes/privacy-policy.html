@@ -75,6 +75,13 @@
     .content-wrap a { color: var(--navy); font-weight: 600; }
     .content-wrap strong { color: var(--navy); font-weight: 600; }
 
+    .scope-note {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border); border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 0 0 2rem; font-size: 0.875rem;
+    }
+    .scope-note strong { color: var(--navy); display: block; margin-bottom: 0.35rem; font-size: 0.9rem; }
+
     .disclosure-box {
       background: var(--white); border-radius: 0.75rem;
       border: 1px solid var(--border);
@@ -116,6 +123,7 @@
       .page-hero h1 { font-size: 1.8rem; }
       .content-wrap { padding: 2rem 1.2rem 3rem; }
       .site-footer-inner { flex-direction: column; align-items: flex-start; }
+      .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
     }
     .disclosure-box { background: none; border: none; border-left: none; padding: 0; margin: .9rem 0; font-size: .9rem; }
   </style>
@@ -130,12 +138,18 @@
 <div class="page-hero">
   <div class="page-eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <div class="page-updated">Updated May 15, 2025</div>
+  <div class="page-updated">Updated July 17, 2026</div>
 </div>
 
 <main class="content-wrap">
 
   <p>This Privacy Policy describes how Link Management Systems, Inc. ("Link," "we," "us," or "our") collects, uses, and shares information about you when you use our services, including our website, mobile applications, and related products and services (collectively, the "Services").</p>
+
+  <!-- P-1: Scope; Financial Services Affiliates -->
+  <div class="scope-note">
+    <strong>Scope; Financial Services Affiliates</strong>
+    This Privacy Policy applies to the Link technology platform operated by Link Management Systems, Inc. Personal information collected by our licensed financial-services affiliates in connection with mortgage or escrow services — First Link Mortgage (NMLS #2527988) and Linked Escrow (DFPI License No. 96DBO-189708) — is governed by those companies' own privacy notices provided under the Gramm-Leach-Bliley Act (GLBA) and by applicable federal and state financial privacy laws, not by this Policy. Information subject to the GLBA is exempt from certain state privacy laws, including the California Consumer Privacy Act.
+  </div>
 
   <h2>1. Information We Collect</h2>
   <h3>Information You Provide</h3>
@@ -182,7 +196,11 @@
     <li>Send promotional communications (with your consent where required)</li>
   </ul>
 
-  <h2>3. Sharing of Information</h2>
+  <!-- P-7: Text Messaging -->
+  <h2>3. Text Messaging</h2>
+  <p>If you opt in to receive text messages from us, you consent to receive recurring text messages at the phone number you provide, which may be sent using automated technology. Message frequency varies. Message and data rates may apply. Reply STOP to cancel and HELP for help. Consent to receive text messages is not a condition of purchasing any goods or services. Mobile opt-in information and text-messaging consent are not shared with or sold to third parties for their marketing purposes.</p>
+
+  <h2 id="do-not-sell">4. Sharing of Information</h2>
   <p>We may share your information as follows:</p>
   <ul>
     <li><strong>With your consent</strong> — we share information when you direct us to</li>
@@ -192,16 +210,17 @@
     <li><strong>Affiliates</strong> — with our parent company, subsidiaries, and affiliates</li>
     <li><strong>Real estate professionals</strong> — information shared as part of a transaction (subject to applicable MLS rules and real estate regulations)</li>
   </ul>
-  <p>We do not sell your personal information to third parties for their direct marketing purposes.</p>
+  <!-- P-2: Option A — keep marketing cookies -->
+  <p>We do not sell your personal information in exchange for money. However, our use of third-party advertising and analytics cookies may constitute "sharing" of personal information for cross-context behavioral advertising as defined by the California Privacy Rights Act. You may opt out of this sharing at any time through the "<a href="#do-not-sell">Do Not Sell or Share My Personal Information</a>" link in our website footer or by using a browser-based opt-out preference signal such as Global Privacy Control (GPC), which we honor.</p>
 
-  <h2>4. Data Retention</h2>
+  <h2>5. Data Retention</h2>
   <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. For transaction records, we retain data in accordance with applicable real estate, mortgage, and escrow regulations, which may require retention for several years after a transaction closes.</p>
 
-  <h2>5. Security</h2>
+  <h2>6. Security</h2>
   <p>We implement commercially reasonable technical and organizational measures designed to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no security system is impenetrable, and we cannot guarantee the security of our systems.</p>
   <p>We use industry-standard encryption (TLS) for data in transit and AES-256 encryption for sensitive data at rest. Access controls, audit logs, and regular security reviews are part of our security program.</p>
 
-  <h2>6. Your Choices and Rights</h2>
+  <h2>7. Your Choices and Rights</h2>
   <h3>Account Information</h3>
   <p>You may update or correct your account information at any time by logging into your account settings. You may also request deletion of your account by contacting us, subject to certain exceptions for legal compliance.</p>
 
@@ -214,7 +233,11 @@
   <h3>Nevada Residents</h3>
   <p>Nevada residents may opt out of the sale of personal information by contacting us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
 
-  <h2>7. Cookies</h2>
+  <!-- P-3: Residents of Other States -->
+  <h3>Residents of Other States</h3>
+  <p>Residents of states with comprehensive privacy laws — including Colorado, Connecticut, Florida, Montana, Oregon, Texas, Utah, and Virginia, among others — may have similar rights of access, correction, deletion, and data portability, and the right to opt out of targeted advertising, the sale of personal information, and certain profiling. To exercise these rights, or to appeal a decision regarding a request, contact us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <h2>8. Cookies</h2>
   <p>We use cookies and similar technologies to collect usage data, remember your preferences, and improve your experience. You can control cookies through your browser settings, though disabling cookies may affect functionality. We use:</p>
   <ul>
     <li><strong>Essential cookies</strong> — required for the Services to function</li>
@@ -223,18 +246,18 @@
     <li><strong>Marketing cookies</strong> — deliver relevant advertising (with consent where required)</li>
   </ul>
 
-  <h2>8. Third-Party Links</h2>
+  <h2>9. Third-Party Links</h2>
   <p>Our Services may contain links to third-party websites and services. We are not responsible for the privacy practices of those third parties, and we encourage you to review their privacy policies.</p>
 
-  <h2>9. Children's Privacy</h2>
-  <p>Our Services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.</p>
+  <h2>10. Children's Privacy</h2>
+  <p>Our Services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately. In addition, we do not sell or share the personal information of consumers we know to be under 16 years of age without the affirmative authorization required by the California Consumer Privacy Act.</p>
 
-  <h2>10. Changes to This Policy</h2>
+  <h2>11. Changes to This Policy</h2>
   <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy on our website and, where appropriate, sending you an email notification. Your continued use of our Services after the effective date of the revised policy constitutes your acceptance of the changes.</p>
 
-  <h2>11. Contact Us</h2>
+  <h2>12. Contact Us</h2>
   <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
-  <div class="disclosure-box">
+  <div class="disclosure-box" style="background:var(--white);border:1px solid var(--border);border-left:4px solid var(--tq);padding:1.2rem 1.5rem;margin:1rem 0;font-size:.9rem;">
     <strong>Link Management Systems, Inc.</strong><br>
     202 W 140th St, Los Angeles, CA 90061<br>
     Email: <a href="mailto:privacy@link.ai">privacy@link.ai</a><br>
@@ -252,12 +275,13 @@
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
       <a href="compliance.html">Compliance</a>
+      <a href="privacy-policy.html#do-not-sell">Do Not Sell or Share My Personal Information</a>
     </div>
     <div class="site-footer-social">
       <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
       <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
     </div>
-    <div class="site-footer-copy">© 2025 Link Management Systems. All rights reserved. Equal Housing Opportunity. NMLS #2527988.</div>
+    <div class="site-footer-copy">© 2026 Link Management Systems. All rights reserved. Equal Housing Opportunity. First Link Mortgage NMLS #2527988.</div>
   </div>
 </footer>
 
