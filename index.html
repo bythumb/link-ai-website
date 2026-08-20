@@ -107,7 +107,7 @@ nav {
 .hero {
   position: relative; height: 100vh;
   display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-  padding-top: clamp(32px, 8vh, 72px);
+  padding-top: clamp(40px, 10vh, 88px);
   overflow: hidden;
   background: url('header%20image%20copy.webp') center / cover no-repeat;
 }
@@ -119,24 +119,6 @@ nav {
 }
 .hero > * { position: relative; z-index: 1; }
 
-/* scroll hint arrow */
-.hero-scroll-hint {
-  display: flex; flex-direction: column; align-items: center; gap: .35rem;
-  margin: .4rem auto 1.4rem;
-  opacity: .55; animation: scrollBounce 2s ease-in-out infinite;
-  pointer-events: none;
-  width: fit-content;
-}
-.hero-scroll-hint span {
-  display: block; width: 10px; height: 10px;
-  border-right: 2px solid #fff; border-bottom: 2px solid #fff;
-  transform: rotate(45deg);
-}
-.hero-scroll-hint span:nth-child(2) { opacity: .55; margin-top: -5px; }
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(7px); }
-}
 
 /* ── access modal ── */
 .modal-backdrop {
@@ -239,24 +221,22 @@ nav {
 }
 .modal-success-sub { font-size: .82rem; color: var(--body); line-height: 1.6; }
 
-/* hero press bar */
+/* hero press bar — lives inside .hero-card, pinned to its bottom */
 .hero-press {
-  width: calc(100% - clamp(80px, 22.2vw, 280px));
-  padding: .5rem 0 .4rem;
+  width: calc(100% + 6rem); margin-top: auto;
+  padding: 3rem 0;
   border-top: 1px solid rgba(255,255,255,.1);
   overflow: hidden;
-  margin-top: -70px;
-  position: relative;
-  z-index: 2;
+  flex-shrink: 0;
 }
 .hero-press-track-wrap { overflow: hidden; width: 100%; }
 .hero-press-track {
-  display: flex; align-items: center; gap: 4rem;
+  display: flex; align-items: center; gap: 3rem;
   width: max-content;
   animation: heroPressScroll 60s linear infinite;
 }
 .hero-press-track img {
-  width: 300px; height: auto; max-height: 66px;
+  width: 225px; height: auto; max-height: 49px;
   opacity: .45; filter: brightness(0) invert(1);
   object-fit: contain; flex-shrink: 0;
 }
@@ -266,7 +246,7 @@ nav {
 }
 
 /* press logo carousel */
-/* frosted card that rises from below eyebrow */
+/* frosted card that rises from below eyebrow, and fills to the bottom of the screen */
 .hero-card {
   flex: 1;
   width: calc(100% - clamp(80px, 22.2vw, 280px));
@@ -275,8 +255,8 @@ nav {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: clamp(36px, 4.7vw, 80px) clamp(36px, 4.7vw, 80px) 0 0;
-  display: flex; align-items: flex-start; justify-content: center;
-  padding: clamp(40px, 5.6vw, 100px) 3rem 2rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  padding: clamp(40px, 5.6vw, 100px) 3rem 0;
   overflow: visible;
 }
 .hero-inner {
@@ -328,11 +308,11 @@ nav {
 }
 
 .hero-eyebrow {
-  font-size: 2.5rem; font-weight: 500;
+  font-size: 1.65rem; font-weight: 500;
   letter-spacing: .01em; color: #fff;
   text-shadow: 0 1px 12px rgba(0,0,0,.25);
   text-align: center; width: 100%;
-  flex-shrink: 0; margin-top: 4vh; margin-bottom: clamp(14px, 2.5vh, 36px);
+  flex-shrink: 0; margin-top: 7vh; margin-bottom: clamp(14px, 2.5vh, 36px);
   opacity: 0; animation: fadeIn .7s ease forwards .05s;
 }
 
@@ -1647,7 +1627,6 @@ footer {
   /* press bar hidden on mobile (inside card not needed) */
   .hero-press { display: none; }
   .hero-press-track img { width: 68px; max-height: 15px; }
-  .hero-scroll-hint { display: none; }   /* no scroll-jack on mobile */
 
   /* ─── TOOLS ───────────────────────── */
   .tools-section { padding: 2.5rem 1.25rem; }
@@ -2215,9 +2194,30 @@ footer {
     </div>
   </div><!-- /hero-mobile-vis -->
 
-  </div><!-- /hero-card -->
+  <div class="hero-press">
+    <div class="hero-press-track-wrap">
+      <div class="hero-press-track">
+        <img src="link.ai%20images/News%201.png" alt="">
+        <img src="link.ai%20images/News%202.png" alt="">
+        <img src="link.ai%20images/News%203.png" alt="">
+        <img src="link.ai%20images/News%204.png" alt="">
+        <img src="link.ai%20images/News%205.png" alt="">
+        <img src="link.ai%20images/News%206.png" alt="">
+        <img src="link.ai%20images/News%207.png" alt="">
+        <img src="link.ai%20images/News%208.png" alt="">
+        <img src="link.ai%20images/News%201.png" alt="">
+        <img src="link.ai%20images/News%202.png" alt="">
+        <img src="link.ai%20images/News%203.png" alt="">
+        <img src="link.ai%20images/News%204.png" alt="">
+        <img src="link.ai%20images/News%205.png" alt="">
+        <img src="link.ai%20images/News%206.png" alt="">
+        <img src="link.ai%20images/News%207.png" alt="">
+        <img src="link.ai%20images/News%208.png" alt="">
+      </div>
+    </div>
+  </div>
 
-  <!-- hero-press hidden for now -->
+  </div><!-- /hero-card -->
 </section>
 </div><!-- /hero-scene -->
 
