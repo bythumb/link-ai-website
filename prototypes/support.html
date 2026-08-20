@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — Link Tools</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    .page-hero {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem; text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--tq);
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.4rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.6rem; line-height: 1.2;
+    }
+    .page-hero p { font-size: 1rem; color: var(--body); max-width: 500px; margin: 0 auto; }
+
+    .contact-banner {
+      background: var(--navy); color: rgba(255,255,255,.85);
+      padding: 1.1rem 2rem; text-align: center; font-size: 0.875rem;
+    }
+    .contact-banner a { color: var(--tq); font-weight: 600; text-decoration: none; }
+    .contact-banner strong { color: #fff; }
+
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h2:first-child { margin-top: 0; }
+    .content-wrap h3 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin: 1.4rem 0 0.35rem; }
+    .content-wrap p { font-size: 0.9rem; margin-bottom: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.45rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .content-wrap a:hover { color: var(--tq); }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+    .content-wrap em { font-style: italic; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 0.25rem; }
+    .faq-item {
+      border-bottom: 1px solid var(--border); padding: 1rem 0;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+    .faq-a { font-size: 0.875rem; color: var(--body); line-height: 1.65; }
+
+    .info-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 4px solid var(--tq); border-radius: 0.75rem;
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.875rem;
+    }
+    .info-box strong { color: var(--navy); display: block; margin-bottom: 0.3rem; font-size: 0.9rem; }
+
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.55; margin-top: 3rem; }
+
+    .site-footer {
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 2rem 2rem 1.6rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--border); display: flex;
+      align-items: center; justify-content: center;
+    }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy { width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.9rem; }
+      .content-wrap { padding: 2rem 1.2rem 3.5rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+      .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="../index.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Support</div>
+  <h1>LINK Tools Support</h1>
+  <p>LINK Tools is the iPhone app for LINK agents — property links, buyer tours, leads, saved searches, valuations, and the AI copilot.</p>
+</div>
+
+<div class="contact-banner">
+  <strong>Contact us:</strong>&nbsp;
+  <a href="mailto:support@link.ai">support@link.ai</a>
+  &nbsp;·&nbsp;
+  <a href="tel:+13106956510">(310) 695-6510</a>
+  &nbsp;·&nbsp; Mon–Fri, 9am–5pm Pacific. We reply within one business day.
+</div>
+
+<div class="content-wrap">
+
+  <h2>Getting access</h2>
+  <div class="info-box">
+    <strong>No account yet?</strong>
+    LINK Tools accounts are created by your brokerage — there is no public sign-up. Ask your broker or office admin to invite your work email address. Once invited, sign in with Apple, Google, or your email and password.
+  </div>
+
+  <h2>Common questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q">I can't sign in.</div>
+      <div class="faq-a">Use the same sign-in method you used the first time (Apple, Google, or email + password). Email and password resets are handled on the sign-in screen. If your invite was sent to a different email address than the one you are trying, contact your brokerage to update it.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">I'm not getting notifications.</div>
+      <div class="faq-a">Check <strong>iOS Settings → LINK Tools → Notifications</strong> and make sure notifications are allowed. You can also adjust which notifications you receive from the Notification settings screen inside the app. LINK Tools works fully with notifications turned off.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">I want to delete my account.</div>
+      <div class="faq-a">Go to <strong>Profile → Danger Zone → Delete Account</strong> in the app, or visit <a href="https://app.link.ai/data-deletion">app.link.ai/data-deletion</a>. Deletion takes effect immediately — your login is removed and push tokens are cleared. Remaining personal information on your account is anonymised within 30 days. Note: your business records (links, leads, tours) are retained and excluded from public pages rather than deleted.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Where do I find my links, leads, tours, and valuations?</div>
+      <div class="faq-a">Everything is in the main dashboard when you open the app. <strong>Links</strong> shows your property links and QR codes. <strong>Tours</strong> shows buyer tours you have built or published. <strong>Leads</strong> tracks contacts from your links and tours. <strong>Valuations</strong> shows home valuation reports you have shared.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">My profile photo isn't updating.</div>
+      <div class="faq-a">Go to <strong>Profile</strong> and tap your photo. The app uses your photo library — if iOS hasn't granted access, go to <strong>iOS Settings → LINK Tools → Photos</strong> and set it to <em>Selected Photos</em> or <em>All Photos</em>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Something looks wrong — how do I report a bug?</div>
+      <div class="faq-a">Email <a href="mailto:support@link.ai">support@link.ai</a> and include:
+        <ul style="margin-top:.4rem;">
+          <li>App version and build number (Settings → About)</li>
+          <li>iOS version (iOS Settings → General → About)</li>
+          <li>A screenshot or screen recording if possible</li>
+          <li>Roughly when the problem happened</li>
+          <li>Your account email address</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Requirements</h2>
+  <p>LINK Tools requires an <strong>iPhone running iOS 16.4 or later</strong>. The app is designed for iPhone and is not offered for iPad.</p>
+
+  <h2>More information</h2>
+  <p>
+    <a href="privacy-policy.html">Privacy Policy</a> ·
+    <a href="terms-of-service.html">Terms of Service</a> ·
+    <a href="contact.html">Contact</a> ·
+    <a href="https://app.link.ai/data-deletion">Data Deletion</a>
+  </p>
+
+  <p class="page-updated">Last updated August 19, 2026</p>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo">
+      <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+    </div>
+    <nav class="site-footer-legal">
+      <a href="support.html">Support</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg" alt="LinkedIn"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg" alt="X"></a>
+    </div>
+    <p class="site-footer-copy">© 2026 Link Management Systems, Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

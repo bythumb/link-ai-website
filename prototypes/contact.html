@@ -18,7 +18,6 @@
     html { font-size: 16px; }
     body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
 
-    /* Header */
     .site-header {
       position: sticky; top: 0; z-index: 100;
       background: var(--white); border-bottom: 1px solid var(--border);
@@ -34,66 +33,66 @@
     }
     .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
 
-    /* Page hero */
     .page-hero {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 3.5rem 2rem 3rem;
-      text-align: center;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem; text-align: center;
     }
     .page-eyebrow {
-      display: inline-block;
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--tq);
+      display: inline-block; font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--tq);
       margin-bottom: 0.65rem;
     }
     .page-hero h1 {
       font-size: 2.4rem; font-weight: 700; color: var(--navy);
       margin-bottom: 0.6rem; line-height: 1.2;
     }
-    .page-hero p {
-      font-size: 1rem; color: var(--body); max-width: 460px; margin: 0 auto;
+    .page-hero p { font-size: 1rem; color: var(--body); max-width: 500px; margin: 0 auto; }
+
+    .contact-wrap {
+      max-width: 840px; margin: 0 auto; padding: 3.5rem 2rem 5rem;
     }
 
-    /* Contact cards */
-    .contact-wrap {
-      max-width: 760px; margin: 0 auto;
-      padding: 3.5rem 2rem 5rem;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+      margin-bottom: 1.25rem;
     }
     .contact-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 1.11rem;
-      padding: 2rem 2rem 2rem;
-      display: flex; flex-direction: column; gap: 0.75rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 1.11rem; padding: 1.75rem 2rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
     }
+    .contact-card.wide { grid-column: 1 / -1; }
     .contact-card-icon {
-      width: 44px; height: 44px; border-radius: 0.75rem;
-      background: #EAF9F7;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+      width: 40px; height: 40px; border-radius: 0.65rem;
+      background: #EAF9F7; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0.25rem; flex-shrink: 0;
     }
-    .contact-card-icon svg { width: 22px; height: 22px; stroke: var(--tq); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-card-icon svg { width: 20px; height: 20px; stroke: var(--tq); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .contact-card-label {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--body); opacity: 0.6;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--body); opacity: 0.55;
     }
-    .contact-card h2 {
-      font-size: 1.05rem; font-weight: 600; color: var(--navy);
-      margin-bottom: 0.1rem;
-    }
-    .contact-card p {
-      font-size: 0.875rem; color: var(--body); line-height: 1.6;
-    }
+    .contact-card h2 { font-size: 1rem; font-weight: 600; color: var(--navy); }
+    .contact-card p { font-size: 0.875rem; color: var(--body); line-height: 1.6; }
     .contact-card a {
-      font-size: 0.95rem; font-weight: 600; color: var(--navy);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      text-decoration: none; transition: color 0.2s;
     }
     .contact-card a:hover { color: var(--tq); }
 
-    /* Footer */
+    .email-list { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.25rem; }
+    .email-row { display: flex; flex-direction: column; gap: 0.1rem; }
+    .email-row a { font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    .email-row a:hover { color: var(--tq); }
+    .email-row span { font-size: 0.78rem; color: var(--body); opacity: 0.7; }
+
+    .affiliate-note {
+      background: var(--white); border: 1px solid var(--border);
+      border-left: 4px solid var(--tq); border-radius: 0.75rem;
+      padding: 1.4rem 1.75rem; margin-top: 1.25rem; font-size: 0.85rem; line-height: 1.7;
+    }
+    .affiliate-note strong { color: var(--navy); font-weight: 600; display: block; margin-bottom: 0.4rem; }
+
     .site-footer {
       background: var(--white); border-top: 1px solid var(--border);
       padding: 2rem 2rem 1.6rem;
@@ -118,13 +117,13 @@
       align-items: center; justify-content: center;
     }
     .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
-    .site-footer-copy {
-      width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem;
-    }
+    .site-footer-copy { width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem; }
 
     @media (max-width: 600px) {
       .page-hero h1 { font-size: 1.9rem; }
-      .contact-wrap { grid-template-columns: 1fr; padding: 2rem 1.2rem 3.5rem; }
+      .contact-wrap { padding: 2rem 1.2rem 3.5rem; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-card.wide { grid-column: 1; }
       .site-footer-inner { flex-direction: column; align-items: flex-start; }
       .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
     }
@@ -140,28 +139,62 @@
 <div class="page-hero">
   <div class="page-eyebrow">Contact</div>
   <h1>Get in touch</h1>
-  <p>We're here to help. Reach out by email or visit us in Canyon Lake.</p>
+  <p>We're here to help. Reach out any time — our team responds within one business day.</p>
 </div>
 
 <div class="contact-wrap">
 
-  <div class="contact-card">
-    <div class="contact-card-icon">
-      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="contact-card-label">Email</div>
+      <h2>Reach us by email</h2>
+      <div class="email-list">
+        <div class="email-row">
+          <a href="mailto:support@link.ai">support@link.ai</a>
+          <span>Product help and account questions</span>
+        </div>
+        <div class="email-row">
+          <a href="mailto:privacy@link.ai">privacy@link.ai</a>
+          <span>Privacy requests, CCPA/CPRA rights, DMCA notices<br>(Designated Agent: John Guints)</span>
+        </div>
+        <div class="email-row">
+          <a href="mailto:contact@link.ai">contact@link.ai</a>
+          <span>General inquiries and partnerships</span>
+        </div>
+      </div>
     </div>
-    <div class="contact-card-label">Email support</div>
-    <h2>Support</h2>
-    <p>For questions about your account, tools, or anything else.</p>
-    <a href="mailto:support@link.ai">support@link.ai</a>
+
+    <div class="contact-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="contact-card-label">Office</div>
+      <h2>Link Management Systems, Inc.</h2>
+      <p>202 W 140th St<br>Los Angeles, CA 90061</p>
+      <p style="margin-top:.5rem;">
+        <a href="tel:+13106956510">(310) 695-6510</a>
+      </p>
+      <p style="margin-top:.25rem; font-size:.8rem; opacity:.65;">Mon–Fri, 9am–5pm Pacific</p>
+    </div>
+
+    <div class="contact-card wide">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <div class="contact-card-label">Support</div>
+      <h2>Need help with the app?</h2>
+      <p>Visit our <a href="support.html">Support page</a> for common questions about sign-in, notifications, account deletion, and more. You can also reach us at <a href="mailto:support@link.ai">support@link.ai</a> — we reply within one business day.</p>
+    </div>
+
   </div>
 
-  <div class="contact-card">
-    <div class="contact-card-icon">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-    </div>
-    <div class="contact-card-label">Office</div>
-    <h2>Canyon Lake, CA</h2>
-    <p><!-- TODO: replace with full street address --><br>Canyon Lake, CA 92587</p>
+  <div class="affiliate-note">
+    <strong>Affiliated Companies</strong>
+    Link Management Systems, Inc. operates the Link platform and is not a licensed mortgage broker, lender, or escrow agent. Mortgage services are offered through <strong>First Link Mortgage</strong> (NMLS #2527988), and escrow services are offered through <strong>Linked Escrow</strong> (DFPI License No. 96DBO-189708), each of which is a separate legal entity. Each affiliate maintains its own licenses, compliance obligations, and contact information.
   </div>
 
 </div>
@@ -172,6 +205,7 @@
       <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
     </div>
     <nav class="site-footer-legal">
+      <a href="support.html">Support</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
       <a href="compliance.html">Compliance</a>
@@ -181,7 +215,7 @@
       <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg" alt="LinkedIn"></a>
       <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg" alt="X"></a>
     </div>
-    <p class="site-footer-copy">© 2026 Link Brokerages Inc. All rights reserved.</p>
+    <p class="site-footer-copy">© 2026 Link Management Systems, Inc. All rights reserved.</p>
   </div>
 </footer>
 
