@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    /* Page hero */
+    .page-hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--tq);
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.4rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 0.6rem; line-height: 1.2;
+    }
+    .page-hero p {
+      font-size: 1rem; color: var(--body); max-width: 460px; margin: 0 auto;
+    }
+
+    /* Contact cards */
+    .contact-wrap {
+      max-width: 760px; margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 1.11rem;
+      padding: 2rem 2rem 2rem;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .contact-card-icon {
+      width: 44px; height: 44px; border-radius: 0.75rem;
+      background: #EAF9F7;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card-icon svg { width: 22px; height: 22px; stroke: var(--tq); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-card-label {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--body); opacity: 0.6;
+    }
+    .contact-card h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.1rem;
+    }
+    .contact-card p {
+      font-size: 0.875rem; color: var(--body); line-height: 1.6;
+    }
+    .contact-card a {
+      font-size: 0.95rem; font-weight: 600; color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover { color: var(--tq); }
+
+    /* Footer */
+    .site-footer {
+      background: var(--white); border-top: 1px solid var(--border);
+      padding: 2rem 2rem 1.6rem;
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--border); display: flex;
+      align-items: center; justify-content: center;
+    }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy {
+      width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.9rem; }
+      .contact-wrap { grid-template-columns: 1fr; padding: 2rem 1.2rem 3.5rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+      .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="../index.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Contact</div>
+  <h1>Get in touch</h1>
+  <p>We're here to help. Reach out by email or visit us in Canyon Lake.</p>
+</div>
+
+<div class="contact-wrap">
+
+  <div class="contact-card">
+    <div class="contact-card-icon">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    </div>
+    <div class="contact-card-label">Email support</div>
+    <h2>Support</h2>
+    <p>For questions about your account, tools, or anything else.</p>
+    <a href="mailto:support@link.ai">support@link.ai</a>
+  </div>
+
+  <div class="contact-card">
+    <div class="contact-card-icon">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    </div>
+    <div class="contact-card-label">Office</div>
+    <h2>Canyon Lake, CA</h2>
+    <p><!-- TODO: replace with full street address --><br>Canyon Lake, CA 92587</p>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo">
+      <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+    </div>
+    <nav class="site-footer-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg" alt="LinkedIn"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg" alt="X"></a>
+    </div>
+    <p class="site-footer-copy">© 2026 Link Brokerages Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
