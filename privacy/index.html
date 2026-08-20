@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Link</title>
+  <style>
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Bold.woff2') format('woff2'); font-weight: 700; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Heavy.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Black.woff2') format('woff2'); font-weight: 900; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #131F4A; --tq: #5AE9D7; --body: #636B87;
+      --page: #FBFCFF; --white: #fff; --border: #DDE5F3;
+      --font: 'Mont', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { font-family: var(--font); background: var(--page); color: var(--body); line-height: 1.7; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .site-header img { height: 22px; }
+    .back-link {
+      font-size: 0.8rem; font-weight: 600; color: var(--body);
+      text-decoration: none; padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border); border-radius: 0.5rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .back-link:hover { color: var(--navy); border-color: #b0b8d0; }
+
+    /* Page hero */
+    .page-hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--body);
+      margin-bottom: 0.65rem;
+    }
+    .page-hero h1 {
+      font-size: 2.2rem; font-weight: 600; color: var(--navy);
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.6; }
+
+    /* Content */
+    .content-wrap {
+      max-width: 820px; margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .content-wrap h3 {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy);
+      margin: 1.5rem 0 0.4rem;
+    }
+    .content-wrap p { margin-bottom: 0.9rem; font-size: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.35rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    .scope-note {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border); border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 0 0 2rem; font-size: 0.875rem;
+    }
+    .scope-note strong { color: var(--navy); display: block; margin-bottom: 0.35rem; font-size: 0.9rem; }
+
+    .disclosure-box {
+      background: var(--white); border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--tq);
+      padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--white); padding: 2rem 2rem 1.6rem;
+      font-family: var(--font);
+    }
+    .site-footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 1rem;
+    }
+    .site-footer-logo img { height: 30px; }
+    .site-footer-legal { display: flex; flex-wrap: wrap; gap: 0; }
+    .site-footer-legal a {
+      font-size: .85rem; color: var(--body); text-decoration: none;
+      transition: color 0.2s; margin-right: 2.5rem;
+    }
+    .site-footer-legal a:hover { color: var(--navy); }
+    .site-footer-legal a:last-child { margin-right: 0; }
+    .site-footer-social { display: flex; gap: 0.45rem; }
+    .site-footer-social a {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--border); display: flex;
+      align-items: center; justify-content: center;
+    }
+    .site-footer-social img { width: 18px; height: 18px; opacity: 0.45; }
+    .site-footer-copy {
+      width: 100%; font-size: 0.68rem; color: #b0b8d0; margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.8rem; }
+      .content-wrap { padding: 2rem 1.2rem 3rem; }
+      .site-footer-inner { flex-direction: column; align-items: flex-start; }
+      .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
+    }
+    .disclosure-box { background: none; border: none; border-left: none; padding: 0; margin: .9rem 0; font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+  <a href="../index.html" class="back-link">← Back to site</a>
+</header>
+
+<div class="page-hero">
+  <div class="page-eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="page-updated">Updated August 19, 2026</div>
+</div>
+
+<main class="content-wrap">
+
+  <p>This Privacy Policy describes how Link Management Systems, Inc. ("Link," "we," "us," or "our") collects, uses, and shares information about you when you use our services, including our website, mobile applications, and related products and services (collectively, the "Services").</p>
+
+  <!-- P-1: Scope; Financial Services Affiliates -->
+  <div class="scope-note">
+    <strong>Scope; Financial Services Affiliates</strong>
+    This Privacy Policy applies to the Link technology platform operated by Link Management Systems, Inc. Personal information collected by our licensed financial-services affiliates in connection with mortgage or escrow services — First Link Mortgage (NMLS #2527988) and Linked Escrow (DFPI License No. 96DBO-189708) — is governed by those companies' own privacy notices provided under the Gramm-Leach-Bliley Act (GLBA) and by applicable federal and state financial privacy laws, not by this Policy. Information subject to the GLBA is exempt from certain state privacy laws, including the California Consumer Privacy Act.
+  </div>
+
+  <h2>1. Information We Collect</h2>
+  <h3>Information You Provide</h3>
+  <p>We collect information you provide directly to us, including:</p>
+  <ul>
+    <li>Account registration details (name, email address, password)</li>
+    <li>Profile information (profile photo, professional license number, brokerage affiliation)</li>
+    <li>Business content you create or generate: property links, leads, buyer tours, saved searches, home valuations, outbound emails, and AI copilot conversations</li>
+    <li>Lead records, which may contain personal information about consumers that you enter directly or that a consumer submits through a shared link, tour, or valuation</li>
+  </ul>
+  <p>For users of the web platform only, we also collect payment information processed securely through third-party providers.</p>
+
+  <h3>Information Collected Automatically</h3>
+  <p>When you use our Services, we automatically collect:</p>
+  <ul>
+    <li>Server-side log data generated by API requests (IP address, timestamps, request paths, response codes)</li>
+    <li>Device and operating system information carried by those requests (device model, OS version)</li>
+    <li>Expo push token, collected when you allow notifications on iOS</li>
+  </ul>
+  <p>The LINK Tools mobile app does not collect location data, advertising identifiers, or analytics beyond the above. Cookies and browser-based analytics apply to our website only.</p>
+
+  <h3>Information from Third Parties</h3>
+  <p>We may receive information about you from third parties, including:</p>
+  <ul>
+    <li>Multiple Listing Services (MLS) and real estate data providers</li>
+    <li>Sign-in providers — Google and Apple, through Auth0, which returns your name, email address, and a user identifier. If you use Apple's Hide My Email feature, Apple provides a relay email address instead of your real address.</li>
+    <li>Identity verification and background check services</li>
+  </ul>
+
+  <h2>2. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, maintain, and improve our Services</li>
+    <li>Process transactions and send related information</li>
+    <li>Send technical notices, updates, security alerts, and support messages</li>
+    <li>Respond to your comments, questions, and requests</li>
+    <li>Facilitate communication between agents, clients, and transaction parties</li>
+    <li>Monitor and analyze trends, usage, and activities in connection with our Services</li>
+    <li>Detect, investigate, and prevent fraudulent transactions and other illegal activities</li>
+    <li>Comply with legal obligations</li>
+    <li>Send service-related communications and, where you have opted in, promotional updates</li>
+    <li>Send push notifications you have enabled on your device</li>
+    <li>Generate AI-drafted content (property descriptions, tour summaries, outreach emails) using the text or listing context you provide</li>
+  </ul>
+
+  <!-- P-7: Text Messaging -->
+  <h2>3. Text Messaging</h2>
+  <p>This section applies to the Link website and web platform. The LINK Tools mobile app does not send SMS messages.</p>
+  <p>If you opt in to receive text messages from us, you consent to receive recurring text messages at the phone number you provide, which may be sent using automated technology. Message frequency varies. Message and data rates may apply. Reply STOP to cancel and HELP for help. Consent to receive text messages is not a condition of purchasing any goods or services. Mobile opt-in information and text-messaging consent are not shared with or sold to third parties for their marketing purposes.</p>
+
+  <h2 id="do-not-sell">4. Sharing of Information</h2>
+  <p>We may share your information as follows:</p>
+  <ul>
+    <li><strong>With your consent</strong> — we share information when you direct us to</li>
+    <li><strong>Service providers</strong> — vendors who assist in our operations (hosting, analytics, payment processing, customer support)</li>
+    <li><strong>Business transfers</strong> — in connection with a merger, acquisition, or sale of assets</li>
+    <li><strong>Legal compliance</strong> — when required by law or to protect rights and safety</li>
+    <li><strong>Affiliates</strong> — with our parent company, subsidiaries, and affiliates</li>
+    <li><strong>Real estate professionals</strong> — information shared as part of a transaction (subject to applicable MLS rules and real estate regulations)</li>
+  </ul>
+  <p><strong>LINK Tools Mobile App:</strong> The LINK Tools mobile app contains no advertising SDKs, analytics SDKs, or tracking libraries. We do not share information collected through the app for cross-context behavioral advertising. The Tracking label in App Store Connect is set to No.</p>
+  <p><strong>Subprocessors:</strong> We use the following third-party service providers to operate our platform:</p>
+  <ul>
+    <li><strong>Auth0</strong> — identity and authentication</li>
+    <li><strong>Convex</strong> — application database and backend functions</li>
+    <li><strong>Expo push service / Apple APNs</strong> — push notifications to iOS devices</li>
+    <li><strong>OpenAI</strong> — AI copilot, tour summaries, and content generation</li>
+    <li><strong>Mapbox</strong> — geocoding and property search</li>
+    <li><strong>AWS SES</strong> — outbound email delivery</li>
+  </ul>
+  <!-- P-2: Option A — keep marketing cookies -->
+  <p>We do not sell your personal information in exchange for money. However, our use of third-party advertising and analytics cookies on our website may constitute "sharing" of personal information for cross-context behavioral advertising as defined by the California Privacy Rights Act. You may opt out of this sharing at any time through the "<a href="#do-not-sell">Do Not Sell or Share My Personal Information</a>" link in our website footer or by using a browser-based opt-out preference signal such as Global Privacy Control (GPC), which we honor.</p>
+
+  <h2>5. Data Retention</h2>
+  <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. For transaction records, we retain data in accordance with applicable real estate, mortgage, and escrow regulations, which may require retention for several years after a transaction closes.</p>
+  <p>When an account deletion is requested through the app (Profile → Danger Zone → Delete Account) or through link.ai/data-deletion, deletion takes effect immediately: your login access is removed, push tokens are cleared, and your invite record is deactivated. Remaining personal information on the account record is anonymised within 30 days. Note: business records associated with your account — property links, leads, tours, saved searches, branding — are retained and excluded from public-facing pages rather than deleted, as required for business continuity and regulatory purposes.</p>
+
+  <h2>6. Security</h2>
+  <p>We implement commercially reasonable technical and organizational measures designed to protect your information against unauthorized access, alteration, disclosure, or destruction. However, no security system is impenetrable, and we cannot guarantee the security of our systems.</p>
+  <p>We use industry-standard encryption (TLS) for data in transit and AES-256 encryption for sensitive data at rest. Access controls, audit logs, and regular security reviews are part of our security program. On iOS, authentication tokens are stored in the iOS Keychain using industry-standard secure enclave protections.</p>
+
+  <h2>7. Your Choices and Rights</h2>
+  <h3>Account Information</h3>
+  <p>You may update or correct your account information at any time by logging into your account settings. To delete your account from the app, go to Profile → Danger Zone → Delete Account. You may also request deletion at app.link.ai/data-deletion (available without needing app access). See Section 5 for what deletion covers and what is retained.</p>
+
+  <h3>Communications</h3>
+  <p>You may opt out of receiving promotional emails from us by following the unsubscribe instructions in those messages. You may not opt out of transactional or service-related communications.</p>
+
+  <h3>Notifications and Device Permissions</h3>
+  <p>You can turn off push notifications at any time in iOS Settings → LINK Tools → Notifications, or through the Notification Settings screen within the app. The app works fully with notifications off. The photo library permission is optional and can be revoked at any time in iOS Settings → LINK Tools → Photos.</p>
+
+  <h3>California Residents</h3>
+  <p>California residents have rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including the right to know, delete, correct, and opt out of the sale/sharing of personal information. To exercise these rights, contact us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <h3>Nevada Residents</h3>
+  <p>Nevada residents may opt out of the sale of personal information by contacting us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <!-- P-3: Residents of Other States -->
+  <h3>Residents of Other States</h3>
+  <p>Residents of states with comprehensive privacy laws — including Colorado, Connecticut, Florida, Montana, Oregon, Texas, Utah, and Virginia, among others — may have similar rights of access, correction, deletion, and data portability, and the right to opt out of targeted advertising, the sale of personal information, and certain profiling. To exercise these rights, or to appeal a decision regarding a request, contact us at <a href="mailto:privacy@link.ai">privacy@link.ai</a>.</p>
+
+  <h2>8. Cookies</h2>
+  <p>Cookies apply to our website. The LINK Tools mobile app is a native iOS application and does not use cookies.</p>
+  <p>We use cookies and similar technologies to collect usage data, remember your preferences, and improve your experience. You can control cookies through your browser settings, though disabling cookies may affect functionality. We use:</p>
+  <ul>
+    <li><strong>Essential cookies</strong> — required for the Services to function</li>
+    <li><strong>Analytics cookies</strong> — help us understand how users interact with our Services</li>
+    <li><strong>Preference cookies</strong> — remember your settings and choices</li>
+    <li><strong>Marketing cookies</strong> — deliver relevant advertising (with consent where required)</li>
+  </ul>
+
+  <h2>9. Third-Party Links</h2>
+  <p>Our Services may contain links to third-party websites and services. We are not responsible for the privacy practices of those third parties, and we encourage you to review their privacy policies.</p>
+
+  <h2>10. AI Features</h2>
+  <p>LINK Tools includes AI-powered features, including an AI copilot and content-generation tools for property descriptions, buyer tour summaries, and outbound email drafts. When you use these features, the relevant listing details, tour stops, or conversation context you provide are sent to OpenAI to generate a draft response. You are responsible for reviewing, editing, and approving all AI-generated content before use.</p>
+  <p>OpenAI processes this content as a subprocessor under our data processing agreement. Content sent to OpenAI through our API integration is not used to train OpenAI's models.</p>
+
+  <h2>11. App Store Data Summary</h2>
+  <p>The following table summarises how the LINK Tools iOS app handles data, consistent with our App Privacy disclosures in the App Store.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:.85rem;margin:.75rem 0 1.25rem;">
+    <thead>
+      <tr style="border-bottom:2px solid var(--border);">
+        <th style="text-align:left;padding:.5rem .75rem;color:var(--navy);font-weight:600;">Data type</th>
+        <th style="text-align:left;padding:.5rem .75rem;color:var(--navy);font-weight:600;">Purpose</th>
+        <th style="text-align:left;padding:.5rem .75rem;color:var(--navy);font-weight:600;">Linked to you</th>
+        <th style="text-align:left;padding:.5rem .75rem;color:var(--navy);font-weight:600;">Used for tracking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:.5rem .75rem;">Contact info (name, email)</td>
+        <td style="padding:.5rem .75rem;">App functionality</td>
+        <td style="padding:.5rem .75rem;">Yes</td>
+        <td style="padding:.5rem .75rem;">No</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:.5rem .75rem;">User content (photos, business content)</td>
+        <td style="padding:.5rem .75rem;">App functionality</td>
+        <td style="padding:.5rem .75rem;">Yes</td>
+        <td style="padding:.5rem .75rem;">No</td>
+      </tr>
+      <tr>
+        <td style="padding:.5rem .75rem;">Identifiers (user ID, push token)</td>
+        <td style="padding:.5rem .75rem;">App functionality</td>
+        <td style="padding:.5rem .75rem;">Yes</td>
+        <td style="padding:.5rem .75rem;">No</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>12. Children's Privacy</h2>
+  <p>Our Services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately. In addition, we do not sell or share the personal information of consumers we know to be under 16 years of age without the affirmative authorization required by the California Consumer Privacy Act.</p>
+
+  <h2>13. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the new policy on our website and, where appropriate, sending you an email notification. Your continued use of our Services after the effective date of the revised policy constitutes your acceptance of the changes.</p>
+
+  <h2>14. Contact Us</h2>
+  <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+  <div class="disclosure-box" style="background:var(--white);border:1px solid var(--border);border-left:4px solid var(--tq);padding:1.2rem 1.5rem;margin:1rem 0;font-size:.9rem;">
+    <strong>Link Management Systems, Inc.</strong><br>
+    202 W 140th St, Los Angeles, CA 90061<br>
+    Email: <a href="mailto:privacy@link.ai">privacy@link.ai</a><br>
+    Phone: (310) 695-6510
+  </div>
+  <p>Requests may also be submitted through the Support link in the LINK Tools app.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-logo">
+      <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
+    </div>
+    <div class="site-footer-legal">
+      <a href="../support/">Support</a>
+      <a href="index.html">Privacy Policy</a>
+      <a href="../terms/">Terms of Service</a>
+      <a href="../prototypes/compliance.html">Compliance</a>
+      <a href="../contact/">Contact</a>
+      <a href="#do-not-sell">Do Not Sell or Share My Personal Information</a>
+    </div>
+    <div class="site-footer-social">
+      <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg"></a>
+      <a href="#" aria-label="X"><img src="../reference/webflow-export/images/X_logo-1.svg"></a>
+    </div>
+    <div class="site-footer-copy">© 2026 Link Management Systems, Inc. All rights reserved. Equal Housing Opportunity. First Link Mortgage NMLS #2527988.</div>
+  </div>
+</footer>
+
+</body>
+</html>
