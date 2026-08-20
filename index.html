@@ -1480,7 +1480,7 @@ footer {
   .hero {
     position: relative;
     height: auto;
-    min-height: 112svh;
+    min-height: 105svh;
     padding-top: 0;
     justify-content: flex-end;   /* card pinned to bottom */
     align-items: stretch;        /* children go full-width */
@@ -1508,7 +1508,7 @@ footer {
     padding: 36px 27px;
     flex: none;
     min-height: 68svh;
-    margin-top: 100px;
+    margin-top: 32px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1760,7 +1760,7 @@ footer {
 }
 
 @media (max-width: 768px) and (min-height: 900px) {
-  .hero { min-height: 99svh; }
+  .hero { min-height: 97svh; }
 }
 
 /* ── Small phones (< 480px) ── */
@@ -2823,7 +2823,8 @@ footer {
     const cardTop    = card.getBoundingClientRect().top;
     const browHeight = brow.offsetHeight;
     const center     = (navBottom + cardTop) / 2;
-    brow.style.top   = Math.round(center - browHeight / 2) + 'px';
+    const minTop     = navBottom + 16;
+    brow.style.top   = Math.max(minTop, Math.round(center - browHeight / 2)) + 'px';
   }
   // Run after layout settles
   requestAnimationFrame(() => requestAnimationFrame(centerEyebrow));
