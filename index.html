@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>link.ai — Create more clients</title>
-<meta name="description" content="Generate leads, connect with clients, and simplify your day with link.ai — your all-in-one AI tool for real estate.">
+<title>Link.ai — Create more clients</title>
+<meta name="description" content="Generate leads, connect with clients, and simplify your day with Link.ai — your all-in-one AI tool for real estate.">
 
 <style>
 @font-face { font-family:Mont; src:url('reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight:400; font-display:swap; }
@@ -396,6 +396,8 @@ nav {
   .hero-sub { font-size:1.35rem; }
   .hero-login { font-size:1.1rem; padding:.85rem 2.75rem; }
   .hero-visual { max-width:44rem; }
+  /* stacked: pull each card left by its transparent PNG margin (--pad) so its edge lines up with the copy */
+  .hv-img { translate:calc(-1 * var(--pad, 0%)) 0; }
 
   .pc-inner { min-height:0; }
   .pc-heading { margin-bottom:1.25rem; }
@@ -496,7 +498,7 @@ nav {
 <body>
 
 <nav>
-  <a href="#" class="nav-logo"><img src="Full%20logo_dark%20color.png" alt="link.ai"></a>
+  <a href="#" class="nav-logo"><img src="Full%20logo_dark%20color.png" alt="Link.ai"></a>
   <a href="https://app.link.ai" class="nav-signup-btn">Sign up</a>
 </nav>
 
@@ -506,19 +508,19 @@ nav {
 <section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
-      <h1 class="hero-headline" id="hero-title">Create more clients<br> with link.ai</h1>
-      <p class="hero-sub">If you’re a real estate agent, link.ai will be your favorite platform. How many leads has ChatGPT gotten you recently?</p>
+      <h1 class="hero-headline" id="hero-title">Create more clients<br> with Link.ai</h1>
+      <p class="hero-sub">If you’re a real estate agent, Link.ai will be your favorite platform. How many leads has Chat gotten you recently?</p>
       <a href="https://app.link.ai" class="btn-tq hero-login">Login</a>
     </div>
     <!-- rotating product visuals -->
-    <div class="hero-visual" aria-roledescription="carousel" aria-label="link.ai product previews">
-      <img class="hv-img active" src="assets/product-ask-link.png" width="1031" height="829"
-           alt="link.ai Copilot home: “Afternoon, Dylan.” with an Ask Link prompt and suggested tasks">
-      <img class="hv-img" src="assets/hero/hero-ready-for-review.png" width="1611" height="1076"
+    <div class="hero-visual" aria-roledescription="carousel" aria-label="Link.ai product previews">
+      <img class="hv-img active" style="--pad:3.49%" src="assets/product-ask-link.png" width="1031" height="829"
+           alt="Link.ai Copilot home: “Afternoon, Dylan.” with an Ask Link prompt and suggested tasks">
+      <img class="hv-img" style="--pad:3.54%" src="assets/hero/hero-ready-for-review.png" width="1611" height="1076"
            alt="Ready for your review: two campaigns and a social post awaiting approval">
-      <img class="hv-img" src="assets/hero/hero-weekly-focus.png" width="1730" height="1212"
+      <img class="hv-img" style="--pad:3.99%" src="assets/hero/hero-weekly-focus.png" width="1730" height="1212"
            alt="Copilot answering “What should I focus on this week?” with three priorities">
-      <img class="hv-img" src="assets/hero/hero-social-approval.png" width="1570" height="1091"
+      <img class="hv-img" style="--pad:1.91%" src="assets/hero/hero-social-approval.png" width="1570" height="1091"
            alt="Social post for 1826 Willow Crest awaiting your approval before it goes live">
     </div>
   </div>
@@ -547,7 +549,7 @@ nav {
 
 
 <!-- ══ 2 · PRODUCT CAROUSEL ══════════════════════════════════ -->
-<section class="pc-section" id="product" aria-roledescription="carousel" aria-label="link.ai product tour">
+<section class="pc-section" id="product" aria-roledescription="carousel" aria-label="Link.ai product tour">
   <div class="pc-inner">
 
     <div class="pc-left">
@@ -614,7 +616,7 @@ nav {
     <div class="le-copy reveal">
       <img class="le-logo" src="assets/linked-escrow-logo.png" width="351" height="351" alt="Linked Escrow">
       <h2 class="le-heading" id="le-title">Linked Escrow’s got your back</h2>
-      <p class="le-body">link.ai is a free tool from Linked Escrow, built to make real estate agents’ jobs easier. It’s a preview of the thoughtful service you can expect when you work with us.</p>
+      <p class="le-body">Link.ai is a free tool from Linked Escrow, built to make real estate agents’ jobs easier. It’s a preview of the thoughtful service you can expect when you work with us.</p>
       <ul class="le-list">
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -625,7 +627,7 @@ nav {
           A taste of better escrow.
         </li>
       </ul>
-      <a href="https://app.link.ai" class="btn-tq le-cta">Try link.ai for free</a>
+      <a href="https://app.link.ai" class="btn-tq le-cta">Try Link.ai for free</a>
     </div>
     <div class="le-photos reveal">
       <img src="assets/linked-escrow-team.png" width="1618" height="1618" loading="lazy"
@@ -639,19 +641,19 @@ nav {
 <section class="ay-section" id="ai-you-own" aria-labelledby="ay-title">
   <div class="ay-stage">
     <h2 class="ay-heading" id="ay-title">AI You Own.</h2>
-    <!-- tools link.ai works with, peeking from behind the product panels -->
+    <!-- tools Link.ai works with, peeking from behind the product panels -->
     <img class="ay-icon ay-icon--ghl"     src="assets/ai-you-own/icon-ghl.png"       width="170" height="180" loading="lazy" alt="GoHighLevel">
     <img class="ay-icon ay-icon--chatgpt" src="assets/ai-you-own/icon-chatgpt.png"   width="170" height="180" loading="lazy" alt="ChatGPT">
     <img class="ay-icon ay-icon--canva"   src="assets/ai-you-own/icon-canva.png"     width="170" height="180" loading="lazy" alt="Canva">
     <img class="ay-icon ay-icon--gads"    src="assets/ai-you-own/icon-google-ad.png" width="170" height="180" loading="lazy" alt="Google Ads">
     <img class="ay-icon ay-icon--meta"    src="assets/ai-you-own/icon-meta.png"      width="170" height="180" loading="lazy" alt="Meta">
     <img class="ay-icon ay-icon--homebot" src="assets/ai-you-own/icon-homebot.png"   width="170" height="89"  loading="lazy" alt="Homebot">
-    <div class="ay-tablet ay-glass" role="img" aria-label="link.ai Buyers workspace showing saved searches, pre-quals, search links and tours">
-      <div class="ay-glass-bar" aria-hidden="true">link.ai</div>
+    <div class="ay-tablet ay-glass" role="img" aria-label="Link.ai Buyers workspace showing saved searches, pre-quals, search links and tours">
+      <div class="ay-glass-bar" aria-hidden="true">Link.ai</div>
       <img class="ay-glass-card" src="assets/ai-you-own/buyers-card.png" width="682" height="537" loading="lazy" alt="">
     </div>
     <img class="ay-copilot" src="assets/product-ask-link.png" width="1031" height="829" loading="lazy"
-         alt="link.ai Copilot: “Afternoon, Dylan.” with an Ask Link prompt">
+         alt="Link.ai Copilot: “Afternoon, Dylan.” with an Ask Link prompt">
   </div>
 </section>
 
@@ -682,7 +684,7 @@ nav {
     <article class="ol-card">
       <p class="ol-label">04 / Your account</p>
       <h3 class="ol-title">Make it<br> yours.</h3>
-      <p class="ol-body">Book a one-on-one call to personalize your link.ai account around your business.</p>
+      <p class="ol-body">Book a one-on-one call to personalize your Link.ai account around your business.</p>
     </article>
   </div>
   <div class="ol-cta-row reveal">
@@ -697,7 +699,7 @@ nav {
 <!-- ══ FOOTER (kept from v1) ═════════════════════════════════ -->
 <footer class="site-footer">
   <div class="site-footer-inner">
-    <div class="site-footer-logo"><img src="Full%20logo_dark%20color.png" alt="link.ai"></div>
+    <div class="site-footer-logo"><img src="Full%20logo_dark%20color.png" alt="Link.ai"></div>
     <div class="site-footer-legal">
       <a href="support/">Support</a>
       <a href="privacy/">Privacy Policy</a>
