@@ -91,7 +91,7 @@ nav {
 .hero {
   position:relative; min-height:100vh; overflow:hidden;
   display:flex; align-items:center;
-  padding:calc(var(--nav-h) + 4rem) var(--gutter) 5rem;
+  padding:calc(var(--nav-h) + 4rem) var(--gutter) 10rem;
   background:#26386e url('header%20image%20copy.webp') center 60% / cover no-repeat;
   color:var(--white);
 }
@@ -101,6 +101,26 @@ nav {
     linear-gradient(180deg, rgba(38,58,120,.78) 0%, rgba(40,56,110,.55) 45%, rgba(20,30,60,.30) 100%),
     linear-gradient(90deg, rgba(16,26,62,.35) 0%, rgba(16,26,62,0) 55%);
 }
+/* press-logo marquee pinned to the base of the hero (from v1) */
+.hero-press {
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:2.25rem 0; overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg, rgba(16,26,62,0) 0%, rgba(16,26,62,.25) 100%);
+}
+.hero-press-track {
+  display:flex; align-items:center; gap:4.5rem; width:max-content;
+  animation:heroPressScroll 60s linear infinite;
+}
+.hero-press-track img {
+  width:11rem; height:auto; max-height:2.4rem; min-width:90px;
+  object-fit:contain; flex-shrink:0;
+  opacity:.45; filter:brightness(0) invert(1);
+}
+@keyframes heroPressScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@media (prefers-reduced-motion:reduce) { .hero-press-track { animation:none; } }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
 .hero-inner {
   position:relative; z-index:2; width:100%;
   display:grid; grid-template-columns:minmax(0,1fr) minmax(0,50rem);
@@ -362,7 +382,11 @@ nav {
   :root { --gutter:1.25rem; --h-size:2.25rem; }
   nav { padding:0 1.25rem; }
   .nav-logo img { height:24px; }
-  .hero { padding-bottom:3.5rem; }
+  .hero { padding-bottom:7.5rem; }
+  .hero-press { padding:1.5rem 0; }
+  .hero-press-track { gap:2.5rem; }
+  .hero-press-track img { width:6rem; min-width:0; max-height:1.4rem; }
+  .hero-headline br { display:none; }
   .hero-headline { margin-bottom:1.5rem; }
   .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
   .hero-login { width:100%; }
@@ -418,6 +442,27 @@ nav {
       <img class="hv-img" src="assets/hero/hero-phone.png" width="700" height="905"
            alt="link.ai on a phone: choosing a listing photo for 24741 Ganymede">
     </div>
+  </div>
+  <div class="hero-press">
+    <p class="sr-only">As featured in the press</p>
+    <div class="hero-press-track" aria-hidden="true">
+        <img src="link.ai%20images/News%201.png" alt="">
+        <img src="link.ai%20images/News%202.png" alt="">
+        <img src="link.ai%20images/News%203.png" alt="">
+        <img src="link.ai%20images/News%204.png" alt="">
+        <img src="link.ai%20images/News%205.png" alt="">
+        <img src="link.ai%20images/News%206.png" alt="">
+        <img src="link.ai%20images/News%207.png" alt="">
+        <img src="link.ai%20images/News%208.png" alt="">
+        <img src="link.ai%20images/News%201.png" alt="">
+        <img src="link.ai%20images/News%202.png" alt="">
+        <img src="link.ai%20images/News%203.png" alt="">
+        <img src="link.ai%20images/News%204.png" alt="">
+        <img src="link.ai%20images/News%205.png" alt="">
+        <img src="link.ai%20images/News%206.png" alt="">
+        <img src="link.ai%20images/News%207.png" alt="">
+        <img src="link.ai%20images/News%208.png" alt="">
+      </div>
   </div>
 </section>
 
