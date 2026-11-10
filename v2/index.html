@@ -92,17 +92,31 @@ nav {
   position:relative; min-height:100vh; overflow:hidden;
   display:flex; align-items:center;
   padding:calc(var(--nav-h) + 4rem) var(--gutter) 5rem;
-  background:url('../header%20image%20copy.webp') center 60% / cover no-repeat;
+  background:#26386e url('../header%20image%20copy.webp') center 60% / cover no-repeat;
   color:var(--white);
 }
+/* rotating background photos (see HERO_IMAGES in script) */
+.hero-bg { position:absolute; inset:0; z-index:0; }
+.hero-slide {
+  position:absolute; inset:0;
+  background-position:center 60%; background-size:cover; background-repeat:no-repeat;
+  opacity:0; transform:scale(1.06);
+  transition:opacity 1.6s ease, transform 9s ease-out;
+  will-change:opacity, transform;
+}
+.hero-slide.active { opacity:1; transform:scale(1); }
+@media (prefers-reduced-motion:reduce) {
+  .hero-slide { transition:opacity .01s; transform:none; }
+  .hero-slide.active { transform:none; }
+}
 .hero::before {
-  content:''; position:absolute; inset:0; pointer-events:none;
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:1;
   background:
     linear-gradient(180deg, rgba(38,58,120,.78) 0%, rgba(40,56,110,.55) 45%, rgba(20,30,60,.30) 100%),
     linear-gradient(90deg, rgba(16,26,62,.35) 0%, rgba(16,26,62,0) 55%);
 }
 .hero-inner {
-  position:relative; z-index:1; width:100%;
+  position:relative; z-index:2; width:100%;
   display:grid; grid-template-columns:minmax(0,1fr) minmax(0,50rem);
   align-items:center; gap:3rem;
 }
@@ -366,6 +380,7 @@ nav {
 
 <!-- ══ 1 · HERO — "Own Your Lead Generation" ═════════════════ -->
 <section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="hero-eyebrow">link.ai for real estate agents</p>
@@ -528,6 +543,55 @@ nav {
 
 
 <script>
+/* hero background rotation
+   Add/remove photos here (paths relative to v2/). Order = rotation order. */
+const HERO_IMAGES = [
+  '../header%20image%20copy.webp',
+  // 'assets/hero/hero-2.jpg',
+  // 'assets/hero/hero-3.jpg',
+  // 'assets/hero/hero-4.jpg',
+  // 'assets/hero/hero-5.jpg',
+];
+const HERO_INTERVAL = 7000;   // ms each photo stays on screen
+
+(() => {
+  const bg = document.querySelector('.hero-bg');
+  if (!bg || !HERO_IMAGES.length) return;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const loaded = new Set();
+  const preload = src => new Promise(res => {
+    if (loaded.has(src)) return res();
+    const img = new Image();
+    img.onload = img.onerror = () => { loaded.add(src); res(); };
+    img.src = src;
+  });
+
+  const slides = HERO_IMAGES.map((src, i) => {
+    const s = document.createElement('div');
+    s.className = 'hero-slide' + (i === 0 ? ' active' : '');
+    if (i === 0) s.style.backgroundImage = `url('${src}')`;
+    bg.appendChild(s);
+    return s;
+  });
+  if (slides.length < 2 || reduced) return;
+
+  let idx = 0;
+  async function next() {
+    const n = (idx + 1) % slides.length;
+    await preload(HERO_IMAGES[n]);             // never fade to a half-loaded photo
+    if (!slides[n].style.backgroundImage) slides[n].style.backgroundImage = `url('${HERO_IMAGES[n]}')`;
+    slides[idx].classList.remove('active');
+    slides[n].classList.add('active');
+    idx = n;
+  }
+  let timer = setInterval(next, HERO_INTERVAL);
+  preload(HERO_IMAGES[1]);
+  document.addEventListener('visibilitychange', () => {
+    clearInterval(timer);
+    if (!document.hidden) timer = setInterval(next, HERO_INTERVAL);
+  });
+})();
+
 /* reveal on scroll */
 (() => {
   const els = document.querySelectorAll('.reveal');
