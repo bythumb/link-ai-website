@@ -150,7 +150,7 @@ nav {
   transition:opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1);
 }
 .hv-img.active { opacity:1; transform:none; }
-@media (prefers-reduced-motion:reduce) { .hv-img { transition:none; transform:none; } }
+@media (prefers-reduced-motion:reduce) { .hv-img { transition:opacity .6s ease; transform:none; } }
 
 /* ════════════════════════════════════
    2 · PRODUCT CAROUSEL
@@ -231,7 +231,7 @@ nav {
 .pc-count { font-size:.85rem; font-weight:600; color:var(--body); letter-spacing:.04em; min-width:3.5rem; }
 
 @media (prefers-reduced-motion:reduce) {
-  .pc-text, .pc-shot, .pc-text.active, .pc-shot.active { transition:none; transform:none; }
+  .pc-text, .pc-shot, .pc-text.active, .pc-shot.active { transition:opacity .4s ease; transform:none; }
   .pc-dot.active::after { animation:none; transform:scaleX(1); }
 }
 
@@ -719,7 +719,7 @@ nav {
 const HERO_INTERVAL = 5000;   // ms each visual stays on screen
 (() => {
   const imgs = [...document.querySelectorAll('.hero-visual .hv-img')];
-  if (imgs.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (imgs.length < 2) return;   // reduced-motion still rotates: CSS turns it into a plain crossfade
   let idx = 0, pending = false;
   const next = () => {
     if (pending) return;
@@ -753,7 +753,6 @@ const HERO_INTERVAL = 5000;   // ms each visual stays on screen
   const dotsWrap = section.querySelector('.pc-dots');
   const count = section.querySelector('.pc-count');
   const DURATION = 6000;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const n = texts.length;
   let idx = 0, timer = null, started = 0, remaining = DURATION;
   let hovering = false, inView = false;
@@ -796,7 +795,6 @@ const HERO_INTERVAL = 5000;   // ms each visual stays on screen
 
   function schedule(ms) {
     clearTimeout(timer);
-    if (reduced) return;
     started = Date.now(); remaining = ms;
     timer = setTimeout(() => go(idx + 1), ms);
   }
@@ -822,9 +820,10 @@ const HERO_INTERVAL = 5000;   // ms each visual stays on screen
   section.querySelectorAll('.pc-arrow').forEach(b =>
     b.addEventListener('click', () => go(idx + Number(b.dataset.dir), true)));
 
-  section.addEventListener('mouseenter', () => { hovering = true; pause(); });
-  section.addEventListener('mouseleave', () => { hovering = false; resume(); });
-  section.addEventListener('focusin', () => { hovering = true; pause(); });
+  /* hover-pause only for a real mouse: on phones a tap fires mouseenter with no matching mouseleave */
+  section.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovering = true; pause(); } });
+  section.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovering = false; resume(); } });
+  section.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) { hovering = true; pause(); } });
   section.addEventListener('focusout', e => { if (!section.contains(e.relatedTarget)) { hovering = false; resume(); } });
   section.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') go(idx + 1, true);
@@ -846,7 +845,7 @@ const HERO_INTERVAL = 5000;   // ms each visual stays on screen
   new IntersectionObserver(([e]) => {
     inView = e.isIntersecting;
     inView ? resume() : pause();
-  }, { threshold: 0.35 }).observe(section);
+  }, { threshold: 0.2 }).observe(section);
 
   render();
 })();
