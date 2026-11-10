@@ -275,17 +275,39 @@ nav {
 }
 /* every image in this section floats; pieces that touch the bottom edge float downward so their cut edge never shows */
 .ay-tablet { position:absolute; left:8.25rem; top:19.3rem; width:52.3rem; z-index:2;
-  animation:ayFloatDown 8s ease-in-out infinite -1.5s; }
+  animation:ayFloatDownSoft 13s ease-in-out infinite -1.5s; }
+/* real frosted glass: blurs (refracts) whatever is actually behind it, including the floating icons */
+.ay-glass {
+  aspect-ratio:837 / 771; container-type:inline-size; overflow:hidden;
+  border-radius:3rem 3rem 0 0;
+  background:linear-gradient(160deg, rgba(255,255,255,.20) 0%, rgba(255,255,255,.05) 45%, rgba(255,255,255,.12) 100%);
+  border:1px solid rgba(255,255,255,.5); border-bottom:0;
+  -webkit-backdrop-filter:blur(16px) saturate(160%) brightness(1.03);
+          backdrop-filter:blur(16px) saturate(160%) brightness(1.03);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.65), -14px 30px 60px rgba(19,31,74,.16);
+}
+.ay-glass-bar {
+  position:absolute; left:8.6%; top:12.2%; width:81.5%; height:6.6%;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:999px; border:1.5px solid rgba(255,255,255,.75);
+  background:rgba(255,255,255,.12); box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+  color:#fff; font-size:3.1cqw; letter-spacing:.01em; text-shadow:0 1px 2px rgba(19,31,74,.25);
+}
+.ay-glass-card {
+  position:absolute; left:8.6%; top:30.35%; width:81.5%;
+  border-radius:4.6cqw 4.6cqw 0 0; box-shadow:0 -4px 30px rgba(19,31,74,.10);
+}
 .ay-copilot { position:absolute; left:64.9rem; top:15.5rem; width:53.3rem; z-index:2;
   filter:drop-shadow(-12px 28px 40px rgba(19,31,74,.16)) drop-shadow(-30px 60px 70px rgba(19,31,74,.12));
-  animation:ayFloat 9s ease-in-out infinite -3s; }
-.ay-icon { position:absolute; width:10.6rem; z-index:1; animation:ayFloat 6s ease-in-out infinite;
+  animation:ayFloatSoft 13s ease-in-out infinite -3s; }
+.ay-icon { position:absolute; width:10.6rem; z-index:1; animation:ayFloat 9s ease-in-out infinite;
   filter:drop-shadow(-6px 14px 18px rgba(19,31,74,.14)); }
 .ay-icon--ghl     { left:4.4rem;  top:28.75rem; }
 .ay-icon--chatgpt { left:3.5rem;  top:47.5rem;  animation-delay:-2.3s; }
 .ay-icon--canva   { left:109rem;  top:7.5rem;   animation-delay:-4.1s; }
 .ay-icon--gads    { left:108.5rem; top:53rem;   animation-delay:-1.2s; }
-.ay-icon--homebot { left:57rem; bottom:0; top:auto; animation:ayFloatDown 6.5s ease-in-out infinite -2s; }
+.ay-icon--meta    { left:41rem;   top:24.6rem;  animation-delay:-5.4s; }
+.ay-icon--homebot { left:57rem; bottom:0; top:auto; animation:ayFloatDown 9.5s ease-in-out infinite -2s; }
 .ay-tablet, .ay-copilot, .ay-icon { will-change:transform; }
 @keyframes ayFloat {
   0%,100% { transform:translate3d(0,0,0) rotate(0deg); }
@@ -294,6 +316,15 @@ nav {
 @keyframes ayFloatDown {
   0%,100% { transform:translate3d(0,0,0); }
   50%     { transform:translate3d(-4px,18px,0); }
+}
+/* product panels: smaller, slower drift than the icons */
+@keyframes ayFloatSoft {
+  0%,100% { transform:translate3d(0,0,0) rotate(0deg); }
+  50%     { transform:translate3d(-2px,-10px,0) rotate(-.2deg); }
+}
+@keyframes ayFloatDownSoft {
+  0%,100% { transform:translate3d(0,0,0); }
+  50%     { transform:translate3d(-2px,9px,0); }
 }
 @media (prefers-reduced-motion:reduce) { .ay-tablet, .ay-copilot, .ay-icon { animation:none; } }
 
@@ -379,7 +410,8 @@ nav {
   /* AI You Own: drop the absolute stage, stack heading → Copilot → tablet (tablet's cut edge sits on section bottom) */
   .ay-stage { height:auto; display:flex; flex-direction:column; align-items:center; gap:2.5rem;
     padding:calc(4.5rem) var(--gutter) 0; }
-  .ay-heading, .ay-tablet, .ay-copilot { position:static; }
+  .ay-heading, .ay-copilot { position:static; }
+  .ay-tablet { position:relative; left:auto; top:auto; }
   .ay-heading { align-self:flex-start; }
   .ay-copilot { order:2; width:100%; max-width:40rem; }
   .ay-tablet { order:3; width:100%; max-width:36rem; }
@@ -433,6 +465,10 @@ nav {
   .ay-heading, .ay-tablet, .ay-icon { position:absolute; display:block; }
   .ay-heading { left:var(--gutter); top:20vw; }
   .ay-tablet { left:12.5vw; top:42vw; width:75vw; max-width:none; }
+  .ay-glass { border-radius:5.4vw 5.4vw 0 0;
+    -webkit-backdrop-filter:blur(10px) saturate(160%) brightness(1.03);
+            backdrop-filter:blur(10px) saturate(160%) brightness(1.03); }
+  .ay-icon--meta    { left:59.5vw; top:49.6vw; }
   .ay-copilot { display:none; }
   .ay-icon { width:12vw; }
   .ay-icon--ghl     { left:7.5vw; top:60vw; }
@@ -441,6 +477,8 @@ nav {
   .ay-icon--canva, .ay-icon--gads { display:none; }
   @keyframes ayFloat { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-2px,-10px,0); } }
   @keyframes ayFloatDown { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-2px,9px,0); } }
+  @keyframes ayFloatSoft { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-1px,-5px,0); } }
+  @keyframes ayFloatDownSoft { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-1px,5px,0); } }
 
   .ol-section { padding-block:3.5rem 4rem; }
   .ol-card { padding:2rem 1.5rem 2.5rem; min-height:15rem; }
@@ -476,14 +514,10 @@ nav {
     <div class="hero-visual" aria-roledescription="carousel" aria-label="link.ai product previews">
       <img class="hv-img active" src="assets/product-ask-link.png" width="1031" height="829"
            alt="link.ai Copilot home: “Afternoon, Dylan.” with an Ask Link prompt and suggested tasks">
-      <img class="hv-img" src="assets/hero/hero-goal-composer.png" width="800" height="602"
-           alt="Copilot goal composer: “What would you like to do?” with “Help me get more seller leads”">
-      <img class="hv-img" src="assets/hero/hero-weekly-focus.png" width="1730" height="1212"
-           alt="Copilot answering “What should I focus on this week?” with three priorities">
-      <img class="hv-img" src="assets/hero/hero-photo-chooser.png" width="846" height="525"
-           alt="Listing photo chooser for 24741 Ganymede with one photo selected">
       <img class="hv-img" src="assets/hero/hero-ready-for-review.png" width="1611" height="1076"
            alt="Ready for your review: two campaigns and a social post awaiting approval">
+      <img class="hv-img" src="assets/hero/hero-weekly-focus.png" width="1730" height="1212"
+           alt="Copilot answering “What should I focus on this week?” with three priorities">
       <img class="hv-img" src="assets/hero/hero-social-approval.png" width="1570" height="1091"
            alt="Social post for 1826 Willow Crest awaiting your approval before it goes live">
     </div>
@@ -610,9 +644,12 @@ nav {
     <img class="ay-icon ay-icon--chatgpt" src="assets/ai-you-own/icon-chatgpt.png"   width="170" height="180" loading="lazy" alt="ChatGPT">
     <img class="ay-icon ay-icon--canva"   src="assets/ai-you-own/icon-canva.png"     width="170" height="180" loading="lazy" alt="Canva">
     <img class="ay-icon ay-icon--gads"    src="assets/ai-you-own/icon-google-ad.png" width="170" height="180" loading="lazy" alt="Google Ads">
+    <img class="ay-icon ay-icon--meta"    src="assets/ai-you-own/icon-meta.png"      width="170" height="180" loading="lazy" alt="Meta">
     <img class="ay-icon ay-icon--homebot" src="assets/ai-you-own/icon-homebot.png"   width="170" height="89"  loading="lazy" alt="Homebot">
-    <img class="ay-tablet" src="assets/ai-you-own/tablet-buyers.png" width="837" height="771" loading="lazy"
-         alt="link.ai Buyers workspace showing saved searches, pre-quals, search links and tours">
+    <div class="ay-tablet ay-glass" role="img" aria-label="link.ai Buyers workspace showing saved searches, pre-quals, search links and tours">
+      <div class="ay-glass-bar" aria-hidden="true">link.ai</div>
+      <img class="ay-glass-card" src="assets/ai-you-own/buyers-card.png" width="682" height="537" loading="lazy" alt="">
+    </div>
     <img class="ay-copilot" src="assets/product-ask-link.png" width="1031" height="829" loading="lazy"
          alt="link.ai Copilot: “Afternoon, Dylan.” with an Ask Link prompt">
   </div>
