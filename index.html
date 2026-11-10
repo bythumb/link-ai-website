@@ -109,16 +109,16 @@ nav {
   background:linear-gradient(180deg, rgba(16,26,62,0) 0%, rgba(16,26,62,.25) 100%);
 }
 .hero-press-track {
-  display:flex; align-items:center; gap:4.5rem; width:max-content;
+  display:flex; align-items:center; width:max-content;
   animation:heroPressScroll 60s linear infinite;
 }
 .hero-press-track img {
   width:11rem; height:auto; max-height:2.4rem; min-width:90px;
-  object-fit:contain; flex-shrink:0;
+  object-fit:contain; flex-shrink:0; margin-right:4.5rem;   /* margin, not gap, so -50% loops seamlessly */
   opacity:.45; filter:brightness(0) invert(1);
 }
 @keyframes heroPressScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-@media (prefers-reduced-motion:reduce) { .hero-press-track { animation:none; } }
+/* slow, steady logo drift keeps running under reduced-motion (it was invisible on iPhones with Reduce Motion on) */
 .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 
 .hero-inner {
@@ -435,8 +435,8 @@ nav {
   .nav-logo img { height:24px; }
   .hero { padding-bottom:7.5rem; }
   .hero-press { padding:1.5rem 0; }
-  .hero-press-track { gap:2.5rem; }
-  .hero-press-track img { width:6rem; min-width:0; max-height:1.4rem; }
+  .hero-press-track { animation-duration:32s; }
+  .hero-press-track img { width:6rem; min-width:0; max-height:1.4rem; margin-right:2.5rem; }
   .hero-headline br { display:none; }
   .hero { padding-top:calc(var(--nav-h) + 1.5rem); }
   .hero-inner { gap:1.25rem; }   /* product preview sits in the first screen, close under Login */
