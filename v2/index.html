@@ -118,7 +118,7 @@ nav {
   font-size:1.75rem; line-height:1.4; max-width:50rem; margin-bottom:2.5rem;
   color:rgba(255,255,255,.96);
 }
-.hero-login { font-size:1.5rem; padding:1.05rem 4.6rem; border-radius:.75rem; }
+.hero-login { font-size:1rem; padding:.7rem 3.1rem; border-radius:.6rem; }   /* 2/3 of Figma size */
 .hero-tagline { font-size:1.375rem; margin:1.6rem 0 2rem; }
 .hero-body { font-size:1.375rem; line-height:1.45; max-width:48rem; color:rgba(255,255,255,.92); }
 
@@ -231,13 +231,46 @@ nav {
 .le-list { list-style:none; display:grid; gap:1.4rem; margin-bottom:3rem; }
 .le-list li { display:flex; align-items:center; gap:1.25rem; font-size:1.375rem; color:var(--body); }
 .le-list svg { width:1.75rem; height:1.75rem; min-width:22px; min-height:22px; flex:none; color:#1fc7b2; }
-.le-cta { font-size:1.375rem; padding:1rem 2.35rem; }
+.le-cta { font-size:.92rem; padding:.67rem 1.57rem; border-radius:.6rem; }   /* 2/3 of Figma size */
 .le-photos img { width:100%; border-radius:1.39rem; }
+
+/* ════════════════════════════════════
+   4 · OWN YOUR LEAD GENERATION (four benefits)
+═══════════════════════════════════ */
+.ol-section { background:#f7f8fc; padding:8rem var(--gutter) 7.5rem; }
+.ol-eyebrow {
+  font-size:1rem; font-weight:600; letter-spacing:.02em; text-transform:uppercase;
+  color:var(--navy); margin-bottom:1.75rem;
+}
+.ol-heading {
+  font-size:4rem; font-weight:600; line-height:1.1; letter-spacing:-.01em;
+  color:var(--navy); margin-bottom:2rem;
+}
+.ol-sub { font-size:1.5rem; line-height:1.45; color:var(--body); margin-bottom:3.5rem; }
+.ol-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:1.5rem; }
+.ol-card {
+  background:var(--white); border:1px solid #e6ebf4; border-radius:1.25rem;
+  padding:2.75rem 2rem 4rem; min-height:26rem;
+  box-shadow:0 1px 2px rgba(19,31,74,.03);
+  transition:background .3s ease, border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+/* first card highlighted by default; highlight follows hover */
+.ol-card.is-active, .ol-grid:hover .ol-card:hover { background:#ebfdfb; border-color:#c9f5ef; }
+.ol-grid:hover .ol-card.is-active:not(:hover) { background:var(--white); border-color:#e6ebf4; }
+.ol-card:hover { transform:translateY(-3px); box-shadow:0 2px 4px rgba(19,31,74,.03), 0 16px 32px -16px rgba(19,31,74,.12); }
+.ol-label {
+  font-size:.875rem; font-weight:600; letter-spacing:.02em; text-transform:uppercase;
+  color:var(--navy); margin-bottom:1.75rem;
+}
+.ol-title { font-size:2rem; font-weight:600; line-height:1.25; color:var(--navy); margin-bottom:1.75rem; }
+.ol-body { font-size:1.25rem; line-height:1.55; color:var(--body); }
+.ol-tagline { font-size:1.5rem; font-weight:600; color:var(--navy); margin-top:3.75rem; }
+@media (prefers-reduced-motion:reduce) { .ol-card, .ol-card:hover { transition:none; transform:none; } }
 
 /* ════════════════════════════════════
    FOOTER (kept from v1)
 ═══════════════════════════════════ */
-.site-footer { background:var(--page); padding:2.5rem 2rem 2rem; border-top:1px solid var(--muted); }
+.site-footer { background:var(--white); padding:2.5rem 2rem 2rem; border-top:1px solid #e6ebf4; }
 .site-footer-inner {
   max-width:1200px; margin:0 auto;
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.25rem;
@@ -266,7 +299,7 @@ nav {
   .hero-inner, .pc-inner, .le-inner { grid-template-columns:minmax(0,1fr); gap:3rem; }
   .hero-headline { font-size:3.5rem; }
   .hero-sub { font-size:1.35rem; }
-  .hero-login { font-size:1.2rem; padding:.9rem 3.2rem; }
+  .hero-login { font-size:1rem; padding:.75rem 2.5rem; }
   .hero-tagline, .hero-body { font-size:1.1rem; }
   .hero-caption { font-size:1rem; }
   .hero-visual { max-width:44rem; }
@@ -279,8 +312,17 @@ nav {
 
   .le-heading { font-size:2.75rem; }
   .le-body, .le-list li { font-size:1.1rem; }
-  .le-cta { font-size:1.1rem; }
+  .le-cta { font-size:1rem; padding:.75rem 1.75rem; }
   .le-photos { max-width:40rem; }
+
+  .ol-section { padding-block:5rem; }
+  .ol-heading { font-size:2.75rem; }
+  .ol-sub { font-size:1.2rem; margin-bottom:2.5rem; }
+  .ol-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .ol-card { min-height:0; padding:2rem 1.75rem 2.5rem; }
+  .ol-title { font-size:1.6rem; margin-bottom:1rem; }
+  .ol-body { font-size:1.05rem; }
+  .ol-tagline { font-size:1.2rem; margin-top:2.5rem; }
 }
 @media (max-width:600px) {
   :root { --gutter:1.25rem; }
@@ -301,6 +343,12 @@ nav {
   .le-section { padding-block:4rem; }
   .le-heading { font-size:2.25rem; }
   .le-cta { width:100%; }
+
+  .ol-section { padding-block:4rem; }
+  .ol-eyebrow { font-size:.8rem; margin-bottom:1rem; }
+  .ol-heading { font-size:2.25rem; margin-bottom:1.25rem; }
+  .ol-grid { grid-template-columns:minmax(0,1fr); gap:1rem; }
+  .ol-title br { display:none; }
 
   .site-footer-inner { flex-direction:column; align-items:flex-start; gap:.75rem; }
   .site-footer-legal a { margin-right:1.2rem; margin-bottom:.3rem; }
@@ -421,6 +469,39 @@ nav {
            alt="Real estate professionals meeting with clients, presenting, and reviewing paperwork">
     </div>
   </div>
+</section>
+
+
+<!-- ══ 4 · OWN YOUR LEAD GENERATION ══════════════════════════ -->
+<section class="ol-section" id="own-your-lead-generation" aria-labelledby="ol-title">
+  <div class="reveal">
+    <p class="ol-eyebrow">Your next move, made easier</p>
+    <h2 class="ol-heading" id="ol-title">Own your lead generation.</h2>
+    <p class="ol-sub">Get leads, spot who’s serious, and act first—with AI doing the setup work.</p>
+  </div>
+  <div class="ol-grid reveal">
+    <article class="ol-card is-active">
+      <p class="ol-label">01 / Your gameplan</p>
+      <h3 class="ol-title">Get leads on<br> your terms.</h3>
+      <p class="ol-body">Start with a lead generation gameplan—not another monthly system to rent.</p>
+    </article>
+    <article class="ol-card">
+      <p class="ol-label">02 / Your focus</p>
+      <h3 class="ol-title">Spot who’s<br> serious.</h3>
+      <p class="ol-body">Learn to spot the leads who are ready for a conversation, so you know where to focus.</p>
+    </article>
+    <article class="ol-card">
+      <p class="ol-label">03 / Your next move</p>
+      <h3 class="ol-title">Act first,<br> with AI.</h3>
+      <p class="ol-body">Let AI do the setup work so you can act sooner and spend more time with clients.</p>
+    </article>
+    <article class="ol-card">
+      <p class="ol-label">04 / Your account</p>
+      <h3 class="ol-title">Make it<br> yours.</h3>
+      <p class="ol-body">Book a one-on-one call to personalize your link.ai account around your business.</p>
+    </article>
+  </div>
+  <p class="ol-tagline reveal">Free for every agent. No subscription ever.</p>
 </section>
 
 </main>
