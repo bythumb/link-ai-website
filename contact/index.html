@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Link</title>
+  <link rel="canonical" href="https://link.ai/contact/">
   <style>
     @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-Regular.woff2') format('woff2'); font-weight: 400; }
     @font-face { font-family: 'Mont'; src: url('../reference/webflow-export/fonts/Mont-SemiBold.woff2') format('woff2'); font-weight: 600; }
@@ -48,50 +49,51 @@
     }
     .page-hero p { font-size: 1rem; color: var(--body); max-width: 500px; margin: 0 auto; }
 
-    .contact-wrap {
-      max-width: 840px; margin: 0 auto; padding: 3.5rem 2rem 5rem;
-    }
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
 
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
-      margin-bottom: 1.25rem;
+    .contact-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; margin: 1.5rem 0 2.5rem;
     }
     .contact-card {
       background: var(--white); border: 1px solid var(--border);
-      border-radius: 1.11rem; padding: 1.75rem 2rem;
-      display: flex; flex-direction: column; gap: 0.5rem;
+      border-radius: 1rem; padding: 1.4rem 1.5rem;
     }
-    .contact-card.wide { grid-column: 1 / -1; }
-    .contact-card-icon {
-      width: 40px; height: 40px; border-radius: 0.65rem;
-      background: #EAF9F7; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 0.25rem; flex-shrink: 0;
-    }
-    .contact-card-icon svg { width: 20px; height: 20px; stroke: var(--tq); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .contact-card-label {
-      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--body); opacity: 0.55;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--tq); margin-bottom: 0.45rem;
     }
-    .contact-card h2 { font-size: 1rem; font-weight: 600; color: var(--navy); }
-    .contact-card p { font-size: 0.875rem; color: var(--body); line-height: 1.6; }
+    .contact-card-title {
+      font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem;
+    }
+    .contact-card p { font-size: 0.84rem; color: var(--body); line-height: 1.5; margin: 0; }
     .contact-card a {
-      font-size: 0.9rem; font-weight: 600; color: var(--navy);
-      text-decoration: none; transition: color 0.2s;
+      color: var(--navy); font-weight: 600; text-decoration: none; font-size: 0.84rem;
     }
     .contact-card a:hover { color: var(--tq); }
 
-    .email-list { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.25rem; }
-    .email-row { display: flex; flex-direction: column; gap: 0.1rem; }
-    .email-row a { font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none; transition: color 0.2s; }
-    .email-row a:hover { color: var(--tq); }
-    .email-row span { font-size: 0.78rem; color: var(--body); opacity: 0.7; }
-
-    .affiliate-note {
-      background: var(--white); border: 1px solid var(--border);
-      border-left: 4px solid var(--tq); border-radius: 0.75rem;
-      padding: 1.4rem 1.75rem; margin-top: 1.25rem; font-size: 0.85rem; line-height: 1.7;
+    .content-wrap h2 {
+      font-size: 1.05rem; font-weight: 600; color: var(--navy);
+      margin: 2.75rem 0 0.75rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
     }
-    .affiliate-note strong { color: var(--navy); font-weight: 600; display: block; margin-bottom: 0.4rem; }
+    .content-wrap h2:first-child { margin-top: 0; }
+    .content-wrap p { font-size: 0.9rem; margin-bottom: 0.9rem; }
+    .content-wrap ul { margin: 0.5rem 0 1rem 1.4rem; }
+    .content-wrap li { font-size: 0.9rem; margin-bottom: 0.45rem; }
+    .content-wrap a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    .content-wrap a:hover { color: var(--tq); }
+    .content-wrap strong { color: var(--navy); font-weight: 600; }
+
+    address { font-style: normal; }
+    .address-block {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 0.9rem; padding: 1.3rem 1.5rem;
+      font-size: 0.9rem; line-height: 1.8; margin: 1rem 0 1.5rem;
+    }
+    .address-block strong { color: var(--navy); font-weight: 600; display: block; }
+
+    .page-updated { font-size: 0.78rem; color: var(--body); opacity: 0.55; margin-top: 3rem; }
 
     .site-footer {
       background: var(--white); border-top: 1px solid var(--border);
@@ -121,9 +123,8 @@
 
     @media (max-width: 600px) {
       .page-hero h1 { font-size: 1.9rem; }
-      .contact-wrap { padding: 2rem 1.2rem 3.5rem; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-card.wide { grid-column: 1; }
+      .content-wrap { padding: 2rem 1.2rem 3.5rem; }
+      .contact-cards { grid-template-columns: 1fr; }
       .site-footer-inner { flex-direction: column; align-items: flex-start; }
       .site-footer-legal a { margin-right: 1.2rem; margin-bottom: .3rem; }
     }
@@ -139,63 +140,64 @@
 <div class="page-hero">
   <div class="page-eyebrow">Contact</div>
   <h1>Get in touch</h1>
-  <p>We're here to help. Reach out any time — our team responds within one business day.</p>
+  <p>We are here for agent support, business inquiries, and legal matters.</p>
 </div>
 
-<div class="contact-wrap">
+<div class="content-wrap">
 
-  <div class="contact-grid">
-
+  <div class="contact-cards">
     <div class="contact-card">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div class="contact-card-label">Email</div>
-      <h2>Reach us by email</h2>
-      <div class="email-list">
-        <div class="email-row">
-          <a href="mailto:support@link.ai">support@link.ai</a>
-          <span>Product help and account questions</span>
-        </div>
-        <div class="email-row">
-          <a href="mailto:privacy@link.ai">privacy@link.ai</a>
-          <span>Privacy requests, CCPA/CPRA rights, DMCA notices<br>(Designated Agent: John Guints)</span>
-        </div>
-        <div class="email-row">
-          <a href="mailto:contact@link.ai">contact@link.ai</a>
-          <span>General inquiries and partnerships</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-card">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div class="contact-card-label">Office</div>
-      <h2>Link Management Systems, Inc.</h2>
-      <p>202 W 140th St<br>Los Angeles, CA 90061</p>
-      <p style="margin-top:.5rem;">
-        <a href="tel:+13106956510">(310) 695-6510</a>
-      </p>
-      <p style="margin-top:.25rem; font-size:.8rem; opacity:.65;">Mon–Fri, 9am–5pm Pacific</p>
-    </div>
-
-    <div class="contact-card wide">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </div>
       <div class="contact-card-label">Support</div>
-      <h2>Need help with the app?</h2>
-      <p>Visit our <a href="../support/">Support page</a> for common questions about sign-in, notifications, account deletion, and more. You can also reach us at <a href="mailto:support@link.ai">support@link.ai</a> — we reply within one business day.</p>
+      <div class="contact-card-title">App support</div>
+      <p>For help with the LINK Tools iOS app and your account.</p>
+      <a href="mailto:support@link.ai">support@link.ai</a>
     </div>
 
+    <div class="contact-card">
+      <div class="contact-card-label">Business</div>
+      <div class="contact-card-title">General inquiries</div>
+      <p>Brokerage partnerships, onboarding, and platform questions.</p>
+      <a href="mailto:hello@link.ai">hello@link.ai</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-card-label">Legal</div>
+      <div class="contact-card-title">Legal &amp; compliance</div>
+      <p>Privacy requests, DMCA notices, and legal correspondence.</p>
+      <a href="mailto:legal@link.ai">legal@link.ai</a>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-card-label">Media</div>
+      <div class="contact-card-title">Press</div>
+      <p>Media inquiries and press kit requests.</p>
+      <a href="mailto:press@link.ai">press@link.ai</a>
+    </div>
   </div>
 
-  <div class="affiliate-note">
-    <strong>Affiliated Companies</strong>
-    Link Management Systems, Inc. operates the Link platform and is not a licensed mortgage broker, lender, or escrow agent. Mortgage services are offered through <strong>First Link Mortgage</strong> (NMLS #2527988), and escrow services are offered through <strong>Linked Escrow</strong> (DFPI License No. 96DBO-189708), each of which is a separate legal entity. Each affiliate maintains its own licenses, compliance obligations, and contact information.
+  <h2>Legal entity &amp; mailing address</h2>
+  <div class="address-block">
+    <address>
+      <strong>Link Management Systems, Inc.</strong>
+      202 W 140th St<br>
+      Los Angeles, CA 90061<br>
+      United States<br>
+      <br>
+      <a href="tel:+13106956510">(310) 695-6510</a>
+    </address>
   </div>
+
+  <h2>Response times</h2>
+  <p>Support and general inquiries are answered Mon–Fri, 9am–5pm Pacific, typically within one business day.</p>
+  <p>Legal correspondence is acknowledged within three business days.</p>
+
+  <h2>App support page</h2>
+  <p>For frequently asked questions and step-by-step guidance for the LINK Tools app, visit the <a href="/support/">Support page</a>.</p>
+
+  <h2>Affiliate disclosure</h2>
+  <p>Link Brokerages maintains affiliated business relationships with <strong>First Link Mortgage</strong> and <strong>Linked Escrow</strong>. You are not required to use these services. Using one does not affect your use of the other. Each entity operates independently and is subject to its own licensing and regulatory requirements.</p>
+
+  <p class="page-updated">Last updated August 19, 2026</p>
 
 </div>
 
@@ -205,11 +207,11 @@
       <a href="../index.html"><img src="../Full%20logo_dark%20color.png" alt="Link"></a>
     </div>
     <nav class="site-footer-legal">
-      <a href="../support/">Support</a>
-      <a href="../privacy/">Privacy Policy</a>
-      <a href="../terms/">Terms of Service</a>
-      <a href="../prototypes/compliance.html">Compliance</a>
-      <a href="index.html">Contact</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Service</a>
+      <a href="/prototypes/compliance.html">Compliance</a>
+      <a href="/contact/">Contact</a>
     </nav>
     <div class="site-footer-social">
       <a href="#" aria-label="LinkedIn"><img src="../reference/webflow-export/images/linkedin-logo.svg" alt="LinkedIn"></a>
