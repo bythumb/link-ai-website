@@ -408,14 +408,13 @@ nav {
   .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
   .hero-login { padding:.85rem 1.9rem; }
 
-  /* each slide fills the screen: text on top, product below, controls last */
-  .pc-section { padding-block:3.5rem; min-height:100svh; display:flex; align-items:center; }
-  .pc-inner { width:100%; gap:2.25rem; }
-  .pc-left { display:contents; }
-  .pc-copy { order:1; }
-  .pc-media { order:2; }
-  .pc-controls { order:3; margin-top:0; }
+  /* carousel: media box hugs the active slide (height set in JS) so there is no leftover space under short slides */
+  .pc-section { padding-block:4rem; }
   .pc-sub { font-size:1.1rem; }
+  .pc-inner { gap:2rem; }
+  .pc-media { position:relative; display:block; transition:height .5s ease; }
+  .pc-shot { position:absolute; top:0; left:0; right:0; }
+  .pc-shot.active { position:relative; }
 
   /* Linked Escrow: heading → body → photos → bullets → button */
   .le-section { padding-block:3.5rem 4rem; }
@@ -731,9 +730,20 @@ const HERO_INTERVAL = 5000;   // ms each visual stays on screen
   });
   section.style.setProperty('--pc-dur', DURATION + 'ms');
 
+  /* phones: media box animates to the active slide's height (no dead space under short slides) */
+  const media = section.querySelector('.pc-media');
+  const phone = matchMedia('(max-width:600px)');
+  function fitMedia() {
+    media.style.height = phone.matches ? shots[idx].offsetHeight + 'px' : '';
+  }
+  addEventListener('resize', fitMedia, { passive: true });
+  phone.addEventListener('change', fitMedia);
+
   function render() {
+    if (phone.matches) media.style.height = media.offsetHeight + 'px';   // lock current height so the change animates
     texts.forEach((el, i) => { el.classList.toggle('active', i === idx); el.setAttribute('aria-hidden', i !== idx); });
     shots.forEach((el, i) => el.classList.toggle('active', i === idx));
+    fitMedia();
     dots.forEach((d, i) => {
       d.classList.remove('active');
       d.setAttribute('aria-selected', i === idx ? 'true' : 'false');
