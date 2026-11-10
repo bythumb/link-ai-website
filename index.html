@@ -395,7 +395,8 @@ nav {
   .ol-cta-row { margin-top:2.5rem; }
 }
 @media (max-width:600px) {
-  :root { --gutter:1.25rem; --h-size:2.25rem; }
+  /* phone layout follows reference/Mobile mockups (390px frames) */
+  :root { --gutter:2rem; --h-size:2.25rem; }
   nav { padding:0 1.25rem; }
   .nav-logo img { height:24px; }
   .hero { padding-bottom:7.5rem; }
@@ -405,22 +406,50 @@ nav {
   .hero-headline br { display:none; }
   .hero-headline { margin-bottom:1.5rem; }
   .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
-  .hero-login { width:100%; }
+  .hero-login { padding:.85rem 1.9rem; }
 
-  .pc-section { padding-block:4rem; }
+  /* each slide fills the screen: text on top, product below, controls last */
+  .pc-section { padding-block:3.5rem; min-height:100svh; display:flex; align-items:center; }
+  .pc-inner { width:100%; gap:2.25rem; }
+  .pc-left { display:contents; }
+  .pc-copy { order:1; }
+  .pc-media { order:2; }
+  .pc-controls { order:3; margin-top:0; }
   .pc-sub { font-size:1.1rem; }
-  .pc-inner { gap:2rem; }
 
-  .le-section { padding-block:4rem; }
-  .le-cta, .ol-cta { width:100%; }
+  /* Linked Escrow: heading → body → photos → bullets → button */
+  .le-section { padding-block:3.5rem 4rem; }
+  .le-inner { display:flex; flex-direction:column; align-items:stretch; gap:0; }
+  .le-copy { display:contents; }
+  .le-logo { order:1; width:3.5rem; margin-bottom:1.5rem; }
+  .le-heading { order:2; margin-bottom:1.25rem; }
+  .le-body { order:3; margin-bottom:1.75rem; }
+  .le-photos { order:4; max-width:none; margin-bottom:2rem; opacity:1; transform:none; }
+  .le-list { order:5; margin-bottom:2rem; gap:1.1rem; }
+  .le-cta { order:6; align-self:flex-start; }
+  .le-cta, .ol-cta { padding:.85rem 1.9rem; }
 
-  .ay-stage { padding-top:3.5rem; gap:2rem; }
+  /* AI You Own: compact version of the desktop stage (390×436 frame), Copilot card dropped */
+  .ay-stage { display:block; height:111.8vw; padding:0; }
+  .ay-heading, .ay-tablet, .ay-icon { position:absolute; display:block; }
+  .ay-heading { left:var(--gutter); top:20vw; }
+  .ay-tablet { left:12.5vw; top:42vw; width:75vw; max-width:none; }
+  .ay-copilot { display:none; }
+  .ay-icon { width:12vw; }
+  .ay-icon--ghl     { left:7.5vw; top:60vw; }
+  .ay-icon--chatgpt { left:5.5vw; top:84vw; }
+  .ay-icon--homebot { left:85vw; top:auto; bottom:0; }
+  .ay-icon--canva, .ay-icon--gads { display:none; }
+  @keyframes ayFloat { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-2px,-10px,0); } }
+  @keyframes ayFloatDown { 0%,100% { transform:translate3d(0,0,0); } 50% { transform:translate3d(-2px,9px,0); } }
 
-  .ol-section { padding-block:4rem; }
+  .ol-section { padding-block:3.5rem 4rem; }
+  .ol-card { padding:2rem 1.5rem 2.5rem; min-height:15rem; }
+  .ol-title { font-size:1.5rem; line-height:1.5; }
+  .ol-cta-row { flex-direction:column; align-items:flex-start; gap:1.25rem; }
   .ol-eyebrow { font-size:.8rem; margin-bottom:1rem; }
   .ol-heading { margin-bottom:1.25rem; }
   .ol-grid { grid-template-columns:minmax(0,1fr); gap:1rem; }
-  .ol-title br { display:none; }
 
   .site-footer-inner { flex-direction:column; align-items:flex-start; gap:.75rem; }
   .site-footer-legal a { margin-right:1.2rem; margin-bottom:.3rem; }
