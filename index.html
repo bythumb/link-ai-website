@@ -438,8 +438,10 @@ nav {
   .hero-press-track { gap:2.5rem; }
   .hero-press-track img { width:6rem; min-width:0; max-height:1.4rem; }
   .hero-headline br { display:none; }
-  .hero-headline { margin-bottom:1.5rem; }
-  .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
+  .hero { padding-top:calc(var(--nav-h) + 1.5rem); }
+  .hero-inner { gap:1.25rem; }   /* product preview sits in the first screen, close under Login */
+  .hero-headline { margin-bottom:1rem; }
+  .hero-sub { font-size:1.1rem; margin-bottom:1.25rem; }
   .hero-login { padding:.85rem 1.9rem; }
 
   /* carousel: media box hugs the active slide (height set in JS) so there is no leftover space under short slides */
