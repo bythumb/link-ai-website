@@ -26,6 +26,7 @@
   --font:   Mont, Montserrat, Arial, sans-serif;
   --gutter: 7.5rem;          /* 120px at 1920 — matches Figma frame margins */
   --nav-h:  60px;
+  --h-size: 4rem;           /* one headline size for every section */
 }
 
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
@@ -107,7 +108,7 @@ nav {
   align-items:center; gap:3rem;
 }
 .hero-headline {
-  font-size:5.25rem; font-weight:600; line-height:1.08; letter-spacing:-.015em;
+  font-size:var(--h-size); font-weight:600; line-height:1.1; letter-spacing:-.01em;
   margin-bottom:2.4rem;
 }
 .hero-sub {
@@ -156,7 +157,7 @@ nav {
   transition:opacity .6s ease .1s, transform .6s ease .1s, visibility 0s;
 }
 .pc-heading {
-  font-size:4.5rem; font-weight:600; line-height:1.1; letter-spacing:-.01em;
+  font-size:var(--h-size); font-weight:600; line-height:1.1; letter-spacing:-.01em;
   color:var(--navy); margin-bottom:2rem;
 }
 .pc-sub { font-size:1.75rem; line-height:1.4; color:var(--body); }
@@ -220,7 +221,7 @@ nav {
   justify-content:space-between; align-items:center; gap:3rem;
 }
 .le-heading {
-  font-size:4rem; font-weight:600; line-height:1.2; letter-spacing:-.01em;
+  font-size:var(--h-size); font-weight:600; line-height:1.1; letter-spacing:-.01em;
   color:var(--navy); margin-bottom:2rem;
 }
 .le-body { font-size:1.375rem; line-height:1.6; color:var(--body); margin-bottom:2.5rem; }
@@ -245,8 +246,8 @@ nav {
 }
 .ay-stage { position:relative; max-width:120rem; height:67.5rem; margin:0 auto; }
 .ay-heading {
-  position:absolute; left:var(--gutter); top:6.25rem; z-index:3;
-  font-size:7.5rem; font-weight:600; line-height:1; letter-spacing:-.02em; color:var(--navy);
+  position:absolute; left:var(--gutter); top:9.5rem; z-index:3;
+  font-size:var(--h-size); font-weight:600; line-height:1.1; letter-spacing:-.01em; color:var(--navy);
 }
 .ay-tablet { position:absolute; left:8.25rem; top:19.3rem; width:52.3rem; z-index:2; }
 .ay-copilot { position:absolute; left:64.9rem; top:15.5rem; width:53.3rem; z-index:2;
@@ -269,7 +270,7 @@ nav {
   color:var(--navy); margin-bottom:1.75rem;
 }
 .ol-heading {
-  font-size:4rem; font-weight:600; line-height:1.1; letter-spacing:-.01em;
+  font-size:var(--h-size); font-weight:600; line-height:1.1; letter-spacing:-.01em;
   color:var(--navy); margin-bottom:2rem;
 }
 .ol-sub { font-size:1.5rem; line-height:1.45; color:var(--body); margin-bottom:3.5rem; }
@@ -320,21 +321,19 @@ nav {
    RESPONSIVE
 ═══════════════════════════════════ */
 @media (max-width:991px) {
-  :root { --gutter:2rem; }
+  :root { --gutter:2rem; --h-size:2.75rem; }
   .hero { min-height:auto; padding-top:calc(var(--nav-h) + 3.5rem); }
   .hero-inner, .pc-inner, .le-inner { grid-template-columns:minmax(0,1fr); gap:3rem; }
-  .hero-headline { font-size:3.5rem; }
   .hero-sub { font-size:1.35rem; }
   .hero-login { font-size:1rem; padding:.75rem 2.5rem; }
   .hero-visual { max-width:44rem; }
 
   .pc-inner { min-height:0; }
-  .pc-heading { font-size:3rem; margin-bottom:1.25rem; }
+  .pc-heading { margin-bottom:1.25rem; }
   .pc-sub { font-size:1.25rem; }
   .pc-controls { margin-top:2rem; }
   .pc-shot img { max-height:none; }
 
-  .le-heading { font-size:2.75rem; }
   .le-body, .le-list li { font-size:1.1rem; }
   .le-cta { font-size:1rem; padding:.75rem 1.75rem; }
   .le-photos { max-width:40rem; }
@@ -343,13 +342,12 @@ nav {
   .ay-stage { height:auto; display:flex; flex-direction:column; align-items:center; gap:2.5rem;
     padding:calc(4.5rem) var(--gutter) 0; }
   .ay-heading, .ay-tablet, .ay-copilot { position:static; }
-  .ay-heading { align-self:flex-start; font-size:4.5rem; }
+  .ay-heading { align-self:flex-start; }
   .ay-copilot { order:2; width:100%; max-width:40rem; }
   .ay-tablet { order:3; width:100%; max-width:36rem; }
   .ay-icon { display:none; }
 
   .ol-section { padding-block:5rem; }
-  .ol-heading { font-size:2.75rem; }
   .ol-sub { font-size:1.2rem; margin-bottom:2.5rem; }
   .ol-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
   .ol-card { min-height:0; padding:2rem 1.75rem 2.5rem; }
@@ -358,29 +356,26 @@ nav {
   .ol-tagline { font-size:1.2rem; margin-top:2.5rem; }
 }
 @media (max-width:600px) {
-  :root { --gutter:1.25rem; }
+  :root { --gutter:1.25rem; --h-size:2.25rem; }
   nav { padding:0 1.25rem; }
   .nav-logo img { height:24px; }
   .hero { padding-bottom:3.5rem; }
-  .hero-headline { font-size:2.5rem; margin-bottom:1.5rem; }
+  .hero-headline { margin-bottom:1.5rem; }
   .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
   .hero-login { width:100%; }
 
   .pc-section { padding-block:4rem; }
-  .pc-heading { font-size:2.25rem; }
   .pc-sub { font-size:1.1rem; }
   .pc-inner { gap:2rem; }
 
   .le-section { padding-block:4rem; }
-  .le-heading { font-size:2.25rem; }
   .le-cta { width:100%; }
 
-  .ay-heading { font-size:3.25rem; }
   .ay-stage { padding-top:3.5rem; gap:2rem; }
 
   .ol-section { padding-block:4rem; }
   .ol-eyebrow { font-size:.8rem; margin-bottom:1rem; }
-  .ol-heading { font-size:2.25rem; margin-bottom:1.25rem; }
+  .ol-heading { margin-bottom:1.25rem; }
   .ol-grid { grid-template-columns:minmax(0,1fr); gap:1rem; }
   .ol-title br { display:none; }
 
@@ -402,7 +397,7 @@ nav {
 <section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
-      <h1 class="hero-headline" id="hero-title">Create more clients with link.ai</h1>
+      <h1 class="hero-headline" id="hero-title">Create more clients<br> with link.ai</h1>
       <p class="hero-sub">Generate leads, connect with clients, and simplify your day with link.ai—your all-in-one AI tool for real estate.</p>
       <a href="https://app.link.ai" class="btn-tq hero-login">Login</a>
     </div>
