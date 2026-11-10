@@ -86,7 +86,7 @@ nav {
 .nav-signup-btn:hover { background:#e2e6f0; border-color:#c4cde0; }
 
 /* ════════════════════════════════════
-   1 · HERO — "Own Your Lead Generation"
+   1 · HERO — "Create more clients" (Figma: Main Site hero)
 ═══════════════════════════════════ */
 .hero {
   position:relative; min-height:100vh; overflow:hidden;
@@ -94,20 +94,6 @@ nav {
   padding:calc(var(--nav-h) + 4rem) var(--gutter) 5rem;
   background:#26386e url('../header%20image%20copy.webp') center 60% / cover no-repeat;
   color:var(--white);
-}
-/* rotating background photos (see HERO_IMAGES in script) */
-.hero-bg { position:absolute; inset:0; z-index:0; }
-.hero-slide {
-  position:absolute; inset:0;
-  background-position:center 60%; background-size:cover; background-repeat:no-repeat;
-  opacity:0; transform:scale(1.06);
-  transition:opacity 1.6s ease, transform 9s ease-out;
-  will-change:opacity, transform;
-}
-.hero-slide.active { opacity:1; transform:scale(1); }
-@media (prefers-reduced-motion:reduce) {
-  .hero-slide { transition:opacity .01s; transform:none; }
-  .hero-slide.active { transform:none; }
 }
 .hero::before {
   content:''; position:absolute; inset:0; pointer-events:none; z-index:1;
@@ -120,10 +106,6 @@ nav {
   display:grid; grid-template-columns:minmax(0,1fr) minmax(0,50rem);
   align-items:center; gap:3rem;
 }
-.hero-eyebrow {
-  font-size:1rem; font-weight:600; letter-spacing:.02em; text-transform:uppercase;
-  color:var(--tq); margin-bottom:1.6rem;
-}
 .hero-headline {
   font-size:5.25rem; font-weight:600; line-height:1.08; letter-spacing:-.015em;
   margin-bottom:2.4rem;
@@ -133,18 +115,18 @@ nav {
   color:rgba(255,255,255,.96);
 }
 .hero-login { font-size:1rem; padding:.7rem 3.1rem; border-radius:.6rem; }   /* 2/3 of Figma size */
-.hero-tagline { font-size:1.375rem; margin:1.6rem 0 2rem; }
-.hero-body { font-size:1.375rem; line-height:1.45; max-width:48rem; color:rgba(255,255,255,.92); }
 
-.hero-visual { position:relative; }
-.hero-visual img {
-  width:100%;
+/* stacked visuals crossfade in one fixed-ratio box so layout never jumps */
+.hero-visual { position:relative; aspect-ratio:1031 / 829; }
+.hv-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:contain; object-position:center;
   filter:drop-shadow(0 24px 48px rgba(10,20,58,.25));
+  opacity:0; transform:translateY(14px) scale(.98);
+  transition:opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1);
 }
-.hero-caption {
-  /* PNG carries transparent shadow padding — pull caption up/in to sit under the visible card edge */
-  margin-top:-1.5rem; padding-left:3.4%; font-size:1.25rem; line-height:1.45; color:rgba(255,255,255,.95);
-}
+.hv-img.active { opacity:1; transform:none; }
+@media (prefers-reduced-motion:reduce) { .hv-img { transition:none; transform:none; } }
 
 /* ════════════════════════════════════
    2 · PRODUCT CAROUSEL
@@ -249,6 +231,36 @@ nav {
 .le-photos img { width:100%; border-radius:1.39rem; }
 
 /* ════════════════════════════════════
+   3b · AI YOU OWN
+   Pieces are absolutely placed on a 1920×1080 stage (in rem, so it scales
+   with the fluid root size) to match the Figma frame.
+═══════════════════════════════════ */
+.ay-section {
+  position:relative; overflow:hidden;
+  background:#bcd6e2 url('assets/ai-you-own/bg-desert-house.jpg') center 28% / cover no-repeat;
+}
+.ay-section::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(180deg, rgba(236,244,249,.55) 0%, rgba(236,244,249,.15) 30%, rgba(236,244,249,0) 50%);
+}
+.ay-stage { position:relative; max-width:120rem; height:67.5rem; margin:0 auto; }
+.ay-heading {
+  position:absolute; left:var(--gutter); top:6.25rem; z-index:3;
+  font-size:7.5rem; font-weight:600; line-height:1; letter-spacing:-.02em; color:var(--navy);
+}
+.ay-tablet { position:absolute; left:8.25rem; top:19.3rem; width:52.3rem; z-index:2; }
+.ay-copilot { position:absolute; left:64.9rem; top:15.5rem; width:53.3rem; z-index:2;
+  filter:drop-shadow(0 24px 48px rgba(19,31,74,.14)); }
+.ay-icon { position:absolute; width:10.6rem; z-index:1; animation:ayFloat 7s ease-in-out infinite; }
+.ay-icon--ghl     { left:4.4rem;  top:28.75rem; }
+.ay-icon--chatgpt { left:3.5rem;  top:47.5rem;  animation-delay:-2.3s; }
+.ay-icon--canva   { left:108rem;  top:11.5rem;  animation-delay:-4.1s; }
+.ay-icon--gads    { left:108.5rem; top:53rem;   animation-delay:-1.2s; }
+.ay-icon--homebot { left:57rem; bottom:0; top:auto; animation:none; }
+@keyframes ayFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+@media (prefers-reduced-motion:reduce) { .ay-icon { animation:none; } }
+
+/* ════════════════════════════════════
    4 · OWN YOUR LEAD GENERATION (four benefits)
 ═══════════════════════════════════ */
 .ol-section { background:#f7f8fc; padding:8rem var(--gutter) 7.5rem; }
@@ -314,8 +326,6 @@ nav {
   .hero-headline { font-size:3.5rem; }
   .hero-sub { font-size:1.35rem; }
   .hero-login { font-size:1rem; padding:.75rem 2.5rem; }
-  .hero-tagline, .hero-body { font-size:1.1rem; }
-  .hero-caption { font-size:1rem; }
   .hero-visual { max-width:44rem; }
 
   .pc-inner { min-height:0; }
@@ -328,6 +338,15 @@ nav {
   .le-body, .le-list li { font-size:1.1rem; }
   .le-cta { font-size:1rem; padding:.75rem 1.75rem; }
   .le-photos { max-width:40rem; }
+
+  /* AI You Own: drop the absolute stage, stack heading → Copilot → tablet (tablet's cut edge sits on section bottom) */
+  .ay-stage { height:auto; display:flex; flex-direction:column; align-items:center; gap:2.5rem;
+    padding:calc(4.5rem) var(--gutter) 0; }
+  .ay-heading, .ay-tablet, .ay-copilot { position:static; }
+  .ay-heading { align-self:flex-start; font-size:4.5rem; }
+  .ay-copilot { order:2; width:100%; max-width:40rem; }
+  .ay-tablet { order:3; width:100%; max-width:36rem; }
+  .ay-icon { display:none; }
 
   .ol-section { padding-block:5rem; }
   .ol-heading { font-size:2.75rem; }
@@ -343,11 +362,9 @@ nav {
   nav { padding:0 1.25rem; }
   .nav-logo img { height:24px; }
   .hero { padding-bottom:3.5rem; }
-  .hero-eyebrow { font-size:.8rem; margin-bottom:1rem; }
   .hero-headline { font-size:2.5rem; margin-bottom:1.5rem; }
   .hero-sub { font-size:1.1rem; margin-bottom:1.75rem; }
   .hero-login { width:100%; }
-  .hero-tagline { margin:1.25rem 0 1rem; }
 
   .pc-section { padding-block:4rem; }
   .pc-heading { font-size:2.25rem; }
@@ -357,6 +374,9 @@ nav {
   .le-section { padding-block:4rem; }
   .le-heading { font-size:2.25rem; }
   .le-cta { width:100%; }
+
+  .ay-heading { font-size:3.25rem; }
+  .ay-stage { padding-top:3.5rem; gap:2rem; }
 
   .ol-section { padding-block:4rem; }
   .ol-eyebrow { font-size:.8rem; margin-bottom:1rem; }
@@ -380,20 +400,25 @@ nav {
 
 <!-- ══ 1 · HERO — "Own Your Lead Generation" ═════════════════ -->
 <section class="hero" id="hero" aria-labelledby="hero-title">
-  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-copy">
-      <p class="hero-eyebrow">link.ai for real estate agents</p>
       <h1 class="hero-headline" id="hero-title">Create more clients with link.ai</h1>
       <p class="hero-sub">Generate leads, connect with clients, and simplify your day with link.ai—your all-in-one AI tool for real estate.</p>
       <a href="https://app.link.ai" class="btn-tq hero-login">Login</a>
-      <p class="hero-tagline">One tool. More time for what matters.</p>
-      <p class="hero-body">Bring lead generation, client connections, and everyday work together—so you can focus on your next deal.</p>
     </div>
-    <div class="hero-visual">
-      <img src="assets/product-ask-link.png" width="1031" height="829"
+    <!-- rotating product visuals (5) -->
+    <div class="hero-visual" aria-roledescription="carousel" aria-label="link.ai product previews">
+      <img class="hv-img active" src="assets/product-ask-link.png" width="1031" height="829"
            alt="link.ai Copilot home: “Afternoon, Dylan.” with an Ask Link prompt and suggested tasks">
-      <p class="hero-caption">You approve everything. Copilot prepares the work, and nothing runs until you say so.</p>
+      <!-- TODO: laptop export has a solid white background — re-enable once a transparent PNG is exported
+      <img class="hv-img" src="assets/hero/hero-laptop.png" width="662" height="441"
+           alt="link.ai dashboard open on a laptop"> -->
+      <img class="hv-img" src="assets/hero/hero-lead-nurture.png" width="486" height="438"
+           alt="SMS conversation with lead Kevin P. about touring homes in Carlsbad">
+      <img class="hv-img" src="assets/hero/hero-social-approval.png" width="434" height="286"
+           alt="Social post for 24741 Ganymede awaiting approval">
+      <img class="hv-img" src="assets/hero/hero-phone.png" width="700" height="905"
+           alt="link.ai on a phone: choosing a listing photo for 24741 Ganymede">
     </div>
   </div>
 </section>
@@ -487,6 +512,24 @@ nav {
 </section>
 
 
+<!-- ══ 3b · AI YOU OWN ═══════════════════════════════════════ -->
+<section class="ay-section" id="ai-you-own" aria-labelledby="ay-title">
+  <div class="ay-stage">
+    <h2 class="ay-heading" id="ay-title">AI You Own.</h2>
+    <!-- tools link.ai works with, peeking from behind the product panels -->
+    <img class="ay-icon ay-icon--ghl"     src="assets/ai-you-own/icon-ghl.png"       width="170" height="180" loading="lazy" alt="GoHighLevel">
+    <img class="ay-icon ay-icon--chatgpt" src="assets/ai-you-own/icon-chatgpt.png"   width="170" height="180" loading="lazy" alt="ChatGPT">
+    <img class="ay-icon ay-icon--canva"   src="assets/ai-you-own/icon-canva.png"     width="170" height="180" loading="lazy" alt="Canva">
+    <img class="ay-icon ay-icon--gads"    src="assets/ai-you-own/icon-google-ad.png" width="170" height="180" loading="lazy" alt="Google Ads">
+    <img class="ay-icon ay-icon--homebot" src="assets/ai-you-own/icon-homebot.png"   width="170" height="89"  loading="lazy" alt="Homebot">
+    <img class="ay-tablet" src="assets/ai-you-own/tablet-buyers.png" width="837" height="771" loading="lazy"
+         alt="link.ai Buyers workspace showing saved searches, pre-quals, search links and tours">
+    <img class="ay-copilot" src="assets/product-ask-link.png" width="1031" height="829" loading="lazy"
+         alt="link.ai Copilot: “Afternoon, Dylan.” with an Ask Link prompt">
+  </div>
+</section>
+
+
 <!-- ══ 4 · OWN YOUR LEAD GENERATION ══════════════════════════ -->
 <section class="ol-section" id="own-your-lead-generation" aria-labelledby="ol-title">
   <div class="reveal">
@@ -543,49 +586,20 @@ nav {
 
 
 <script>
-/* hero background rotation
-   Add/remove photos here (paths relative to v2/). Order = rotation order. */
-const HERO_IMAGES = [
-  '../header%20image%20copy.webp',
-  // 'assets/hero/hero-2.jpg',
-  // 'assets/hero/hero-3.jpg',
-  // 'assets/hero/hero-4.jpg',
-  // 'assets/hero/hero-5.jpg',
-];
-const HERO_INTERVAL = 7000;   // ms each photo stays on screen
-
+/* hero product visual rotation — order = order of .hv-img in the HTML */
+const HERO_INTERVAL = 5000;   // ms each visual stays on screen
 (() => {
-  const bg = document.querySelector('.hero-bg');
-  if (!bg || !HERO_IMAGES.length) return;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const loaded = new Set();
-  const preload = src => new Promise(res => {
-    if (loaded.has(src)) return res();
-    const img = new Image();
-    img.onload = img.onerror = () => { loaded.add(src); res(); };
-    img.src = src;
-  });
-
-  const slides = HERO_IMAGES.map((src, i) => {
-    const s = document.createElement('div');
-    s.className = 'hero-slide' + (i === 0 ? ' active' : '');
-    if (i === 0) s.style.backgroundImage = `url('${src}')`;
-    bg.appendChild(s);
-    return s;
-  });
-  if (slides.length < 2 || reduced) return;
-
-  let idx = 0;
-  async function next() {
-    const n = (idx + 1) % slides.length;
-    await preload(HERO_IMAGES[n]);             // never fade to a half-loaded photo
-    if (!slides[n].style.backgroundImage) slides[n].style.backgroundImage = `url('${HERO_IMAGES[n]}')`;
-    slides[idx].classList.remove('active');
-    slides[n].classList.add('active');
-    idx = n;
-  }
+  const imgs = [...document.querySelectorAll('.hero-visual .hv-img')];
+  if (imgs.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let idx = 0, pending = false;
+  const next = () => {
+    if (pending) return;
+    const n = (idx + 1) % imgs.length;
+    const swap = () => { pending = false; imgs[idx].classList.remove('active'); imgs[n].classList.add('active'); idx = n; };
+    pending = true;
+    imgs[n].complete ? swap() : imgs[n].addEventListener('load', swap, { once:true });   // never fade to a half-loaded image
+  };
   let timer = setInterval(next, HERO_INTERVAL);
-  preload(HERO_IMAGES[1]);
   document.addEventListener('visibilitychange', () => {
     clearInterval(timer);
     if (!document.hidden) timer = setInterval(next, HERO_INTERVAL);
